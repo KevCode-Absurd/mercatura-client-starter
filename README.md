@@ -6,7 +6,7 @@ A fresh, local installation of the creative, landing page and SEO workspace. Thi
 
 1. Install Node.js 22+ and pnpm 11.25. Run pnpm install --frozen-lockfile.
 2. Copy .env.example to .env. Keep mock mode and zero budgets while checking onboarding. Never copy another installation's environment or data folders.
-3. Run pnpm setup, then pnpm dev. Open http://127.0.0.1:3000/onboarding.
+3. Run pnpm run setup, then pnpm dev. Open http://127.0.0.1:3000/onboarding. Use run setup explicitly because pnpm setup is a package-manager command.
 4. Create the client, add only their approved brand resources and accurate product/offer facts. Follow docs/guide/01-start-here.md.
 5. Configure your own provider credentials locally, confirm the selected models are available to your account, approve the destination and choose explicit small caps before live generation. Text uses LLM_BUDGET_USD within ABSOLUTE_BUDGET_USD; image count and video USD have separate limits. These are local controls, not a hosted multi-user billing ledger.
 6. Produce and approve a small pilot before a large batch. Mock output verifies workflow, not real copy or image quality.
