@@ -1,0 +1,134 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ForeplayStaticAdAnalysis",
+  "description": "Structured extraction schema for Gemini Vision analysis of static / image / carousel ads from Foreplay. Force JSON output mode. Null any field that cannot be determined from the image alone. Do not infer beyond what is visible.",
+  "type": "object",
+  "required": [
+    "format_archetype",
+    "headline_verbatim",
+    "primary_claim",
+    "social_proof_type",
+    "production_tier",
+    "why_it_works"
+  ],
+  "properties": {
+    "format_archetype": {
+      "type": "string",
+      "enum": [
+        "listicle-checkmarks",
+        "listicle-numbered",
+        "5-star-pull-quote",
+        "editorial-endorsement",
+        "back-in-stock-scarcity",
+        "seasonal-promo",
+        "tribal-identity",
+        "product-hero-with-overlay",
+        "bundle-kit-visual",
+        "ugc-testimonial-screenshot",
+        "before-after",
+        "comparison-grid",
+        "carousel-listicle",
+        "other"
+      ],
+      "description": "Static format archetype. Pick closest match."
+    },
+    "headline_verbatim": {
+      "type": "string",
+      "description": "Verbatim primary headline text on the image. Do not paraphrase. If multiple text blocks, this is the largest/most prominent one."
+    },
+    "subheadline": {
+      "type": ["string", "null"],
+      "description": "Verbatim secondary headline if present, e.g. 'These statements have not been evaluated...' or the smaller text underneath the main headline."
+    },
+    "primary_claim": {
+      "type": "string",
+      "description": "The single most prominent benefit/claim. Verbatim if shown on image. One sentence."
+    },
+    "benefit_bullets": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "List of verbatim benefit bullets if the static is a listicle format. Empty array if not a listicle."
+    },
+    "objection_handled": {
+      "type": "string",
+      "enum": ["price", "skepticism", "efficacy", "fit", "convenience", "trust", "ingredient-purity", "competitor-comparison", "other", "none"],
+      "description": "Primary objection the static addresses."
+    },
+    "social_proof_type": {
+      "type": "string",
+      "enum": ["testimonial-quote", "star-rating", "review-screenshot", "influencer-endorsement", "press-endorsement", "user-count", "before-after", "as-seen-in", "none"],
+      "description": "Type of social proof used in the static. 'none' if absent."
+    },
+    "cta_text": {
+      "type": ["string", "null"],
+      "description": "Verbatim CTA wording if visible on the image. Null if no explicit CTA."
+    },
+    "production_tier": {
+      "type": "string",
+      "enum": ["raw iPhone snapshot", "mid-tier creator graphic", "agency-produced design", "AI-generated", "stock-photo with overlay"],
+      "description": "Best inference of production quality."
+    },
+    "visual_layout": {
+      "type": "object",
+      "properties": {
+        "product_position": {
+          "type": "string",
+          "enum": ["centered-hero", "left-anchored", "right-anchored", "top-of-frame", "bottom-of-frame", "background-context", "absent"]
+        },
+        "text_density": {
+          "type": "string",
+          "enum": ["minimal", "moderate", "heavy"]
+        },
+        "color_palette": {
+          "type": "string",
+          "description": "Brief color palette description, e.g. 'cream + dusty rose + olive', 'high-contrast black on white', 'desaturated lifestyle photography'."
+        },
+        "uses_brand_logo": {
+          "type": "boolean"
+        },
+        "uses_product_pack": {
+          "type": "boolean"
+        }
+      },
+      "required": ["product_position", "text_density", "color_palette", "uses_brand_logo", "uses_product_pack"]
+    },
+    "typography": {
+      "type": "object",
+      "properties": {
+        "headline_style": {
+          "type": "string",
+          "enum": ["serif-editorial", "sans-modern", "script-handwritten", "display-condensed", "mixed", "kinetic-stacked"]
+        },
+        "uses_emoji": {
+          "type": "boolean"
+        }
+      },
+      "required": ["headline_style", "uses_emoji"]
+    },
+    "carousel_breakdown": {
+      "type": ["array", "null"],
+      "items": {
+        "type": "object",
+        "properties": {
+          "slide_number": {"type": "integer"},
+          "purpose": {
+            "type": "string",
+            "enum": ["hook", "problem-statement", "benefit", "social-proof", "ingredient-callout", "before-after", "cta", "other"]
+          },
+          "headline": {"type": "string"}
+        },
+        "required": ["slide_number", "purpose"]
+      },
+      "description": "Only populate for carousel ads. Null for single-image statics."
+    },
+    "why_it_works": {
+      "type": "string",
+      "description": "One-paragraph mechanism explanation grounded in what's visible. Why does this static convert? Name the persuasion lever (authority, scarcity, social proof, problem-aware framing, transformation, identity, etc.) and how the visual layout reinforces it."
+    },
+    "category_tags": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Optional category descriptors, e.g. ['scalp-care', 'female-targeted', 'wellness-tone']. Free-form."
+    }
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "read_at": "2026-10-12",
+  "index": "https://transparency.meta.com/policies/ad-standards/",
+  "pages": [
+    {
+      "slug": "index",
+      "title": "Introduction to the Advertising Standards",
+      "url": "https://transparency.meta.com/policies/ad-standards/"
+    },
+    {
+      "slug": "siep",
+      "title": "Ads about Social Issues, Elections or Politics",
+      "url": "https://transparency.meta.com/policies/ad-standards/SIEP-advertising/SIEP/"
+    },
+    {
+      "slug": "cybersecurity",
+      "title": "Cybersecurity",
+      "url": "https://transparency.meta.com/policies/ad-standards/business-assets/Cybersecurity/"
+    },
+    {
+      "slug": "account-integrity",
+      "title": "Account Integrity",
+      "url": "https://transparency.meta.com/policies/ad-standards/business-assets/account-integrity/"
+    },
+    {
+      "slug": "inauthentic-behavior",
+      "title": "Inauthentic Behavior",
+      "url": "https://transparency.meta.com/policies/ad-standards/business-assets/inauthentic-behavior/"
+    },
+    {
+      "slug": "spam",
+      "title": "Spam",
+      "url": "https://transparency.meta.com/policies/ad-standards/business-assets/spam/"
+    },
+    {
+      "slug": "user-requests",
+      "title": "User Requests",
+      "url": "https://transparency.meta.com/policies/ad-standards/business-assets/user-requests/"
+    },
+    {
+      "slug": "community-standards",
+      "title": "Community Standards",
+      "url": "https://transparency.meta.com/policies/ad-standards/community-standards/"
+    },
+    {
+      "slug": "prohibited-commercial-practices",
+      "title": "Prohibited Commercial Practices",
+      "url": "https://transparency.meta.com/policies/ad-standards/deceptive-content/prohibited-commercial-practices/"
+    },
+    {
+      "slug": "using-meta-intellectual-property-licenses",
+      "title": "Using Meta Intellectual Property and Licenses",
+      "url": "https://transparency.meta.com/policies/ad-standards/intellectual-property-infringement/Using-Meta-Intellectual-Property-Licenses/"
+    },
+    {
+      "slug": "third-party-infringement",
+      "title": "Third-Party Intellectual Property Infringement",
+      "url": "https://transparency.meta.com/policies/ad-standards/intellectual-property-infringement/third-party-infringement/"
+    },
+    {
+      "slug": "adult-nudity-and-sexual-activity",
+      "title": "Adult Nudity and Sexual Activity",
+      "url": "https://transparency.meta.com/policies/ad-standards/objectionable-content/adult-nudity-and-sexual-activity/"
+    },
+    {
+      "slug": "adult-sexual-exploitation",
+      "title": "Adult Sexual Exploitation",
+      "url": "https://transparency.meta.com/policies/ad-standards/objectionable-content/adult-sexual-exploitation/"
+    },
+    {
+      "slug": "adult-sexual-solicitation-and-sexually-explicit-language",
+      "title": "Adult Sexual Solicitation and Sexually Explicit Language",
+      "url": "https://transparency.meta.com/policies/ad-standards/objectionable-content/adult-sexual-solicitation-and-sexually-explicit-language/"
+    },
+    {
+      "slug": "bullying-harassment",
+      "title": "Bullying and Harassment",
+      "url": "https://transparency.meta.com/policies/ad-standards/objectionable-content/bullying-harassment/"
+    },
+    {
+      "slug": "child-sexual-exploitation-abuse-nudity",
+      "title": "Child Sexual Exploitation, Abuse, and Nudity",
+      "url": "https://transparency.meta.com/policies/ad-standards/objectionable-content/child-sexual-exploitation-abuse-nudity/"
+    },
+    {
+      "slug": "privacy-violations-personal-attributes",
+      "title": "Privacy Violations and Personal Attributes",
+      "url": "https://transparency.meta.com/policies/ad-standards/objectionable-content/privacy-violations-personal-attributes/"
+    },
+    {
+      "slug": "profanity",
+      "title": "Profanity",
+      "url": "https://transparency.meta.com/policies/ad-standards/objectionable-content/profanity/"
+    },
+    {
+      "slug": "suicide-selfinjury-eating-disorders",
+      "title": "Suicide, Self-Injury, and Eating Disorders",
+      "url": "https://transparency.meta.com/policies/ad-standards/objectionable-content/suicide-selfinjury-eating-disorders/"
+    },
+    {
+      "slug": "violent-graphic-content",
+      "title": "Violent and Graphic Content",
+      "url": "https://transparency.meta.com/policies/ad-standards/objectionable-content/violent-graphic-content/"
+    },
+    {
+      "slug": "alcohol",
+      "title": "Alcohol",
+      "url": "https://transparency.meta.com/policies/ad-standards/restricted-goods-services/alcohol/"
+    },
+    {
+      "slug": "bodily-parts-and-fluid",
+      "title": "Sale of Human Body Parts and Bodily Fluids",
+      "url": "https://transparency.meta.com/policies/ad-standards/restricted-goods-services/bodily-parts-and-fluid/"
+    },
+    {
+      "slug": "commercial-exploitation-of-crises-and-controversial-events",
+      "title": "Commercial Exploitation of Crises and Controversial Events",
+      "url": "https://transparency.meta.com/policies/ad-standards/restricted-goods-services/commercial-exploitation-of-crises-and-controversial-events/"
+    },
+    {
+      "slug": "cryptocurrency-products-and-services",
+      "title": "Cryptocurrency Products and Services",
+      "url": "https://transparency.meta.com/policies/ad-standards/restricted-goods-services/cryptocurrency-products-and-services/"
+    },
+    {
+      "slug": "dating-ads",
+      "title": "Dating Ads",
+      "url": "https://transparency.meta.com/policies/ad-standards/restricted-goods-services/dating-ads/"
+    },
+    {
+      "slug": "drug-alcohol-addiction-treatment",
+      "title": "Drug and Alcohol Addiction Treatment",
+      "url": "https://transparency.meta.com/policies/ad-standards/restricted-goods-services/drug-alcohol-addiction-treatment/"
+    },
+    {
+      "slug": "drugs-pharmaceuticals",
+      "title": "Drugs and Pharmaceuticals",
+      "url": "https://transparency.meta.com/policies/ad-standards/restricted-goods-services/drugs-pharmaceuticals/"
+    },
+    {
+      "slug": "financial-services",
+      "title": "Financial and Insurance Products and Services",
+      "url": "https://transparency.meta.com/policies/ad-standards/restricted-goods-services/financial-services/"
+    },
+    {
+      "slug": "gambling-games",
+      "title": "Online Gambling and Games",
+      "url": "https://transparency.meta.com/policies/ad-standards/restricted-goods-services/gambling-games/"
+    },
+    {
+      "slug": "hazardous-goods-materials",
+      "title": "Hazardous Goods and Materials",
+      "url": "https://transparency.meta.com/policies/ad-standards/restricted-goods-services/hazardous-goods-materials/"
+    },
+    {
+      "slug": "health-wellness",
+      "title": "Health and Wellness",
+      "url": "https://transparency.meta.com/policies/ad-standards/restricted-goods-services/health-wellness/"
+    },
+    {
+      "slug": "historical-artifacts",
+      "title": "Historical Artifacts",
+      "url": "https://transparency.meta.com/policies/ad-standards/restricted-goods-services/historical-artifacts/"
+    },
+    {
+      "slug": "live-endangered-nonendangered-animals",
+      "title": "Sale of Non-Endangered Animals and Endangered Species",
+      "url": "https://transparency.meta.com/policies/ad-standards/restricted-goods-services/live-endangered-nonendangered-animals/"
+    },
+    {
+      "slug": "prohibited-documents-and-financial-services",
+      "title": "Prohibited Documents and Financial Services",
+      "url": "https://transparency.meta.com/policies/ad-standards/restricted-goods-services/prohibited-documents-and-financial-services/"
+    },
+    {
+      "slug": "tobacco-related-products",
+      "title": "Tobacco and Related Products",
+      "url": "https://transparency.meta.com/policies/ad-standards/restricted-goods-services/tobacco-related-products/"
+    },
+    {
+      "slug": "weapons-ammunitions-explosives",
+      "title": "Weapons, Ammunition or Explosives",
+      "url": "https://transparency.meta.com/policies/ad-standards/restricted-goods-services/weapons-ammunitions-explosives/"
+    },
+    {
+      "slug": "coordinating-harm-and-promoting-crime",
+      "title": "Coordinating Harm and Promoting Crime",
+      "url": "https://transparency.meta.com/policies/ad-standards/unacceptable-content/coordinating-harm-and-promoting-crime/"
+    },
+    {
+      "slug": "dangerous-orgs-individuals",
+      "title": "Dangerous Organizations and Individuals",
+      "url": "https://transparency.meta.com/policies/ad-standards/unacceptable-content/dangerous-orgs-individuals/"
+    },
+    {
+      "slug": "discriminatory-practices",
+      "title": "Discriminatory Practices",
+      "url": "https://transparency.meta.com/policies/ad-standards/unacceptable-content/discriminatory-practices/"
+    },
+    {
+      "slug": "hateful-conduct",
+      "title": "Hateful Conduct",
+      "url": "https://transparency.meta.com/policies/ad-standards/unacceptable-content/hateful-conduct/"
+    },
+    {
+      "slug": "human-exploitation",
+      "title": "Human Exploitation",
+      "url": "https://transparency.meta.com/policies/ad-standards/unacceptable-content/human-exploitation/"
+    },
+    {
+      "slug": "locally-illegal-products-services",
+      "title": "Locally Illegal Content, Products, or Services",
+      "url": "https://transparency.meta.com/policies/ad-standards/unacceptable-content/locally-illegal-products-services/"
+    },
+    {
+      "slug": "misinformation",
+      "title": "Misinformation",
+      "url": "https://transparency.meta.com/policies/ad-standards/unacceptable-content/misinformation/"
+    },
+    {
+      "slug": "vaccine-discouragement",
+      "title": "Vaccine Discouragement",
+      "url": "https://transparency.meta.com/policies/ad-standards/unacceptable-content/vaccine-discouragement/"
+    },
+    {
+      "slug": "cs-cybersecurity",
+      "title": "Cybersecurity",
+      "url": "https://transparency.meta.com/policies/community-standards/cybersecurity/"
+    },
+    {
+      "slug": "cs-inauthentic-behavior",
+      "title": "Inauthentic Behavior",
+      "url": "https://transparency.meta.com/policies/community-standards/inauthentic-behavior/"
+    },
+    {
+      "slug": "cs-meta-intellectual-property",
+      "title": "Using Meta Intellectual Property and Licenses",
+      "url": "https://transparency.meta.com/policies/community-standards/meta-intellectual-property/"
+    },
+    {
+      "slug": "cs-misinformation",
+      "title": "Misinformation",
+      "url": "https://transparency.meta.com/policies/community-standards/misinformation/"
+    },
+    {
+      "slug": "cs-privacy-violations",
+      "title": "Privacy Violations",
+      "url": "https://transparency.meta.com/policies/community-standards/privacy-violations/"
+    },
+    {
+      "slug": "cs-prohibited-commercial-practices",
+      "title": "Prohibited Commercial Practices",
+      "url": "https://transparency.meta.com/policies/community-standards/prohibited-commercial-practices/"
+    },
+    {
+      "slug": "cs-spam",
+      "title": "Spam",
+      "url": "https://transparency.meta.com/policies/community-standards/spam/"
+    },
+    {
+      "slug": "cs-user-requests",
+      "title": "User Requests",
+      "url": "https://transparency.meta.com/policies/community-standards/user-requests/"
+    },
+    {
+      "slug": "cs-sexual-solicitation",
+      "title": "Adult Sexual Solicitation and Sexually Explicit Language",
+      "url": "https://transparency.meta.com/policies/community-standards/sexual-solicitation/"
+    },
+    {
+      "slug": "cs-suicide-self-injury",
+      "title": "Suicide and Self-Injury",
+      "url": "https://transparency.meta.com/policies/community-standards/suicide-self-injury/"
+    },
+    {
+      "slug": "cs-hate-speech",
+      "title": "Hateful Conduct",
+      "url": "https://transparency.meta.com/policies/community-standards/hate-speech/"
+    }
+  ],
+  "failed": []
+}

@@ -1,0 +1,14 @@
+.git
+node_modules
+.next*
+.test-tmp
+.env*
+data
+brands
+uploads
+output
+backup
+docs/screenshots
+*.db
+*.sqlite*
+*.log

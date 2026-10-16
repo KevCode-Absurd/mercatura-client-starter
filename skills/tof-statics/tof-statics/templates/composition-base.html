@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<!--
+  tof-statics composition toolkit — 1080×1920 master, 4:5 read-zone.
+  Copy this file per ad, keep the canvas/read-zone plumbing, swap the content.
+  Render: python scripts/compose.py <this-file>.html <out>.png
+  Dev guides: open with ?guides appended to the file URL.
+-->
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; }
+  .canvas {
+    position: relative; width: 1080px; height: 1920px;
+    font-family: 'Poppins', sans-serif;   /* swap for client brand font */
+  }
+  .base {                                  /* the generated image, full bleed */
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  }
+
+  /* ---- read-zone: centred 1080×1350; all readable elements inside ---- */
+  .readzone { position: absolute; left: 0; top: 285px; width: 1080px; height: 1350px; }
+
+  /* ---- devices ---- */
+  .headline {
+    position: absolute; left: 64px; right: 64px; top: 40px;
+    font-size: 104px; font-weight: 800; line-height: 1.02; letter-spacing: -0.02em;
+    color: #fff;
+  }
+  .headline .light { font-weight: 500; opacity: .92; }        /* two-tone: setup */
+  .headline .bar {                                            /* highlight bar: the pivot */
+    background: #C42B55; color: #fff; padding: 0 18px;
+    box-decoration-break: clone; -webkit-box-decoration-break: clone;
+  }
+  .subhead {
+    position: absolute; left: 64px; right: 64px;
+    font-size: 42px; font-weight: 500; line-height: 1.25; color: #fff;
+  }
+  .scrim {                                                    /* only if the base forces it */
+    position: absolute; left: 0; right: 0; height: 560px;
+    background: linear-gradient(to bottom, rgba(0,0,0,.55), transparent);
+  }
+
+  .callout {                                                  /* leader-line caption */
+    position: absolute; font-size: 30px; font-weight: 500; color: #fff; max-width: 360px;
+  }
+  .leader { position: absolute; }                             /* svg line, see markup */
+
+  .inset {                                                    /* circular product crop */
+    position: absolute; width: 280px; height: 280px; border-radius: 50%;
+    border: 5px solid #fff; object-fit: cover; background: #fff;
+  }
+  .flag {                                                     /* price/offer flag — <10% of ads */
+    position: absolute; background: #fff; color: #1A1A1A;
+    font-size: 44px; font-weight: 800; padding: 14px 30px; border-radius: 10px;
+  }
+  .lowerthird {                                               /* native/documentary */
+    position: absolute; left: 90px; right: 90px; background: rgba(255,255,255,.96);
+    color: #222; font-size: 44px; font-weight: 700; line-height: 1.12;
+    padding: 26px 34px; text-transform: uppercase; letter-spacing: -0.01em;
+  }
+  .bubble {                                                   /* native flat-lay caption */
+    position: absolute; background: #fff; color: #111; border-radius: 28px;
+    font-size: 40px; font-weight: 600; line-height: 1.2; padding: 24px 38px;
+    max-width: 620px; text-align: center; box-shadow: 0 4px 18px rgba(0,0,0,.18);
+  }
+
+  /* ---- dev guides (?guides) ---- */
+  .guides { display: none; position: absolute; inset: 0; pointer-events: none; }
+  body.show-guides .guides { display: block; }
+  .guides .rz { position: absolute; left: 0; top: 285px; width: 1078px; height: 1348px;
+                border: 1px dashed rgba(255,0,0,.9); }
+  .guides .cx { position: absolute; left: 539px; top: 0; width: 1px; height: 100%;
+                background: rgba(255,0,0,.4); }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <img class="base" src="REPLACE-base-image.png">
+
+  <!-- <div class="scrim" style="top:0"></div> -->
+
+  <div class="readzone">
+    <div class="headline">
+      <span class="light">STILL SCRATCHING.</span><br>
+      <span class="bar">STILL NOTHING WORKS.</span>
+    </div>
+    <div class="subhead" style="top: 460px;">
+      Subhead states the mechanism in one breath. ≤90 chars with the headline.
+    </div>
+
+    <!-- leader line: dot at visual, rule to caption -->
+    <svg class="leader" style="left:0; top:0; width:1080px; height:1350px;" viewBox="0 0 1080 1350">
+      <circle cx="640" cy="880" r="7" fill="#fff"/>
+      <line x1="640" y1="880" x2="850" y2="1060" stroke="#fff" stroke-width="2.5"/>
+    </svg>
+    <div class="callout" style="left:700px; top:1075px;">Caption carrying exactly one spec.</div>
+
+    <img class="inset" src="REPLACE-product.jpg" style="left:80px; top:1000px;">
+    <!-- <div class="flag" style="left:390px; top:1120px;">80% OFF TODAY</div> -->
+  </div>
+
+  <div class="guides"><div class="rz"></div><div class="cx"></div></div>
+</div>
+<script>
+  if (location.search.includes('guides')) document.body.classList.add('show-guides');
+</script>
+</body>
+</html>

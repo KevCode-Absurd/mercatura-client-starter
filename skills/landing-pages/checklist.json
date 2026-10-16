@@ -1,0 +1,618 @@
+{
+  "about": "Every check the Landing pages module runs, in the masterclass order (clarity, copy, offer, proof, friction), plus truth and mobile. applies: 'page' is a page built in the app, 'url' is a page captured from a link. level is what a failure is: 'fail' blocks nothing but is shown in red; 'warn' is advice. Each check is code keyed by its id in src/lib/landing/checks.ts; this file holds the words. ice: impact, confidence and ease out of 10, for ranking fixes.",
+  "areas": [
+    {
+      "id": "clarity",
+      "label": "Clarity and hierarchy",
+      "question": "Can a stranger understand it at once, above the fold, on a phone?"
+    },
+    {
+      "id": "copy",
+      "label": "Copy",
+      "question": "Does it remove doubt and speak to the actual desire?"
+    },
+    {
+      "id": "offer",
+      "label": "Offer",
+      "question": "Is the thing on offer worth converting on?"
+    },
+    {
+      "id": "proof",
+      "label": "Proof",
+      "question": "Do they believe the claim and the mechanism?"
+    },
+    {
+      "id": "friction",
+      "label": "Friction",
+      "question": "Is anything physically in the way of buying?"
+    },
+    {
+      "id": "truth",
+      "label": "Truth",
+      "question": "Is every fact on the page one the brand can stand behind?"
+    }
+  ],
+  "checks": [
+    {
+      "id": "atf_what",
+      "area": "clarity",
+      "applies": [
+        "page",
+        "url"
+      ],
+      "level": "fail",
+      "label": "Above the fold says what it is, as an outcome",
+      "good": "The headline states the outcome for the buyer, not the product's name or its format",
+      "fix": "Rewrite the headline as dream outcome + benefit with a timeframe + mechanism (copy-formulas.md)",
+      "source": "Masterclass: 4 questions; playbook 07-LPG 3C.2",
+      "ice": [
+        9,
+        8,
+        9
+      ]
+    },
+    {
+      "id": "atf_why_this",
+      "area": "clarity",
+      "applies": [
+        "page",
+        "url"
+      ],
+      "level": "warn",
+      "label": "Above the fold says why this one",
+      "good": "A sub-line names the mechanism or the one-of-one difference",
+      "fix": "Add a sub-headline: the pain, the unique mechanism, the benefit (40 words at most)",
+      "source": "Masterclass: 4 questions; 07-LPG 3C.4",
+      "ice": [
+        7,
+        7,
+        9
+      ]
+    },
+    {
+      "id": "atf_why_now",
+      "area": "clarity",
+      "applies": [
+        "page",
+        "url"
+      ],
+      "level": "warn",
+      "label": "Above the fold gives a reason to buy now",
+      "good": "A real reason today, from the brand's facts: a gift, a bundle saving or the price per day for a product bought again; when it arrives, free returns or instalments for a product bought once",
+      "fix": "Put the offer, the per-day price, or the delivery and returns line beside the price. Never invent urgency",
+      "source": "Masterclass: 4 questions",
+      "ice": [
+        6,
+        6,
+        8
+      ]
+    },
+    {
+      "id": "atf_trust",
+      "area": "clarity",
+      "applies": [
+        "page",
+        "url"
+      ],
+      "level": "warn",
+      "label": "Above the fold gives a reason to trust",
+      "good": "The brand's stated rating and review count, a customer's words, or a warranty, right under the headline",
+      "fix": "Add the brand's own rating and count under the title, or 1 customer quote that proves the promise. Never a default score",
+      "source": "Masterclass: 4 questions; 07-LPG 3C.6",
+      "ice": [
+        8,
+        8,
+        8
+      ]
+    },
+    {
+      "id": "one_cta",
+      "area": "clarity",
+      "applies": [
+        "page",
+        "url"
+      ],
+      "level": "warn",
+      "label": "1 primary call to action in the first screen",
+      "good": "1 button that stands out",
+      "fix": "Keep 1 primary button above the fold; make the rest links",
+      "source": "cro-brain 3a; 07-LPG 3C.7",
+      "ice": [
+        6,
+        7,
+        9
+      ]
+    },
+    {
+      "id": "price_visible",
+      "area": "clarity",
+      "applies": [
+        "page",
+        "url"
+      ],
+      "level": "fail",
+      "label": "Price visible without scrolling (product page)",
+      "good": "Price, and any saving in money, in the first screen",
+      "fix": "Move the price and the button above the fold on a phone",
+      "source": "Product Page Checklist (PDP) 2; 07-LPG 3C.9",
+      "ice": [
+        8,
+        8,
+        8
+      ],
+      "only": [
+        "pdp"
+      ]
+    },
+    {
+      "id": "page_type_fits",
+      "area": "clarity",
+      "applies": [
+        "page"
+      ],
+      "level": "warn",
+      "label": "Page type fits the buyer's awareness",
+      "good": "Advertorial for unaware and problem aware; listicle for solution aware; product page for product aware and ready",
+      "fix": "Change the page type, or the buyer it is for",
+      "source": "5 Buyer Segments; 07-LPG 3A",
+      "ice": [
+        8,
+        6,
+        6
+      ]
+    },
+    {
+      "id": "images_filled",
+      "area": "clarity",
+      "applies": [
+        "page"
+      ],
+      "level": "warn",
+      "label": "Every image slot has a picture",
+      "good": "Each slot holds a real photo of the product or a customer",
+      "fix": "Add product photos on the Brand brain screen, or make the image in Creative Studio (product page images, the bucket named on the slot)",
+      "source": "Product Page Checklist (PDP) 1; product-image-templates",
+      "ice": [
+        6,
+        7,
+        6
+      ]
+    },
+    {
+      "id": "continuity",
+      "area": "copy",
+      "applies": [
+        "page"
+      ],
+      "level": "fail",
+      "label": "The hero carries the ad's promise",
+      "good": "The headline or sub-headline repeats the ad's main words; the first buying option is the ad's offer and the first image shows the same product",
+      "fix": "Put the ad's headline words in the hero; same buyer, same angle, same offer, same picture",
+      "source": "Masterclass: continuity; 07-LPG 5.5",
+      "ice": [
+        9,
+        8,
+        9
+      ],
+      "when": "built for an ad"
+    },
+    {
+      "id": "one_angle",
+      "area": "copy",
+      "applies": [
+        "page"
+      ],
+      "level": "warn",
+      "label": "1 angle, not every benefit",
+      "good": "6 benefits or fewer, all on the page's 1 angle",
+      "fix": "Cut benefits that belong to another buyer's page",
+      "source": "Masterclass: specificity beats breadth",
+      "ice": [
+        6,
+        6,
+        8
+      ]
+    },
+    {
+      "id": "so_what",
+      "area": "copy",
+      "applies": [
+        "page",
+        "url"
+      ],
+      "level": "warn",
+      "label": "Headings pass the so-what test",
+      "good": "Section headings say what the buyer gets",
+      "fix": "Lead with the outcome and justify with the feature",
+      "source": "Masterclass: so-what test; cro-brain 1",
+      "ice": [
+        6,
+        6,
+        8
+      ]
+    },
+    {
+      "id": "table_stakes_low",
+      "area": "copy",
+      "applies": [
+        "page",
+        "url"
+      ],
+      "level": "warn",
+      "label": "Table stakes are not headlines",
+      "good": "Free shipping, fast delivery and great service stay small",
+      "fix": "Move table stakes into small print; headline what is unique",
+      "source": "Masterclass: table stakes",
+      "ice": [
+        4,
+        6,
+        9
+      ]
+    },
+    {
+      "id": "faq_objections",
+      "area": "copy",
+      "applies": [
+        "page",
+        "url"
+      ],
+      "level": "warn",
+      "label": "FAQ answers reasons not to buy",
+      "good": "3 or more questions, each an objection from research",
+      "fix": "Replace generic questions (shipping policy, brand story) with the top objections in the buyer's words. Returns, delivery and fit count when asked as the buyer's worry",
+      "source": "Masterclass: FAQ; 07-LPG 3D.11",
+      "ice": [
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "id": "offer_present",
+      "area": "offer",
+      "applies": [
+        "page",
+        "url"
+      ],
+      "level": "warn",
+      "label": "An offer worth converting on",
+      "good": "A bundle, routine, gift or subscription saving shown in money; for a product bought once, the price with what is in the box, delivery, returns and warranty",
+      "fix": "Build an offer in the Offers module and put it on the page",
+      "source": "Masterclass: offer; 07-LPG 3G",
+      "ice": [
+        9,
+        6,
+        5
+      ]
+    },
+    {
+      "id": "discount_depth",
+      "area": "offer",
+      "applies": [
+        "page"
+      ],
+      "level": "warn",
+      "label": "Not a lazy discount",
+      "good": "Value added, not price cut; any discount under 30%",
+      "fix": "Reframe the offer: bundle, gift with purchase, routine",
+      "source": "Masterclass: offer is positioning",
+      "ice": [
+        6,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "saving_in_money",
+      "area": "offer",
+      "applies": [
+        "page"
+      ],
+      "level": "warn",
+      "label": "Savings stated in money",
+      "good": "A saving is shown as an amount, not only a percent",
+      "fix": "Show 'Save $14' beside the percent",
+      "source": "07-LPG 3G.1",
+      "ice": [
+        4,
+        6,
+        9
+      ]
+    },
+    {
+      "id": "reviews_present",
+      "area": "proof",
+      "applies": [
+        "page",
+        "url"
+      ],
+      "level": "fail",
+      "label": "Customer proof on the page",
+      "good": "3 or more customer quotes",
+      "fix": "Import reviews in Sources; the builder uses their words",
+      "source": "Masterclass: reviews first",
+      "ice": [
+        9,
+        9,
+        7
+      ]
+    },
+    {
+      "id": "proof_matches_claim",
+      "area": "proof",
+      "applies": [
+        "page"
+      ],
+      "level": "warn",
+      "label": "Proof matches the promise",
+      "good": "At least 1 quote is about the page's promise",
+      "fix": "Pick reviews that prove the headline's claim",
+      "source": "Masterclass: proof must match the claim",
+      "ice": [
+        7,
+        7,
+        8
+      ]
+    },
+    {
+      "id": "reviews_real",
+      "area": "proof",
+      "applies": [
+        "page"
+      ],
+      "level": "fail",
+      "label": "Every quote is a real customer's words",
+      "good": "Each quote is found in the research, or was entered by a person",
+      "fix": "Remove quotes that are not in the research",
+      "source": "Core principle: retrieve, never invent; 07-LPG 5.7",
+      "ice": [
+        10,
+        10,
+        9
+      ]
+    },
+    {
+      "id": "risk_reversal_near_cta",
+      "area": "friction",
+      "applies": [
+        "page",
+        "url"
+      ],
+      "level": "warn",
+      "label": "Risk reversal under the button",
+      "good": "The guarantee, or the returns window and warranty, sits under the main button",
+      "fix": "Put the guarantee, or the returns window and warranty, in 1 line under the button",
+      "source": "cro-brain 2.3; 07-LPG 3C.8",
+      "ice": [
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "id": "sticky_cta",
+      "area": "friction",
+      "applies": [
+        "page",
+        "url"
+      ],
+      "level": "warn",
+      "label": "A button follows the visitor on mobile",
+      "good": "A sticky add to cart after the hero scrolls away",
+      "fix": "Turn on the sticky bar",
+      "source": "Product Page Checklist (PDP) 7; 07-LPG 5.6",
+      "ice": [
+        5,
+        6,
+        9
+      ]
+    },
+    {
+      "id": "no_popup_on_load",
+      "area": "friction",
+      "applies": [
+        "url"
+      ],
+      "level": "warn",
+      "label": "No pop-up on arrival",
+      "good": "Nothing covers the page in the first seconds",
+      "fix": "Trigger pop-ups on exit intent or scroll depth",
+      "source": "cro-brain 3a; 07-LPG 3H.4",
+      "ice": [
+        5,
+        6,
+        8
+      ]
+    },
+    {
+      "id": "numbers_known",
+      "area": "truth",
+      "applies": [
+        "page"
+      ],
+      "level": "fail",
+      "label": "Every number is one the brand states",
+      "good": "Prices, timeframes, counts and figures all appear in the brand brain",
+      "fix": "Remove or correct the number, or add it to the brand brain with its source",
+      "source": "Core principle; 07-LPG 5.7",
+      "ice": [
+        10,
+        9,
+        9
+      ]
+    },
+    {
+      "id": "forbidden_claims",
+      "area": "truth",
+      "applies": [
+        "page",
+        "url"
+      ],
+      "level": "fail",
+      "label": "No forbidden claims",
+      "good": "None of the brand's forbidden claims",
+      "fix": "Remove the claim",
+      "source": "Brand brain",
+      "ice": [
+        10,
+        10,
+        9
+      ]
+    },
+    {
+      "id": "no_em_dash",
+      "area": "truth",
+      "applies": [
+        "page"
+      ],
+      "level": "warn",
+      "label": "No em dashes",
+      "good": "Commas, 'and' or '&' instead",
+      "fix": "Replace each dash",
+      "source": "ThrillX prompts; five-reasons-lp",
+      "ice": [
+        2,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "no_fake_urgency",
+      "area": "truth",
+      "applies": [
+        "page",
+        "url"
+      ],
+      "level": "fail",
+      "label": "No invented urgency",
+      "good": "Any deadline or stock line is true",
+      "fix": "Remove countdowns and stock lines that are not wired to real numbers",
+      "source": "cro-brain 8; 07-LPG 5.7",
+      "ice": [
+        8,
+        8,
+        9
+      ]
+    },
+    {
+      "id": "five_reasons",
+      "area": "copy",
+      "applies": [
+        "page"
+      ],
+      "level": "warn",
+      "label": "Distinct supported reasons",
+      "good": "The page uses only distinct supported reasons answering the selected buyer task; section count follows evidence",
+      "fix": "Remove unsupported or redundant reasons; resolve the material buying objections first",
+      "source": "Advertorial Playbook 5, 12",
+      "ice": [
+        8,
+        8,
+        8
+      ],
+      "only": [
+        "advertorial"
+      ]
+    },
+    {
+      "id": "proof_at_doubt",
+      "area": "proof",
+      "applies": [
+        "page"
+      ],
+      "level": "warn",
+      "label": "Proof placed where doubt peaks",
+      "good": "A real customer's words sit right after reasons 2 and 4, the reasons most likely to trigger \"sure, but does it work\"",
+      "fix": "Move a quote to reason 2 and one to reason 4; keep the review block for the end",
+      "source": "Advertorial Playbook 6",
+      "ice": [
+        8,
+        7,
+        9
+      ],
+      "only": [
+        "advertorial"
+      ]
+    },
+    {
+      "id": "price_once_late",
+      "area": "offer",
+      "applies": [
+        "page"
+      ],
+      "level": "warn",
+      "label": "The price appears once, at the end",
+      "good": "No price before the buy box; the case is made first, then the buy box asks which plan",
+      "fix": "Take every price out of the hero, the lede, the problem and the reasons",
+      "source": "Advertorial Playbook 1, 7, 12",
+      "ice": [
+        7,
+        8,
+        9
+      ],
+      "only": [
+        "advertorial"
+      ]
+    },
+    {
+      "id": "lede_no_product",
+      "area": "copy",
+      "applies": [
+        "page"
+      ],
+      "level": "warn",
+      "label": "The lede does not name the product",
+      "good": "The first 2 paragraphs describe her situation so precisely that she assumes it has been solved; the product enters at reason 1",
+      "fix": "Take the brand and product names out of the opening paragraphs",
+      "source": "Advertorial Playbook 3",
+      "ice": [
+        7,
+        7,
+        9
+      ],
+      "only": [
+        "advertorial"
+      ]
+    },
+    {
+      "id": "headline_formula",
+      "area": "clarity",
+      "applies": [
+        "page"
+      ],
+      "level": "warn",
+      "label": "Headline of 8 to 14 words naming the audience",
+      "good": "The headline follows 1 of the 4 formulas: 8 to 14 words, names the audience and the problem, not the feature, and reads on a day she is not shopping",
+      "fix": "Rewrite under a formula: name who it is for and what it fixes, in 8 to 14 words",
+      "source": "Advertorial Playbook 4",
+      "ice": [
+        8,
+        6,
+        8
+      ],
+      "only": [
+        "advertorial"
+      ]
+    },
+    {
+      "id": "faq_six_to_eight",
+      "area": "copy",
+      "applies": [
+        "page"
+      ],
+      "level": "warn",
+      "label": "6 to 8 real questions before the offer",
+      "good": "The FAQ holds 6 to 8 questions buyers actually ask before buying, answered plainly, placed after the reasons and before the offer",
+      "fix": "Add the questions support is tired of answering; cut the ones nobody asks",
+      "source": "Advertorial Playbook 8",
+      "ice": [
+        6,
+        7,
+        9
+      ],
+      "only": [
+        "advertorial"
+      ]
+    }
+  ]
+}

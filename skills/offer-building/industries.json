@@ -1,0 +1,274 @@
+{
+  "note": "What each industry is known for doing with its offers. Written from general knowledge on 2026-10-03, not from research: each line is a well-known pattern, not a finding about any company. Research an industry on the Offers screen to add current, sourced examples (kept in research/<id>.json).",
+  "groups": [
+    { "id": "move", "name": "Travel and vehicles", "hue": 212 },
+    { "id": "eat", "name": "Food and drink", "hue": 24 },
+    { "id": "sub", "name": "Memberships and software", "hue": 262 },
+    { "id": "shop", "name": "Shops", "hue": 338 },
+    { "id": "body", "name": "Body and care", "hue": 158 },
+    { "id": "home", "name": "Home", "hue": 44 },
+    { "id": "money", "name": "Money and trade", "hue": 190 },
+    { "id": "play", "name": "Play and learning", "hue": 300 }
+  ],
+  "industries": [
+    { "id": "car_dealers", "name": "Car dealers", "group": "move", "icon": "Car", "patterns": [
+      { "name": "Servicing included", "how": "The first years of maintenance come with the car, so the price buys peace of mind as well as the thing." },
+      { "name": "Trade-in credit", "how": "The old one is taken in part payment, which removes the reason to wait." },
+      { "name": "Pay monthly at 0%", "how": "The price is restated as a small monthly figure with no interest." },
+      { "name": "Take it home first", "how": "An extended test drive at home before any commitment." },
+      { "name": "Certified pre-owned", "how": "A checked, warrantied second-hand tier for buyers who will not pay for new." } ] },
+    { "id": "car_wash", "name": "Car washes", "group": "move", "icon": "Droplets", "patterns": [
+      { "name": "Unlimited monthly pass", "how": "A flat monthly fee for as many washes as you like, priced at about 2 single washes." },
+      { "name": "Good, better, best menu", "how": "3 packages side by side, built so the middle one looks like the sensible choice." },
+      { "name": "Family add-on", "how": "A second car joins the pass at a lower price." },
+      { "name": "Rain check", "how": "If it rains within 48 hours, the next wash is free." } ] },
+    { "id": "airlines", "name": "Airlines", "group": "move", "icon": "Plane", "patterns": [
+      { "name": "Status tiers", "how": "Spend in a year earns a rank, and the rank earns comforts that cost the airline little." },
+      { "name": "Fare families", "how": "The same seat sold as basic, standard and flexible, each adding what the last one left out." },
+      { "name": "Upgrade at check-in", "how": "A paid step up offered at the last moment, when the buyer is already committed." },
+      { "name": "Companion fare", "how": "A second ticket for a fraction of the price when 2 travel together." },
+      { "name": "Points with an expiry", "how": "A balance that lapses unless the customer buys again within a set time." } ] },
+    { "id": "hotels", "name": "Hotels", "group": "move", "icon": "BedDouble", "patterns": [
+      { "name": "Stay 3, pay for 2", "how": "A free night for a longer stay, which raises the booking value without cutting the nightly rate." },
+      { "name": "Member rate", "how": "A lower price shown only to people who sign up, which builds the list." },
+      { "name": "Breakfast included", "how": "A rate that folds in something worth more to the guest than it costs the hotel." },
+      { "name": "Late checkout", "how": "A free perk of time, given to loyal guests." },
+      { "name": "Book direct, get more", "how": "A perk for buying from the hotel and not through a reseller." } ] },
+    { "id": "travel_parks", "name": "Cruises and theme parks", "group": "move", "icon": "Ship", "patterns": [
+      { "name": "All-inclusive", "how": "1 price covers everything, so the buyer stops counting." },
+      { "name": "Kids go free", "how": "The adult pays full price and the child is included." },
+      { "name": "Credit to spend", "how": "Money to spend on board comes with the booking, which feels like cash and is spent at the seller's margin." },
+      { "name": "Season pass", "how": "Unlimited visits for the price of 2 or 3." },
+      { "name": "Skip the queue", "how": "A paid fast lane sold after the ticket." } ] },
+    { "id": "bikes_outdoor", "name": "Bikes and outdoor gear", "group": "move", "icon": "Bike", "patterns": [
+      { "name": "A year of free tune-ups", "how": "Servicing is included with the purchase, bringing the buyer back to the shop." },
+      { "name": "Fitted to you", "how": "A fitting session included, so the product is right for the person." },
+      { "name": "Trade up", "how": "Credit for the old one against a better one." },
+      { "name": "Try it for a day", "how": "A demo or a rental whose fee comes off the purchase." } ] },
+
+    { "id": "restaurants", "name": "Restaurants", "group": "eat", "icon": "UtensilsCrossed", "patterns": [
+      { "name": "Set menu", "how": "3 courses for 1 price: a higher spend that feels like a deal." },
+      { "name": "Kids eat free", "how": "The family comes because the children cost nothing." },
+      { "name": "Happy hour", "how": "A lower price in the quiet hours only, which fills empty tables without touching the busy ones." },
+      { "name": "Birthday treat", "how": "A free dessert on your birthday, which brings a paying table with it." },
+      { "name": "Chef's tasting", "how": "A premium, limited experience that sets the top of the price range." } ] },
+    { "id": "fast_food", "name": "Fast food", "group": "eat", "icon": "Sandwich", "patterns": [
+      { "name": "The combo meal", "how": "Main, side and drink at 1 price, lower than the 3 bought apart." },
+      { "name": "Go large for a little more", "how": "A small extra charge for the bigger size, asked at the till." },
+      { "name": "App-only deals", "how": "The best offers are in the app, which gets the customer's details and a way to reach them." },
+      { "name": "Back for a limited time", "how": "A much-loved item returns for a few weeks." },
+      { "name": "Value menu", "how": "A short list at a low fixed price that brings people in, who then add more." } ] },
+    { "id": "coffee", "name": "Coffee shops", "group": "eat", "icon": "Coffee", "patterns": [
+      { "name": "The 10th is free", "how": "A stamp card: the reward is close enough to keep the habit." },
+      { "name": "Load money, earn more", "how": "Prepaying a balance earns points faster." },
+      { "name": "The seasonal drink", "how": "A flavour that exists for a few weeks each year and is waited for." },
+      { "name": "Bring your cup", "how": "A small discount for a behaviour the brand wants." },
+      { "name": "Monthly subscription", "how": "A flat monthly fee for a drink a day." } ] },
+    { "id": "bakeries", "name": "Donut shops and bakeries", "group": "eat", "icon": "Donut", "patterns": [
+      { "name": "The dozen price", "how": "12 cost far less than 12 singles, so nobody buys 4." },
+      { "name": "Baker's dozen", "how": "Buy 12, get a 13th: a gift, not a discount." },
+      { "name": "Free one day", "how": "1 free item on 1 day a year, which becomes an event." },
+      { "name": "Hot now", "how": "A signal that the product is at its best this minute." },
+      { "name": "End-of-day box", "how": "What is left sells as a surprise box at a low price." } ] },
+    { "id": "pizza", "name": "Pizza delivery", "group": "eat", "icon": "Pizza", "patterns": [
+      { "name": "2 for a fixed price", "how": "Any 2 for 1 simple price, which doubles the order." },
+      { "name": "Free side over a minimum", "how": "Spend a set amount and something is added." },
+      { "name": "Collect it and save", "how": "A lower price for taking the cheaper route for the seller." },
+      { "name": "Points toward a free one", "how": "Every order earns toward a free pizza." },
+      { "name": "Late or it's free", "how": "A guarantee on the thing buyers worry about." } ] },
+    { "id": "grocery", "name": "Supermarkets", "group": "eat", "icon": "ShoppingCart", "patterns": [
+      { "name": "Card price", "how": "2 prices on the shelf: one for members, one for everyone else." },
+      { "name": "3 for 2", "how": "A multi-buy that moves more units without lowering the single price." },
+      { "name": "The loss leader", "how": "1 staple sold at cost to bring the basket in." },
+      { "name": "Fuel points", "how": "Spending here earns a saving on something else the buyer needs." },
+      { "name": "Coupons made for you", "how": "Offers picked from what this customer buys." } ] },
+    { "id": "meal_kits", "name": "Meal kits", "group": "eat", "icon": "ChefHat", "patterns": [
+      { "name": "Discount across the first boxes", "how": "The saving is spread over 4 or 5 deliveries, so the customer stays to collect it." },
+      { "name": "Free item for life", "how": "1 small extra in every box for as long as the subscription runs." },
+      { "name": "Skip any week", "how": "Freedom to pause, which makes signing up feel safe." },
+      { "name": "Pick your plan", "how": "Price per portion falls as portions rise." } ] },
+    { "id": "wine_clubs", "name": "Wine and spirits clubs", "group": "eat", "icon": "Wine", "patterns": [
+      { "name": "Mixed case price", "how": "Any 6 or 12 earn a case discount, so nobody buys 1 bottle." },
+      { "name": "The allocation list", "how": "Limited bottles go to the list first." },
+      { "name": "Club shipments", "how": "A regular curated delivery at a member price." },
+      { "name": "Tasting with the maker", "how": "Members get access to the people and the story." } ] },
+
+    { "id": "gyms", "name": "Gyms and studios", "group": "sub", "icon": "Dumbbell", "patterns": [
+      { "name": "Founding member rate", "how": "A lower price locked for life for those who join now and stay." },
+      { "name": "No joining fee this month", "how": "The one-time fee is waived, with a deadline." },
+      { "name": "Bring a friend", "how": "A member's guest trains free, and often joins." },
+      { "name": "A free week", "how": "A real trial before paying." },
+      { "name": "The 30-day challenge", "how": "A programme with a start, an end and a result to aim at." } ] },
+    { "id": "software", "name": "Software subscriptions", "group": "sub", "icon": "Laptop", "patterns": [
+      { "name": "Pay yearly, 2 months free", "how": "A year paid at once at the price of 10 months." },
+      { "name": "Free trial", "how": "Full use for a set number of days." },
+      { "name": "Free tier", "how": "A useful version costs nothing, and the paid one unlocks more." },
+      { "name": "Setup done for you", "how": "Onboarding included, so the buyer reaches the result." },
+      { "name": "Good, better, best plans", "how": "3 plans, with 1 marked as the popular choice." } ] },
+    { "id": "telecom", "name": "Mobile and broadband", "group": "sub", "icon": "Smartphone", "patterns": [
+      { "name": "The device on contract", "how": "The expensive thing costs little up front in return for a commitment." },
+      { "name": "Family plan", "how": "Each extra line costs less than the last." },
+      { "name": "A bundled subscription", "how": "Someone else's service is included free, at little cost to the seller." },
+      { "name": "Switch and we pay", "how": "The cost of leaving the competitor is covered." },
+      { "name": "Trade in any phone", "how": "Credit for the old device, whatever its state." } ] },
+    { "id": "streaming", "name": "Streaming and media", "group": "sub", "icon": "Tv", "patterns": [
+      { "name": "Cheaper with ads", "how": "A lower price tier for buyers who will not pay the full one." },
+      { "name": "The bundle of services", "how": "Several subscriptions sold as 1 at less than their sum." },
+      { "name": "Student price", "how": "A lower price for a group that will pay full price later." },
+      { "name": "Share with the household", "how": "Extra members at a small charge." } ] },
+    { "id": "warehouse_clubs", "name": "Warehouse clubs", "group": "sub", "icon": "Warehouse", "patterns": [
+      { "name": "Pay to shop", "how": "A yearly fee buys access to low prices, and makes the member shop there to earn it back." },
+      { "name": "Bulk only", "how": "Everything comes in large packs, so the order is large." },
+      { "name": "The treasure hunt", "how": "A changing set of surprising deals that reward coming back." },
+      { "name": "Return anything", "how": "A guarantee generous enough to remove all doubt." } ] },
+    { "id": "insurance", "name": "Insurance", "group": "sub", "icon": "ShieldCheck", "patterns": [
+      { "name": "Multi-policy discount", "how": "A second product from the same company lowers the price of both." },
+      { "name": "No-claims bonus", "how": "Staying and behaving well earns a lower price each year." },
+      { "name": "Pay yearly and save", "how": "A lower price for paying up front." },
+      { "name": "A gift for a quote", "how": "A small reward for taking the first step." } ] },
+
+    { "id": "fashion", "name": "Fashion and department stores", "group": "shop", "icon": "Shirt", "patterns": [
+      { "name": "Buy more, save more", "how": "The saving grows with each item added." },
+      { "name": "Friends and family days", "how": "A private sale that feels like an invitation." },
+      { "name": "Store card welcome", "how": "A saving on the first purchase for joining." },
+      { "name": "Complete the look", "how": "The matching item is offered beside the one chosen." },
+      { "name": "Free alterations", "how": "A service that makes the product fit the buyer." } ] },
+    { "id": "luxury", "name": "Luxury goods", "group": "shop", "icon": "Gem", "patterns": [
+      { "name": "Never on sale", "how": "The price is never cut, so everything else carries the value." },
+      { "name": "Made yours", "how": "Free engraving or personalisation." },
+      { "name": "The waiting list", "how": "Scarcity that is real and visible." },
+      { "name": "The unboxing", "how": "Packaging and small gifts that make the delivery an event." },
+      { "name": "Private client", "how": "The best customers get first access and a named person." } ] },
+    { "id": "beauty", "name": "Beauty counters", "group": "shop", "icon": "Sparkles", "patterns": [
+      { "name": "Gift with purchase", "how": "Spend a set amount and receive a bag of deluxe samples." },
+      { "name": "Pick your samples", "how": "The buyer chooses a few free minis at checkout." },
+      { "name": "Value sets", "how": "A set of products worth more than its price, often seasonal." },
+      { "name": "Points for rewards", "how": "Spending earns points traded for products, not discounts." },
+      { "name": "Refills cost less", "how": "The second purchase is cheaper and keeps the customer." } ] },
+    { "id": "electronics", "name": "Consumer electronics", "group": "shop", "icon": "Headphones", "patterns": [
+      { "name": "Trade in", "how": "Credit for the old model against the new." },
+      { "name": "Protection plan", "how": "Cover against damage, sold at checkout at high margin." },
+      { "name": "Bundle the accessories", "how": "The case, the charger and the cable at 1 price." },
+      { "name": "Education price", "how": "A lower price for students and teachers." },
+      { "name": "Open box", "how": "Returned stock sold at a lower price, with the warranty." } ] },
+    { "id": "jewellery", "name": "Jewellery", "group": "shop", "icon": "Diamond", "patterns": [
+      { "name": "Care for life", "how": "Free cleaning and checks for as long as you own it." },
+      { "name": "Upgrade later", "how": "Full credit for this piece toward a bigger one." },
+      { "name": "Engraved free", "how": "Personalisation included." },
+      { "name": "The gift box", "how": "Presentation that is part of the product." } ] },
+    { "id": "toys", "name": "Toys and collectibles", "group": "shop", "icon": "ToyBrick", "patterns": [
+      { "name": "Blind box", "how": "The buyer does not know which one is inside, and buys again to find out." },
+      { "name": "Collect the set", "how": "A numbered series that asks to be completed." },
+      { "name": "The limited drop", "how": "A small run released on a date and gone when sold." },
+      { "name": "The club", "how": "Members get first pick and exclusives." } ] },
+    { "id": "books", "name": "Books and publishing", "group": "shop", "icon": "BookOpen", "patterns": [
+      { "name": "Pre-order, signed", "how": "Buying early earns a signed copy or an extra." },
+      { "name": "The box set", "how": "The whole series in 1 purchase." },
+      { "name": "Book of the month", "how": "A curated pick delivered on a subscription." },
+      { "name": "A free chapter", "how": "A sample that sells the rest." } ] },
+    { "id": "florists", "name": "Florists and gifting", "group": "shop", "icon": "Flower2", "patterns": [
+      { "name": "Add a vase, add chocolates", "how": "Small add-ons at checkout that complete the gift." },
+      { "name": "Flowers every month", "how": "A subscription for a gift given again and again." },
+      { "name": "Reminders for the dates", "how": "The seller remembers the birthday and offers to send again." },
+      { "name": "A handwritten note", "how": "A free personal touch." } ] },
+    { "id": "print", "name": "Print and custom products", "group": "shop", "icon": "Printer", "patterns": [
+      { "name": "First order free, pay shipping", "how": "The product costs nothing the first time." },
+      { "name": "Price breaks by quantity", "how": "The unit price falls at each step up." },
+      { "name": "Design help included", "how": "A person helps make it, which removes the hard part." },
+      { "name": "A proof first", "how": "The buyer sees it before paying for the run." } ] },
+
+    { "id": "salons", "name": "Salons and barbers", "group": "body", "icon": "Scissors", "patterns": [
+      { "name": "Book the next one now", "how": "A saving for booking the next visit before leaving." },
+      { "name": "A course of sessions", "how": "6 paid up front at the price of 5." },
+      { "name": "The membership", "how": "A monthly fee covers the regular service." },
+      { "name": "Refer a friend", "how": "Both get a reward." } ] },
+    { "id": "clinics", "name": "Dental and cosmetic clinics", "group": "body", "icon": "Stethoscope", "patterns": [
+      { "name": "New patient special", "how": "The check, the scan and the clean at 1 low price." },
+      { "name": "Free consultation", "how": "An expert's time before any commitment." },
+      { "name": "The in-house plan", "how": "A yearly fee covers the routine visits and lowers the price of the rest." },
+      { "name": "Pay monthly", "how": "A large treatment spread over months." },
+      { "name": "The treatment plan", "how": "A written, staged plan toward a result, with before and after." } ] },
+    { "id": "opticians", "name": "Opticians and pharmacies", "group": "body", "icon": "Glasses", "patterns": [
+      { "name": "Second pair free", "how": "A second product included with the first." },
+      { "name": "A 90-day supply", "how": "3 months at once for less trouble and a better price." },
+      { "name": "Refilled for you", "how": "The repeat arrives without being ordered." },
+      { "name": "Free test", "how": "A free check that leads to the purchase." } ] },
+    { "id": "pets", "name": "Vets and pet food", "group": "body", "icon": "PawPrint", "patterns": [
+      { "name": "The wellness plan", "how": "A monthly fee covers the year's routine care." },
+      { "name": "Autoship and save", "how": "A lower price for a repeating order." },
+      { "name": "A vet to ask, included", "how": "Access to an expert comes with the product." },
+      { "name": "Starter box", "how": "A small first box to prove the pet will eat it." } ] },
+
+    { "id": "furniture", "name": "Mattresses and furniture", "group": "home", "icon": "Sofa", "patterns": [
+      { "name": "100 nights to decide", "how": "A long trial at home with a full refund." },
+      { "name": "Delivered, set up, old one taken", "how": "The whole job done for the buyer." },
+      { "name": "Free pillows with it", "how": "A bundle of extras with a real price." },
+      { "name": "0% over 12 months", "how": "The price as a small monthly figure." },
+      { "name": "10-year warranty", "how": "A long promise on a long-lived product." } ] },
+    { "id": "appliances", "name": "Home appliances", "group": "home", "icon": "Refrigerator", "patterns": [
+      { "name": "Installed and the old one removed", "how": "Fitting and disposal included." },
+      { "name": "Buy the set, save", "how": "A saving that grows with each matching appliance." },
+      { "name": "Money back by post", "how": "A rebate claimed after the purchase." },
+      { "name": "Price match", "how": "A promise to meet any lower price." } ] },
+    { "id": "home_services", "name": "Home services", "group": "home", "icon": "Wrench", "patterns": [
+      { "name": "Free inspection", "how": "An expert looks and reports before anything is sold." },
+      { "name": "The yearly plan", "how": "A fee covers the regular visits and gives priority." },
+      { "name": "Fixed right or it's free", "how": "A guarantee on the result." },
+      { "name": "Seasonal tune-up", "how": "A low-priced check before the season it matters." } ] },
+    { "id": "diy", "name": "Hardware and DIY", "group": "home", "icon": "Hammer", "patterns": [
+      { "name": "The project kit", "how": "Everything for 1 job, sold together." },
+      { "name": "Free workshop", "how": "The store teaches the job its products are for." },
+      { "name": "Rent the tool", "how": "A low price to use it once, credited if you buy." },
+      { "name": "Trade account", "how": "Better prices for those who buy often." } ] },
+    { "id": "home_builders", "name": "Home builders and estate agents", "group": "home", "icon": "House", "patterns": [
+      { "name": "Upgrades included", "how": "Better finishes at no extra charge for buying now." },
+      { "name": "Costs covered", "how": "The seller pays the fees the buyer dreads." },
+      { "name": "The show home", "how": "The finished result, staged to walk through." },
+      { "name": "Part exchange", "how": "The seller takes the old home." } ] },
+
+    { "id": "banking", "name": "Banks and credit cards", "group": "money", "icon": "CreditCard", "patterns": [
+      { "name": "Bonus after you spend", "how": "A large reward unlocked by spending a set amount in the first 3 months." },
+      { "name": "Cash back by category", "how": "A higher reward where the customer spends most." },
+      { "name": "0% for the first year", "how": "An introductory rate." },
+      { "name": "Refer a friend", "how": "Both get a cash reward." } ] },
+    { "id": "manufacturing", "name": "Manufacturing and industrial", "group": "money", "icon": "Factory", "patterns": [
+      { "name": "The sample kit", "how": "A small paid or free kit to test before a large order." },
+      { "name": "Volume price breaks", "how": "A published table: the unit price at each quantity." },
+      { "name": "Service contract", "how": "Maintenance and parts sold with the machine." },
+      { "name": "Stock held for you", "how": "The supplier keeps the customer's stock and ships on call." },
+      { "name": "The spec sheet and manual", "how": "Documents that make the product easy to adopt." } ] },
+    { "id": "wholesale", "name": "Wholesale and distribution", "group": "money", "icon": "Truck", "patterns": [
+      { "name": "Free freight over a minimum", "how": "Delivery is free once the order passes a level set above the usual order." },
+      { "name": "Year-end rebate", "how": "Money back for reaching a yearly total." },
+      { "name": "Standing order", "how": "A repeating order at a better price." },
+      { "name": "First to the new line", "how": "Good customers get new products first." } ] },
+    { "id": "crowdfunding", "name": "Crowdfunding launches", "group": "money", "icon": "Rocket", "patterns": [
+      { "name": "Early backer price", "how": "The first buyers get the lowest price, in limited number." },
+      { "name": "Stretch goals", "how": "Everyone gets more as the total rises." },
+      { "name": "Reward tiers", "how": "A ladder of pledges, each adding something." },
+      { "name": "Backer-only edition", "how": "A version that will never be sold again." } ] },
+
+    { "id": "courses", "name": "Online courses and coaching", "group": "play", "icon": "GraduationCap", "patterns": [
+      { "name": "The bonus stack", "how": "Templates, checklists and guides added to the main thing, each with a stated value." },
+      { "name": "The cohort closes", "how": "Enrolment opens and shuts on dates." },
+      { "name": "Do the work or your money back", "how": "A guarantee tied to the buyer following the method." },
+      { "name": "The community", "how": "Access to other buyers and to the teacher." },
+      { "name": "Payment plan", "how": "The price in instalments." } ] },
+    { "id": "events", "name": "Events and tickets", "group": "play", "icon": "Ticket", "patterns": [
+      { "name": "Early bird tiers", "how": "The price rises on set dates." },
+      { "name": "Group tickets", "how": "A lower price each when 4 or more buy together." },
+      { "name": "The VIP upgrade", "how": "A premium tier with access and extras." },
+      { "name": "Season ticket", "how": "Every event for 1 price." } ] },
+    { "id": "gaming", "name": "Video games", "group": "play", "icon": "Gamepad2", "patterns": [
+      { "name": "The season pass", "how": "Pay once and earn rewards by using the product through the season." },
+      { "name": "Pre-order bonus", "how": "An exclusive item for buying before launch." },
+      { "name": "Founder's pack", "how": "Early supporters get a bundle and a badge that is never offered again." },
+      { "name": "Daily reward", "how": "A small gift for coming back each day, growing with the streak." },
+      { "name": "Limited-time bundle", "how": "A set of items at 1 price, for a few days." } ] },
+    { "id": "cinemas", "name": "Cinemas", "group": "play", "icon": "Film", "patterns": [
+      { "name": "Unlimited for a monthly fee", "how": "See as much as you like, priced at about 2 tickets." },
+      { "name": "The combo", "how": "Ticket, popcorn and drink together." },
+      { "name": "Cheap day", "how": "A low price on the quietest day." },
+      { "name": "Members see it first", "how": "Early screenings for members." } ] }
+  ]
+}

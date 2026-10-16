@@ -1,0 +1,7 @@
+Format: 1 static image.
+- It has no sound, no order and a moment of attention. The picture makes 1 claim: the deal in 1 frame, 1 proof, 1 contrast, or 1 moment the buyer knows. The argument, or for a buyer who does not know the answer yet the whole story of the problem, is carried by the primary text beside it. Do not shrink a video onto the picture.
+- The reading order is the ad: what the eye lands on first, second, third. The first read picks the person. A headline on the picture may be a whole plain sentence, up to about 12 words; where there is less room, say a smaller thing and never squeeze a sentence until its small words fall out. Few words on the whole image.
+- In what you return, a line's `on_screen` is the words set on the image and its `text` is what the primary text says beside it. The first line's `visual_note` is the picture: what is in it, where the product sits, where each piece of text goes.
+- The primary text carries what the image left out, in paragraphs a person would read. How long it runs comes with the request, by the buyer's stage: long for a buyer who does not know the answer yet, a few lines for one who knows the product. Its first sentence stands alone above "See more", in about 125 characters, and does not repeat the words on the image.
+- The words on the image, the first line of the primary text and the feed headline belong to the same ad at the same stage: 1 idea, said 3 different ways and never the same words 3 times.
+- No generated person shown as a customer, founder or expert. No child.

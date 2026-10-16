@@ -1,0 +1,23 @@
+name: Client starter integrity
+on: [push, pull_request]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: corepack enable
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm check:leakage
+      - run: pnpm test
+      - run: pnpm db:migrate
+      - run: pnpm typecheck
+      - run: pnpm build
+        env:
+          LLM_MODE: mock
+          LLM_BUDGET_USD: 0
+          ABSOLUTE_BUDGET_USD: 0
+          MEDIA_IMAGE_CAP: 0
+          MEDIA_VIDEO_BUDGET_USD: 0

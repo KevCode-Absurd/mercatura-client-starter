@@ -1,0 +1,12 @@
+"use client";
+import { BUYING_TASKS, PAGE_STRUCTURES, type QualityBrief } from "@/lib/landing/quality-types";
+export type BuyingTaskBrief = Pick<QualityBrief, "task" | "structure" | "buyerQuestion" | "trafficContext">;
+export const defaultBuyingTask: BuyingTaskBrief = { task: "purchase", structure: "pdp", buyerQuestion: "", trafficContext: "Audience context is an editable assumption; no account metrics are required." };
+export function BuyingTaskFields({ value, onChange, classic = false }: {
+    value: BuyingTaskBrief;
+    onChange: (value: BuyingTaskBrief) => void;
+    classic?: boolean;
+}) {
+    const field = "w-full rounded-lg border bg-background px-3 py-2 text-sm";
+    return <details className="rounded-xl border p-4" data-testid="buying-task-brief"><summary className="cursor-pointer text-sm font-semibold">Choose structure from the buyer's question</summary><p className="my-3 text-xs leading-5 text-muted-foreground">Add the exact question to use this shared brief. Your chosen structure is preserved in the saved page and writer; section and reason counts follow available evidence.</p><div className="grid gap-3 sm:grid-cols-2"><label className="text-xs font-semibold">Buyer question<input className={`${field} mt-1`} value={value.buyerQuestion} onChange={e => onChange({ ...value, buyerQuestion: e.target.value })} placeholder="Does this fit my kitchen and cooking routine?"/></label><label className="text-xs font-semibold">Buying task<select aria-label="Buying task" className={`${field} mt-1`} value={value.task} onChange={e => onChange({ ...value, task: e.target.value as BuyingTaskBrief["task"] })}>{BUYING_TASKS.map(task => <option key={task}>{task}</option>)}</select></label><label className="text-xs font-semibold">Chosen structure<select aria-label="Chosen structure" className={`${field} mt-1`} value={value.structure} onChange={e => onChange({ ...value, structure: e.target.value as BuyingTaskBrief["structure"] })}>{PAGE_STRUCTURES.filter(s => !classic || s !== "quiz").map(s => <option key={s}>{s}</option>)}</select></label><label className="text-xs font-semibold">Audience / traffic assumptions<input className={`${field} mt-1`} value={value.trafficContext} onChange={e => onChange({ ...value, trafficContext: e.target.value })}/></label></div>{classic && <p className="mt-3 text-xs text-muted-foreground">Interactive quizzes use CRO Studio. Product, explanation, comparison and listicle briefs use the same contract here.</p>}</details>;
+}

@@ -1,0 +1,1220 @@
+{
+ "note": "The opener bank of skills/hook-bank (PB-09). Shapes, not lines to run: each is a way in that an ad may take when it can hold it, said in the buyer's own words. `needs` is `real_person` when the line is said by a real founder, customer or expert in their own voice (never by a generated presenter), and `real_proof` when it states a number, a count or a result the brand must hold. Read by src/lib/hooks/bank.ts.",
+ "openers": [
+  {
+   "id": "hb_001",
+   "line": "Moms over 35 who are tired of [pain point], this is for you...",
+   "type": "callout_demographic",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_002",
+   "line": "If you're a [age range] woman dealing with [problem]...",
+   "type": "callout_demographic",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_003",
+   "line": "Men in their 40s who want [desire] without [obstacle]...",
+   "type": "callout_demographic",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_004",
+   "line": "If you've tried everything for [problem] and nothing works...",
+   "type": "callout_pain",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_005",
+   "line": "Tired of [frustration] every single [time period]?",
+   "type": "callout_pain",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_006",
+   "line": "I was spending $[amount] on [category] that didn't work until...",
+   "type": "callout_pain",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_007",
+   "line": "If you're the kind of person who [behavior/value]...",
+   "type": "callout_identity",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_008",
+   "line": "For [identity] who refuse to settle for [inferior option]...",
+   "type": "callout_identity",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_009",
+   "line": "Busy [role] who don't have time for [inconvenience]...",
+   "type": "callout_identity",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_010",
+   "line": "If you've got [event] coming up and need [result] fast...",
+   "type": "callout_situation",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_011",
+   "line": "Just started [life change]? Here's what nobody tells you about [topic]...",
+   "type": "callout_situation",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_012",
+   "line": "POV: You finally found [product/solution] that actually [delivers benefit]...",
+   "type": "callout_situation",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_013",
+   "line": "I didn't believe [claim] until I tried this...",
+   "type": "skeptic",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_014",
+   "line": "I was skeptical too. But after [time period] of using this...",
+   "type": "skeptic",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_015",
+   "line": "My [relation] thought I was crazy for buying this. Now she wants one...",
+   "type": "skeptic",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_016",
+   "line": "If you're a [specific person] who [specific situation]...",
+   "type": "callout_situation",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_017",
+   "line": "If you're a busy mom who can't find 30 minutes for the gym...",
+   "type": "callout_demographic",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "fitness",
+   "needs": ""
+  },
+  {
+   "id": "hb_018",
+   "line": "If you're tired of skincare that promises everything and delivers nothing...",
+   "type": "callout_pain",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "skincare",
+   "needs": ""
+  },
+  {
+   "id": "hb_019",
+   "line": "Tired of [problem]? There's a better way.",
+   "type": "callout_pain",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_020",
+   "line": "Unlike [common solution], we [unique approach].",
+   "type": "contrarian",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_021",
+   "line": "Join 10,000+ customers who [achieved result].",
+   "type": "proof",
+   "stage": "product_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_proof"
+  },
+  {
+   "id": "hb_022",
+   "line": "24 hours only: 20% off your first order.",
+   "type": "offer",
+   "stage": "most_aware",
+   "occasion": "sale",
+   "niche": "",
+   "needs": "real_proof"
+  },
+  {
+   "id": "hb_023",
+   "line": "I never knew [surprising fact] until I tried this...",
+   "type": "curiosity",
+   "stage": "unaware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_030",
+   "line": "Stop [common action]. Do this instead.",
+   "type": "contrarian",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_032",
+   "line": "Nobody's talking about this [trend/tactic]",
+   "type": "curiosity",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_037",
+   "line": "Unpopular opinion: [controversial statement]",
+   "type": "contrarian",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_038",
+   "line": "[common advice] is outdated. Here's what actually works now",
+   "type": "contrarian",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_040",
+   "line": "If you struggle with [problem]...",
+   "type": "callout_pain",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_042",
+   "line": "10,000 people bought this last month...",
+   "type": "proof",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_proof"
+  },
+  {
+   "id": "hb_043",
+   "line": "I saw results in [timeframe]...",
+   "type": "proof",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_044",
+   "line": "Best [product category] I've ever tried...",
+   "type": "other",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_045",
+   "line": "I used to struggle with [problem] until I tried this...",
+   "type": "callout_pain",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_047",
+   "line": "The reason your [problem] is not going away...",
+   "type": "curiosity",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_048",
+   "line": "I finally got my [brand] order and...",
+   "type": "other",
+   "stage": "product_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_049",
+   "line": "This is my honest first impression of [product]",
+   "type": "other",
+   "stage": "product_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_050",
+   "line": "Still wasting money on products that don't fix [problem]?",
+   "type": "question",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_051",
+   "line": "Here's exactly how this solves [pain] in 30 seconds.",
+   "type": "other",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_052",
+   "line": "I tried [brand] after 6 months of [problem], never going back.",
+   "type": "other",
+   "stage": "product_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_053",
+   "line": "Why we built [product] after struggling with [pain] for years…",
+   "type": "founder",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_054",
+   "line": "If you're [icp], this is for you",
+   "type": "callout_identity",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_055",
+   "line": "are you making this mistake?",
+   "type": "question",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_056",
+   "line": "Most people with [problem] are missing this",
+   "type": "curiosity",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_057",
+   "line": "Here is what makes [product] different from everything else out there",
+   "type": "other",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_058",
+   "line": "Still thinking about it?",
+   "type": "question",
+   "stage": "most_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_059",
+   "line": "I tried 6 protein powders. This is the only one that didn't bloat me.",
+   "type": "skeptic",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "supplements",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_060",
+   "line": "The 3 skincare ingredients that are actually doing nothing.",
+   "type": "curiosity",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "skincare",
+   "needs": ""
+  },
+  {
+   "id": "hb_061",
+   "line": "The most common question we get about [product] and the honest answer.",
+   "type": "other",
+   "stage": "product_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_063",
+   "line": "your skin routine isn't complete without this.",
+   "type": "other",
+   "stage": "most_aware",
+   "occasion": "",
+   "niche": "skincare",
+   "needs": ""
+  },
+  {
+   "id": "hb_064",
+   "line": "3 things everyone gets wrong about X",
+   "type": "contrarian",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_069",
+   "line": "Before you [thing they're about to do], read this",
+   "type": "callout_situation",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_070",
+   "line": "Why your [problem] [keeps happening]",
+   "type": "curiosity",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_071",
+   "line": "It wasn't [what they blamed]. It was [the real cause].",
+   "type": "contrarian",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_072",
+   "line": "The reason you [behavior they're embarrassed by]",
+   "type": "curiosity",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_073",
+   "line": "I was sick of [problem] so I built [product].",
+   "type": "founder",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_074",
+   "line": "I spent 3 years buying [category] and every single one disappointed me.",
+   "type": "founder",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_075",
+   "line": "Nobody was making [product] the way it should be made. So I quit my job and did it myself.",
+   "type": "founder",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_076",
+   "line": "I was spending $200/month on [category] and getting zero results.",
+   "type": "founder",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_077",
+   "line": "I've [impressive credential] and here's what most people get wrong about [category].",
+   "type": "founder",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_078",
+   "line": "I'm a dermatologist and I've seen thousands of patients waste money on skincare that doesn't work.",
+   "type": "founder",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "skincare",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_080",
+   "line": "I've formulated over 200 products. Most were designed to be repurchased, not to actually work.",
+   "type": "founder",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_081",
+   "line": "Everyone in [industry] does [common practice]. We do the exact opposite.",
+   "type": "founder",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_082",
+   "line": "Every supplement brand hides behind proprietary blends. We list every single ingredient and exact dose.",
+   "type": "founder",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "supplements",
+   "needs": "real_proof"
+  },
+  {
+   "id": "hb_083",
+   "line": "Most skincare brands add fragrance to feel luxurious. We removed it entirely.",
+   "type": "founder",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "skincare",
+   "needs": "real_proof"
+  },
+  {
+   "id": "hb_084",
+   "line": "The entire DTC playbook says to discount. We raised prices 20% and sales went up.",
+   "type": "founder",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_proof"
+  },
+  {
+   "id": "hb_085",
+   "line": "I almost shut down the company in [year]. Here's what saved it.",
+   "type": "founder",
+   "stage": "unaware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_086",
+   "line": "We were 3 weeks from running out of money when one email changed everything.",
+   "type": "founder",
+   "stage": "unaware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_087",
+   "line": "Our first launch: 200 units sold. 180 returned.",
+   "type": "founder",
+   "stage": "unaware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_088",
+   "line": "I put my entire savings into this brand and for 6 months, nobody bought a single thing.",
+   "type": "founder",
+   "stage": "unaware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_089",
+   "line": "Here's exactly how we make [product]. Most brands would never show you this.",
+   "type": "founder",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_090",
+   "line": "We flew to [country] to source this ingredient. Here's what we found.",
+   "type": "founder",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_proof"
+  },
+  {
+   "id": "hb_091",
+   "line": "This is our actual production facility. No studio, no fake lab coats.",
+   "type": "founder",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_proof"
+  },
+  {
+   "id": "hb_092",
+   "line": "Most brands won't show you what's in their product. We'll show you everything.",
+   "type": "founder",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_093",
+   "line": "I started [brand] because I was frustrated with [problem]...",
+   "type": "founder",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_094",
+   "line": "Everyone asked why I made [product]. Here's the real reason...",
+   "type": "founder",
+   "stage": "product_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_095",
+   "line": "This mistake almost killed my business...",
+   "type": "founder",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_096",
+   "line": "Ever wonder how we make [product]? Let me show you...",
+   "type": "founder",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_097",
+   "line": "Here's what running [brand] actually looks like...",
+   "type": "founder",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_098",
+   "line": "Everyone thinks [misconception]. Here's the truth...",
+   "type": "contrarian",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_099",
+   "line": "A customer sent me this message and I had to share...",
+   "type": "founder",
+   "stage": "product_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_100",
+   "line": "If I could go back and tell myself one thing before starting...",
+   "type": "founder",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_101",
+   "line": "Here's why [brand] isn't like other [competitors]...",
+   "type": "contrarian",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_102",
+   "line": "You wanna know why I started [brand]? [one word/emotion].",
+   "type": "founder",
+   "stage": "unaware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_103",
+   "line": "I was tired of [frustration]. Every [product] I tried was [problem].",
+   "type": "founder",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_104",
+   "line": "We're not like [what you stand against]...",
+   "type": "contrarian",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_105",
+   "line": "While they [bad behavior], we [better alternative]...",
+   "type": "contrarian",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_106",
+   "line": "This is for people who are tired of [enemy behavior]...",
+   "type": "callout_pain",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_107",
+   "line": "We believe [your stance], not [their stance]...",
+   "type": "contrarian",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_112",
+   "line": "I almost made the expensive mistake, then I found this.",
+   "type": "other",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_113",
+   "line": "They bought that, I bought this, guess which one won.",
+   "type": "contrarian",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_116",
+   "line": "I tried this so you don't have to",
+   "type": "other",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_117",
+   "line": "If you aren't using this you're missing out",
+   "type": "curiosity",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_118",
+   "line": "We tried the viral [product]",
+   "type": "other",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_proof"
+  },
+  {
+   "id": "hb_121",
+   "line": "I wish someone had told me about this sooner",
+   "type": "curiosity",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_122",
+   "line": "What I love about my [...]",
+   "type": "other",
+   "stage": "product_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_123",
+   "line": "What I Ordered Vs. What I Got",
+   "type": "other",
+   "stage": "product_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_124",
+   "line": "Cozy Season Finds Too Good Not To Share",
+   "type": "season",
+   "stage": "",
+   "occasion": "season",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_125",
+   "line": "Why hasn't this [product] gone viral yet?!",
+   "type": "question",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_126",
+   "line": "OKAY I'm about to be really honest…",
+   "type": "curiosity",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_127",
+   "line": "I never thought I would find [...] that would help me [...]",
+   "type": "skeptic",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_128",
+   "line": "Looking for the perfect gift?",
+   "type": "gifting",
+   "stage": "",
+   "occasion": "gifting",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_133",
+   "line": "Why I stopped buying [...] and started doing this instead",
+   "type": "contrarian",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_134",
+   "line": "Don't Buy That, Buy This Instead",
+   "type": "contrarian",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_135",
+   "line": "3 Signs You Should [...]",
+   "type": "other",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_136",
+   "line": "Things I'm Gifting My BFFs",
+   "type": "gifting",
+   "stage": "",
+   "occasion": "gifting",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_137",
+   "line": "Why I can never go back to [...]",
+   "type": "contrarian",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_139",
+   "line": "This is officially my favourite gift I got for my birthday",
+   "type": "gifting",
+   "stage": "product_aware",
+   "occasion": "gifting",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_140",
+   "line": "This is my favourite [...] when I'm working from home",
+   "type": "callout_situation",
+   "stage": "product_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_141",
+   "line": "Things In My Daily Routine That Just Make Sense",
+   "type": "other",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_142",
+   "line": "I've tried a LOT of [...] but this is IT",
+   "type": "skeptic",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_143",
+   "line": "Love [...] and amazing deals?",
+   "type": "question",
+   "stage": "",
+   "occasion": "sale",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_144",
+   "line": "If you have a [...] that you hate using, this is for you",
+   "type": "callout_pain",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_145",
+   "line": "This is for my [...] girlies, so listen up",
+   "type": "callout_identity",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_146",
+   "line": "What most people are doing wrong when it comes to [...]",
+   "type": "contrarian",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_148",
+   "line": "If your [...] just aren't cutting it for you, then these are the only [...] you need",
+   "type": "callout_pain",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_150",
+   "line": "My [...] got me the cutest gift ever",
+   "type": "gifting",
+   "stage": "",
+   "occasion": "gifting",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_151",
+   "line": "Calling all [...]",
+   "type": "callout_identity",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_152",
+   "line": "ATTN: Girlies who haven't found the perfect [...] yet",
+   "type": "callout_identity",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_153",
+   "line": "I'm officially breaking up with [...], here's why",
+   "type": "contrarian",
+   "stage": "solution_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_154",
+   "line": "I reaaaaallly wanted to gatekeep this one",
+   "type": "curiosity",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_155",
+   "line": "An Honest Review Of [...]",
+   "type": "other",
+   "stage": "product_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_156",
+   "line": "Three fun facts about [...]",
+   "type": "other",
+   "stage": "",
+   "occasion": "",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_158",
+   "line": "If your dog doesn't have a [...], they're missing out and here's why…",
+   "type": "callout_identity",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "pets",
+   "needs": ""
+  },
+  {
+   "id": "hb_159",
+   "line": "If your [...] is [...], I have something to tell you!",
+   "type": "callout_situation",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "pets",
+   "needs": ""
+  },
+  {
+   "id": "hb_160",
+   "line": "[...] Items you NEED in your closet",
+   "type": "other",
+   "stage": "",
+   "occasion": "",
+   "niche": "apparel",
+   "needs": ""
+  },
+  {
+   "id": "hb_163",
+   "line": "Gift Ideas That Don't Suck",
+   "type": "gifting",
+   "stage": "",
+   "occasion": "gifting",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_164",
+   "line": "Holiday Finds Too Good Not To Share",
+   "type": "gifting",
+   "stage": "",
+   "occasion": "gifting",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_165",
+   "line": "3 reasons why [brand] should be where you get your gifts this season",
+   "type": "gifting",
+   "stage": "",
+   "occasion": "gifting",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_166",
+   "line": "The [occasion] gift you've been searching for...",
+   "type": "gifting",
+   "stage": "",
+   "occasion": "gifting",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_167",
+   "line": "Best [occasion] gift I've ever gotten",
+   "type": "gifting",
+   "stage": "",
+   "occasion": "gifting",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_169",
+   "line": "I've officially found my new gift giving site",
+   "type": "gifting",
+   "stage": "",
+   "occasion": "gifting",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_170",
+   "line": "3 reasons why [product] is the best [kind of gift] this holiday season",
+   "type": "gifting",
+   "stage": "",
+   "occasion": "gifting",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_171",
+   "line": "Gift Ideas For Anyone With A [...]",
+   "type": "gifting",
+   "stage": "",
+   "occasion": "gifting",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_172",
+   "line": "Why You Should Gift [...] This Holiday Season",
+   "type": "gifting",
+   "stage": "",
+   "occasion": "gifting",
+   "niche": "",
+   "needs": ""
+  },
+  {
+   "id": "hb_173",
+   "line": "I'll admit it, I used to [do the thing wrong] too. Then I discovered...",
+   "type": "other",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_person"
+  },
+  {
+   "id": "hb_174",
+   "line": "[x]% of [audience] make this mistake. Here's how to avoid it...",
+   "type": "proof",
+   "stage": "problem_aware",
+   "occasion": "",
+   "niche": "",
+   "needs": "real_proof"
+  }
+ ]
+}

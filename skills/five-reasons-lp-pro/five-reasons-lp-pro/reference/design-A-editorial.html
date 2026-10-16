@@ -1,0 +1,1303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Your Brand — The Father's Day Gift Every Golfer Actually Wants</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --green: #2D5A3D;
+    --green-deep: #1F4029;
+    --green-tint: #EFF3ED;
+    --green-tint-2: #E3EBE2;
+    --ink: #1A1A1A;
+    --ink-soft: #313131;
+    --ink-muted: #4A4A4A;
+    --gold: #C4A265;
+    --gold-star: #F4C01E;
+    --paper: #FFFFFF;
+    --off-paper: #FAF7F0;
+    --rule: #E8E4DA;
+    --shadow: 0 1px 2px rgba(26,26,26,.04), 0 8px 24px rgba(26,26,26,.06);
+    --display: "Copperplate", "Copperplate Gothic Light", "Playfair Display", Georgia, serif;
+    --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+    --body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--paper); }
+  body {
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  img { display: block; max-width: 100%; }
+
+  .page {
+    width: 100%;
+    background: var(--paper);
+    position: relative;
+  }
+
+  /* ==== Review pill ==== */
+  .review-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    height: 43px;
+    padding: 0 20px;
+    border-radius: 500px;
+    background: var(--green-tint);
+    border: 1px solid var(--green);
+    color: var(--green);
+    font-family: var(--body);
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+  .review-pill .stars {
+    display: inline-flex;
+    gap: 2px;
+    color: var(--gold-star);
+  }
+  .review-pill .stars svg { width: 16px; height: 16px; }
+
+  /* ==== Hero ==== */
+  .hero {
+    position: relative;
+    height: 680px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    padding: 65px 0 22px 0;
+    align-items: center;
+    overflow: hidden;
+  }
+  .hero-text { max-width: 580px; padding-left: 100px; }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 55px;
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+    color: var(--ink-soft);
+    margin: 24px 0 0;
+    text-wrap: balance;
+  }
+  .hero .kicker {
+    margin-top: 22px;
+    font-family: var(--body);
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .hero .byline {
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+    gap: 19px;
+  }
+  .hero .avatar {
+    width: 67px; height: 67px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--green-tint-2) 0%, var(--green) 100%);
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .hero .avatar::after {
+    content: "SK";
+    position: absolute;
+    inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--display);
+    color: #fff;
+    letter-spacing: 0.1em;
+    font-size: 18px;
+  }
+  .hero .by-name { font-weight: 700; font-size: 18px; color: var(--ink); }
+  .hero .by-meta { font-size: 15px; color: var(--ink-muted); }
+
+  .hero-art {
+    position: relative;
+    width: 100%;
+    height: 658px;
+    overflow: hidden;
+  }
+  .hero-art img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  /* ==== Tagline strip ==== */
+  .strip {
+    background: var(--green-tint);
+    height: 42px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .strip .track {
+    display: flex;
+    gap: 0;
+    white-space: nowrap;
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.01em;
+    color: var(--green-deep);
+    animation: marquee 22s linear infinite;
+    width: max-content;
+    flex-shrink: 0;
+  }
+  .strip .track span::after {
+    content: "·";
+    margin: 0 28px;
+    font-style: normal;
+    color: var(--gold);
+    font-weight: 300;
+  }
+
+  /* ==== Reason sections ==== */
+  .reason {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    padding: 56px 100px;
+    align-items: center;
+  }
+  .reason .copy h2 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+    color: var(--ink-soft);
+    margin: 0 0 20px;
+    max-width: 520px;
+    text-wrap: balance;
+  }
+  .reason .copy .tag {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: -0.01em;
+    color: var(--green);
+    margin-bottom: 14px;
+  }
+  .reason .copy p {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 520px;
+    margin: 0 0 18px;
+  }
+  .reason .copy p:last-child { margin-bottom: 0; }
+
+  .art-frame {
+    position: relative;
+    width: 100%;
+    max-width: 588px;
+    aspect-ratio: 588 / 571;
+    margin: 0 auto;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .art-frame * { box-sizing: border-box; }
+  .art-frame > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Reason 1: sage backing card offset */
+  .art-1 .pad {
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 80%; height: 72%;
+    border-radius: 12px;
+    background: var(--green-tint);
+  }
+  .art-1 .img-wrap {
+    position: absolute;
+    right: 0; top: 0;
+    width: 85%; height: 92%;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,.14);
+  }
+  .art-1 .img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ==== Proof section ==== */
+  .proof {
+    padding: 56px 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    align-items: center;
+  }
+  .proof .hd { display: flex; flex-direction: column; gap: 18px; align-items: center; }
+  .proof h2 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center;
+    color: var(--ink-soft);
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .proof-tiles {
+    width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .proof-tile {
+    height: 628px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+    background-size: cover;
+    background-position: center;
+  }
+  .proof-tile::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,.72) 0%, rgba(0,0,0,.1) 50%, transparent 100%);
+    pointer-events: none;
+  }
+  .proof-tile > * { position: relative; z-index: 1; }
+  .proof-tile .caption {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0,0,0,.4);
+    margin: 0 0 10px;
+  }
+  .proof-tile .meta {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+  .proof-tile .play {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 62px; height: 62px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 1;
+  }
+  .proof-tile .play::after {
+    content: "";
+    width: 0; height: 0;
+    margin-left: 4px;
+    border-left: 16px solid #fff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+
+  /* ==== Product section ==== */
+  .product {
+    padding: 56px 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .product .hd { text-align: center; margin-bottom: 16px; }
+  .product .hd h2 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-style: italic;
+    font-size: 40px;
+    color: var(--green);
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+  .product .hd p {
+    font-size: 19px;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: 650px 1fr;
+    gap: 48px;
+    align-items: flex-start;
+  }
+  .gallery { display: flex; flex-direction: column; gap: 16px; }
+  .gallery .main {
+    aspect-ratio: 1/1;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    background: #e9d9b7;
+  }
+  .gallery .main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .gallery .main .arrow-nav {
+    position: absolute;
+    left: 24px; right: 24px; top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+  }
+  .gallery .main .arrow-nav button {
+    width: 40px; height: 40px;
+    border-radius: 999px;
+    border: 1px solid var(--ink-soft);
+    background: rgba(255,255,255,.85);
+    color: var(--ink);
+    display: flex; align-items: center; justify-content: center;
+    pointer-events: auto;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  .gallery .main .arrow-nav button.r {
+    background: var(--ink);
+    color: #fff;
+    border-color: var(--ink);
+  }
+  .gallery .thumbs {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+  }
+  .gallery .thumbs .thumb {
+    aspect-ratio: 1/1;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #e6d7b0;
+    border: 2px solid transparent;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+  }
+  .gallery .thumbs .thumb.active { border-color: var(--green); }
+
+  .details { display: flex; flex-direction: column; gap: 18px; }
+  .details .rating { display: flex; align-items: center; gap: 10px; font-size: 15px; color: var(--ink-soft); }
+  .details .rating .stars { color: var(--gold-star); display: inline-flex; gap: 2px; }
+  .details h3 {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .details > p { font-size: 17px; color: var(--ink-soft); margin: 0; }
+
+  .opt-row {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 18px;
+    border-radius: 10px;
+    border: 1.5px solid var(--rule);
+    background: var(--paper);
+  }
+  .opt-row.sel { border-color: var(--green); background: var(--green-tint); }
+  .opt-row .top {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  }
+  .opt-row .pick {
+    display: flex; align-items: center; gap: 10px; flex: 1;
+  }
+  .opt-row .radio {
+    width: 18px; height: 18px; border-radius: 50%;
+    border: 2px solid var(--rule);
+    position: relative;
+    flex-shrink: 0;
+  }
+  .opt-row.sel .radio { border-color: var(--green); }
+  .opt-row.sel .radio::after {
+    content: ""; position: absolute; inset: 3px;
+    border-radius: 50%; background: var(--green);
+  }
+  .opt-row .name { font-weight: 700; font-size: 16px; color: var(--ink-soft); }
+  .opt-row .sub { font-size: 13px; color: var(--ink-muted); }
+  .opt-row .price { font-weight: 700; color: var(--ink); font-size: 18px; }
+  .opt-row .price s { color: var(--ink-muted); font-weight: 400; margin-right: 6px; }
+  .opt-row .badge {
+    font-size: 11px; letter-spacing: 0.1em;
+    background: var(--green); color: #fff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .gifts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .gift {
+    background: var(--paper);
+    border-radius: 12px;
+    padding: 14px;
+    text-align: center;
+    border: 1px solid var(--rule);
+    display: flex; flex-direction: column; gap: 8px; align-items: center;
+  }
+  .gift .val { font-size: 12px; color: var(--ink-muted); letter-spacing: 0.06em; }
+  .gift .img {
+    width: 100%;
+    aspect-ratio: 122/84;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--green-tint-2), var(--green));
+    position: relative;
+    overflow: hidden;
+  }
+  .gift .img.gold { background: linear-gradient(135deg, #e8d6ad, var(--gold)); }
+  .gift .img.towel { background: repeating-linear-gradient(90deg, var(--green) 0 10px, var(--green-deep) 10px 20px); }
+  .gift .lbl { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--ink); text-transform: uppercase; }
+
+  .add-block {
+    background: var(--paper);
+    border-radius: 16px;
+    border: 1px solid var(--rule);
+    overflow: hidden;
+  }
+  .add-block .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--green);
+    color: #fff;
+    font-family: var(--body);
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    height: 56px;
+    border-radius: 999px;
+    margin: 16px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .add-block .btn:hover { background: var(--green-deep); }
+  .add-block .sub {
+    padding: 0 16px 14px;
+    font-size: 13px;
+    text-align: center;
+    color: var(--ink-muted);
+  }
+  .add-block .trust {
+    background: var(--off-paper);
+    border-top: 1px solid var(--rule);
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    font-size: 13px;
+    color: var(--ink);
+  }
+  .add-block .trust .item { display: flex; align-items: center; gap: 8px; }
+  .add-block .trust .ic {
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--green);
+    color: #fff;
+    font-size: 11px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* ==== FAQ ==== */
+  .faq {
+    padding: 56px 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .faq h2 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center;
+    color: var(--ink-soft);
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .faq-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+  .faq-item {
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 18px 24px;
+    transition: border-color 0.2s;
+    cursor: pointer;
+  }
+  .faq-item.open {
+    border-color: var(--green);
+    background: var(--off-paper);
+  }
+  .faq-item .q {
+    font-family: var(--serif);
+    font-size: 19px;
+    letter-spacing: 0.02em;
+    color: var(--green);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    font-weight: 500;
+  }
+  .faq-item .q .chev { flex-shrink: 0; margin-top: 6px; color: var(--green); }
+  .faq-item .a {
+    display: none;
+    margin-top: 12px;
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+  .faq-item.open .a { display: block; }
+
+  /* ==== CTA banner ==== */
+  .cta-banner {
+    margin: 0 102px;
+    background: var(--green);
+    color: #fff;
+    border: 1px solid var(--ink-soft);
+    border-radius: 24px;
+    padding: 56px 48px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+    min-height: 444px;
+  }
+  .cta-banner h2 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 1.02;
+    margin: 0 0 16px;
+    color: #fff;
+    letter-spacing: -0.01em;
+    max-width: 440px;
+  }
+  .cta-banner .lede {
+    font-size: 17px;
+    max-width: 380px;
+    color: rgba(255,255,255,.9);
+    margin: 0 0 28px;
+  }
+  .cta-banner .btn {
+    display: inline-flex;
+    background: #fff;
+    color: var(--green);
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    height: 56px;
+    padding: 0 36px;
+    border-radius: 4px;
+    align-items: center;
+    cursor: pointer;
+  }
+  .cta-banner .micro {
+    margin-top: 18px;
+    display: flex; flex-wrap: wrap;
+    gap: 20px;
+    font-size: 14px;
+    color: rgba(255,255,255,.9);
+  }
+  .cta-banner .micro .i {
+    display: flex; align-items: center; gap: 6px;
+  }
+  .cta-banner .micro .ic {
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--ink);
+    font-size: 11px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .cta-banner .art {
+    position: absolute;
+    right: 40px; top: -60px;
+    width: 540px;
+    height: 480px;
+    border: 14px solid #2a2218;
+    border-radius: 4px;
+    box-shadow: 0 30px 60px rgba(0,0,0,.3);
+    transform: rotate(1.5deg);
+    overflow: hidden;
+  }
+  .cta-banner .art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  .cta-banner .offer-card {
+    position: absolute;
+    right: 70px; bottom: -30px;
+    width: 480px;
+    background: #fff;
+    color: var(--green);
+    border: 1px solid var(--green);
+    border-radius: 24px;
+    padding: 16px 24px;
+    text-align: center;
+  }
+  .cta-banner .offer-card .label {
+    font-family: var(--display);
+    letter-spacing: 0.28em;
+    font-size: 12px;
+    color: var(--green);
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+  .cta-banner .offer-card .line1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--ink);
+  }
+  .cta-banner .offer-card .line2 {
+    font-size: 14px;
+    color: var(--ink-muted);
+    margin-top: 2px;
+  }
+
+  .cta-spacer { height: 80px; }
+
+  /* ==== Tweaks panel ==== */
+  #tweaks-panel {
+    position: fixed; right: 20px; bottom: 20px;
+    width: 300px;
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.18);
+    padding: 18px;
+    font-family: var(--body);
+    font-size: 13px;
+    z-index: 1000;
+    display: none;
+  }
+  #tweaks-panel.on { display: block; }
+  #tweaks-panel h4 {
+    margin: 0 0 12px;
+    font-family: var(--display);
+    letter-spacing: 0.24em;
+    font-size: 12px;
+    color: var(--green);
+  }
+  #tweaks-panel .group { margin-bottom: 14px; }
+  #tweaks-panel .group label {
+    display: block; font-weight: 600; margin-bottom: 6px; color: var(--ink);
+  }
+  #tweaks-panel select,
+  #tweaks-panel input[type="text"] {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    font: inherit;
+    color: var(--ink);
+    background: #fff;
+  }
+  #tweaks-panel .swatches { display: flex; gap: 8px; }
+  #tweaks-panel .sw {
+    width: 28px; height: 28px; border-radius: 50%;
+    cursor: pointer; border: 2px solid #fff;
+    box-shadow: 0 0 0 1px var(--rule);
+  }
+  #tweaks-panel .sw.sel { box-shadow: 0 0 0 2px var(--ink); }
+</style>
+</head>
+<body>
+
+<div class="page" data-screen-label="Father's Day Landing">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <div class="review-pill">
+        <span class="stars" aria-label="4.8 out of 5 stars">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+        </span>
+        Excellent 4.8 | 2,000+ Reviews
+      </div>
+
+      <h1 id="headline">5 Reasons This Is The Father's Day Gift Every Golfer Actually Wants</h1>
+
+      <div class="kicker" id="kicker">(And why every dad we've shipped to has asked for another one.)</div>
+
+      <div class="byline">
+        <div class="avatar" aria-hidden="true"></div>
+        <div>
+          <div class="by-name">by Sarah K.</div>
+          <div class="by-meta">Father's Day Gift Guide · 4 min read</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <img src="assets/GCP-Hero.webp" alt="Woman on a golf course holding a framed Pebble Beach Golf Links course map print">
+    </div>
+  </section>
+
+  <!-- Strip -->
+  <section class="strip" aria-hidden="true">
+    <div class="track">
+      <span>The Perfect Father's Day Gift</span>
+      <span>His Favorite Course, As Art</span>
+      <span>Order by June 8th · Ships Free</span>
+      <span>The Perfect Father's Day Gift</span>
+      <span>His Favorite Course, As Art</span>
+      <span>Order by June 8th · Ships Free</span>
+    </div>
+  </section>
+
+  <!-- Reason 1 -->
+  <section class="reason" data-screen-label="Reason 1">
+    <div class="art-frame art-1" aria-hidden="true">
+      <div class="pad"></div>
+      <div class="img-wrap">
+        <img src="assets/ai-generated/print-cross-processed-20260402.jpg" alt="">
+      </div>
+    </div>
+    <div class="copy">
+      <div class="tag">— Reason 1</div>
+      <h2>Art He'll Actually Hang Up (Not Store in a Closet)</h2>
+      <p>Pull it out of the tube and you'll pause. Not because it's another piece of golf memorabilia — but because it <em>isn't</em>.</p>
+      <p>Every map is composed from the actual course. Every dogleg, every bunker, every forced carry rendered in clean minimalist lines or quiet watercolor washes. No clip-art clubs. No stock flags. No fading felt.</p>
+      <p>It's the round he keeps telling the story of, on paper worth framing.</p>
+    </div>
+  </section>
+
+  <!-- Reason 2 -->
+  <section class="reason" data-screen-label="Reason 2">
+    <div class="copy">
+      <div class="tag">— Reason 2</div>
+      <h2>It Looks Like It Belongs In the Room</h2>
+      <p>The palettes are quiet. Considered. Warm greens, paper-whites, a single pull of gold. Nothing reads "man cave."</p>
+      <p>Hang it in a home office, above a credenza, at the end of a hallway — it reads as art first, golf second. No kitsch. No fading six months in. No "it looked better online."</p>
+      <p>His friends will ask where it came from. He'll enjoy telling them.</p>
+    </div>
+    <div class="art-frame" aria-hidden="true">
+      <img src="assets/Ocean_Course-Kiawah-Island-South-Carolina-1_HeroFrameWood.webp" alt="">
+    </div>
+  </section>
+
+  <!-- Proof: lifestyle tiles -->
+  <section class="proof" data-screen-label="Customer Proof">
+    <div class="hd">
+      <div class="review-pill">
+        <span class="stars" aria-label="4.8 out of 5 stars">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+        </span>
+        Excellent 4.8 | 2,000+ Reviews
+      </div>
+      <h2>Over 40,000 Golfers Have Hung Their Course</h2>
+    </div>
+
+    <div class="proof-tiles">
+      <div class="proof-tile" style="background-image:url('assets/Bandon_Dunes__TableTop.webp')">
+        <div>
+          <p class="caption">"The first thing people notice when they walk in."</p>
+          <div class="meta">— Matt O. · Phoenix, AZ</div>
+        </div>
+      </div>
+      <div class="proof-tile" style="background-image:url('assets/ai-generated/print-kodak-disposable-20260402.jpg')">
+        <div>
+          <p class="caption">"He couldn't stop looking at it all through dinner."</p>
+          <div class="meta">— Kim P. · Austin, TX</div>
+        </div>
+      </div>
+      <div class="proof-tile" style="background-image:url('assets/cta-img.png');background-position:center top">
+        <div>
+          <p class="caption">"He still talks about that round. Now it's on the wall."</p>
+          <div class="meta">— Tyler B. · Charlotte, NC</div>
+        </div>
+      </div>
+      <div class="proof-tile" style="background-image:url('assets/ai-generated/print-noon-sun-20260402.jpg')">
+        <div>
+          <p class="caption">"The only golf gift I've ever given that he didn't return."</p>
+          <div class="meta">— Jennifer W. · Seattle, WA</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reason 3 -->
+  <section class="reason" data-screen-label="Reason 3">
+    <div class="art-frame" aria-hidden="true">
+      <div style="position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:8px">
+        <img src="assets/Ocean_Course-Kiawah-Island-South-Carolina-1_HeroFrameWood.webp" style="width:100%;height:100%;object-fit:cover;display:block" alt="">
+        <img src="assets/Pinehurst_Resort_No._2_Paper.png" style="width:100%;height:100%;object-fit:cover;display:block;background:#f0ede5" alt="">
+        <img src="assets/ai-generated/print-ring-flash-20260402.jpg" style="width:100%;height:100%;object-fit:cover;display:block" alt="">
+        <img src="assets/ai-generated/print-tilt-shift-20260402.jpg" style="width:100%;height:100%;object-fit:cover;display:block" alt="">
+      </div>
+    </div>
+    <div class="copy">
+      <div class="tag">— Reason 3</div>
+      <h2>His Whole Golf Life, On One Wall</h2>
+      <p>One print becomes two. Pebble Beach next to Bandon Dunes. Augusta beside the course where he shot his career best. His whole golf life, lined up in a row.</p>
+      <p>We add new courses every month — championship venues, hidden local favorites, the public course he's played 40 times. Tell us the round; we'll make the art.</p>
+      <p>A collection that gets more meaningful every year.</p>
+    </div>
+  </section>
+
+  <!-- Reason 4 -->
+  <section class="reason" data-screen-label="Reason 4">
+    <div class="copy">
+      <div class="tag">— Reason 4</div>
+      <h2>You'll Know It By the Look on His Face</h2>
+      <p>Stop buying golf balls. Stop buying the glove. He already has them.</p>
+      <p>What he doesn't have is the course where he played his career best, framed. The one he played with his own father. The round you two went on last summer, on the wall behind his desk.</p>
+      <p>This is the kind of gift he'll still be pointing to twenty years from now.</p>
+    </div>
+    <div class="art-frame" aria-hidden="true">
+      <img src="assets/ai-generated/print-kodak-disposable-20260402.jpg" alt="">
+    </div>
+  </section>
+
+  <!-- Reason 5 -->
+  <section class="reason" data-screen-label="Reason 5">
+    <div class="art-frame" aria-hidden="true">
+      <div style="position:relative;width:100%;height:100%">
+        <div style="position:absolute;left:0;top:0;width:58%;height:80%;transform:rotate(-3deg);overflow:hidden;box-shadow:0 12px 36px rgba(0,0,0,.22)">
+          <img src="assets/ai-generated/print-tilt-shift-20260402.jpg" style="width:100%;height:100%;object-fit:cover;display:block" alt="">
+        </div>
+        <div style="position:absolute;right:0;bottom:0;width:62%;height:68%;transform:rotate(2deg);overflow:hidden;box-shadow:0 12px 36px rgba(0,0,0,.22)">
+          <img src="assets/ai-generated/print-noon-sun-20260402.jpg" style="width:100%;height:100%;object-fit:cover;display:block" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="copy">
+      <div class="tag">— Reason 5</div>
+      <h2>Two Styles. Order by June 8th.</h2>
+      <p>Minimalist, for the dad who likes clean lines and negative space. Watercolor, for the one who sees the course as poetry.</p>
+      <p>Both printed on archival paper or mounted on canvas. Both ship free within 3–5 business days. Order by June 8th for guaranteed Father's Day delivery — or reach out for rush options.</p>
+      <p>Backed by a 90-day guarantee: if it doesn't look the way you hoped, send it back. No questions.</p>
+    </div>
+  </section>
+
+  <!-- Product detail -->
+  <section class="product" data-screen-label="Product Detail">
+    <div class="hd">
+      <h2>The Signature Series</h2>
+      <p>Pick his course. Pick your size. Ships in time for Father's Day.</p>
+    </div>
+
+    <div class="product-grid">
+      <div class="gallery">
+        <div class="main" id="gallery-main">
+          <img src="assets/Ocean_Course-Kiawah-Island-South-Carolina-1_HeroFrameWood.webp" id="gallery-img" alt="The Ocean Course at Kiawah Island — framed wood print">
+          <div class="arrow-nav">
+            <button class="l" aria-label="Previous">‹</button>
+            <button class="r" aria-label="Next">›</button>
+          </div>
+        </div>
+        <div class="thumbs">
+          <div class="thumb active" style="background-image:url('assets/Ocean_Course-Kiawah-Island-South-Carolina-1_HeroFrameWood.webp')"></div>
+          <div class="thumb" style="background-image:url('assets/Pinehurst_Resort_No._2_Paper.png');background-color:#f0ede5"></div>
+          <div class="thumb" style="background-image:url('assets/Bandon_Dunes__TableTop.webp')"></div>
+          <div class="thumb" style="background-image:url('assets/ai-generated/print-noon-sun-20260402.jpg')"></div>
+          <div class="thumb" style="background-image:url('assets/GCP-Hero.webp');background-position:center top"></div>
+        </div>
+      </div>
+
+      <div class="details">
+        <div class="rating">
+          <span class="stars">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L1.5 7.7l5.9-.8z"/></svg>
+          </span>
+          Excellent 4.8 | 10,000+ Customers
+        </div>
+        <h3>The Ocean Course — Kiawah Island</h3>
+        <p>Hand-composed course map, museum-quality giclée on archival paper. Guaranteed for 90 days or your money back.</p>
+
+        <div class="opt-row">
+          <div class="top">
+            <div class="pick">
+              <span class="radio"></span>
+              <div>
+                <div class="name">8 × 10 Print — Unframed</div>
+                <div class="sub">Fits a standard frame · ships in protective tube</div>
+              </div>
+            </div>
+            <div class="price"><s>$49</s> $39</div>
+          </div>
+        </div>
+
+        <div class="opt-row sel">
+          <div class="top">
+            <div class="pick">
+              <span class="radio"></span>
+              <div>
+                <div class="name">16 × 20 Framed Canvas <span class="badge">Most Loved</span></div>
+                <div class="sub">White, black, or natural wood frame · ready to hang</div>
+              </div>
+            </div>
+            <div class="price"><s>$179</s> $149</div>
+          </div>
+        </div>
+
+        <div class="opt-row">
+          <div class="top">
+            <div class="pick">
+              <span class="radio"></span>
+              <div>
+                <div class="name">24 × 36 Gallery Canvas</div>
+                <div class="sub">Centerpiece size · museum wrap · gold plaque included</div>
+              </div>
+            </div>
+            <div class="price"><s>$328</s> $298</div>
+          </div>
+        </div>
+
+        <div class="gifts">
+          <div class="gift">
+            <div class="val">$36 Value</div>
+            <div class="img"></div>
+            <div class="lbl">Free Golf Towel</div>
+          </div>
+          <div class="gift">
+            <div class="val">$24 Value</div>
+            <div class="img gold"></div>
+            <div class="lbl">Brass Ball Marker</div>
+          </div>
+          <div class="gift">
+            <div class="val">$29 Value</div>
+            <div class="img towel"></div>
+            <div class="lbl">Scorecard Journal</div>
+          </div>
+        </div>
+
+        <div class="add-block">
+          <div class="btn">ADD TO CART &nbsp;—&nbsp; $149</div>
+          <div class="sub">Order in the next <strong>7:59</strong> to claim your free gifts</div>
+          <div class="trust">
+            <div class="item"><span class="ic">★</span> 10,000+ 5-star customers</div>
+            <div class="item"><span class="ic">✓</span> 90-day money-back guarantee</div>
+            <div class="item"><span class="ic">✈</span> Free U.S. shipping</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" data-screen-label="FAQ">
+    <h2>Still Have Questions? We Have Answers.</h2>
+    <div class="faq-cols">
+      <div>
+        <div class="faq-item open">
+          <div class="q"><span>Will it arrive before Father's Day?</span><span class="chev">−</span></div>
+          <div class="a">Order by June 8th and we guarantee delivery before June 15th. Need it faster? Email us and we'll sort out rush options — we ship same day on most orders.</div>
+        </div>
+        <div class="faq-item">
+          <div class="q"><span>What courses do you offer?</span><span class="chev">+</span></div>
+          <div class="a">Every major championship course and hundreds of beloved municipal and private courses worldwide — from Augusta National to your local muni. Don't see his course? Email us; we commission new ones every week.</div>
+        </div>
+        <div class="faq-item">
+          <div class="q"><span>Can I add a personal inscription or dedication?</span><span class="chev">+</span></div>
+          <div class="a">Yes — we'll hand-set a dedication ("For Dad, Father's Day 2026") at the bottom of any print at no charge. Just add it in the order notes.</div>
+        </div>
+        <div class="faq-item">
+          <div class="q"><span>What size should I order for a home office?</span><span class="chev">+</span></div>
+          <div class="a">16×20 framed is our most popular for desks and shelves. For a statement piece above a credenza, go 24×36.</div>
+        </div>
+        <div class="faq-item">
+          <div class="q"><span>Can I get a print of a course he hasn't played yet?</span><span class="chev">+</span></div>
+          <div class="a">Of course. Plenty of collectors start with bucket-list courses and grow from there.</div>
+        </div>
+      </div>
+      <div>
+        <div class="faq-item">
+          <div class="q"><span>How does shipping work?</span><span class="chev">+</span></div>
+          <div class="a">Prints ship free within the U.S. within 3–5 business days. Framed canvas takes 7–10 days as each is hand-assembled. Order by June 8th for Father's Day delivery.</div>
+        </div>
+        <div class="faq-item">
+          <div class="q"><span>What's your 90-day guarantee?</span><span class="chev">+</span></div>
+          <div class="a">If he's not thrilled — for any reason — send it back within 90 days for a full refund or replacement. No questions, no restocking fee.</div>
+        </div>
+        <div class="faq-item">
+          <div class="q"><span>How do you verify course details and rights?</span><span class="chev">+</span></div>
+          <div class="a">Every map is hand-drawn from aerial imagery and public course schematics. We don't use official club logos or trademarks.</div>
+        </div>
+        <div class="faq-item">
+          <div class="q"><span>Where are the prints made?</span><span class="chev">+</span></div>
+          <div class="a">Printed and framed in the U.S. by a family-run atelier we've worked with for six years.</div>
+        </div>
+        <div class="faq-item">
+          <div class="q"><span>Do you offer corporate gifting for golf outings?</span><span class="chev">+</span></div>
+          <div class="a">Yes — bulk pricing starts at 10 prints. Tournament organizers love custom hole-by-hole gifts.</div>
+        </div>
+        <div class="faq-item">
+          <div class="q"><span>How quickly will a custom course be added?</span><span class="chev">+</span></div>
+          <div class="a">Custom commissions ship in 10–14 days. Rush available on request — reach out before June 8th for Father's Day.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="cta-banner" data-screen-label="Final CTA">
+    <div>
+      <h2>His Favorite Course. On His Wall. This Father's Day.</h2>
+      <p class="lede">Join 40,000+ golfers who've turned their favorite round into something worth hanging.</p>
+      <div class="btn">SHOP FATHER'S DAY PRINTS</div>
+      <div class="micro">
+        <div class="i"><span class="ic">✈</span> Order by June 8th</div>
+        <div class="i"><span class="ic">★</span> 40,000+ happy golfers</div>
+        <div class="i"><span class="ic">✓</span> 90-day guarantee</div>
+      </div>
+    </div>
+
+    <div class="art">
+      <img src="assets/GCP-Hero.webp" alt="Framed golf course print held on the course at golden hour">
+    </div>
+
+    <div class="offer-card">
+      <div class="label">★ FATHER'S DAY SPECIAL ★</div>
+      <div class="line1">Free Personalization on Every Print</div>
+      <div class="line2">Add his name, a date, or a dedication — at no charge</div>
+    </div>
+  </section>
+
+  <div class="cta-spacer"></div>
+
+
+</div>
+
+<!-- Tweaks panel -->
+<div id="tweaks-panel">
+  <h4>TWEAKS</h4>
+
+  <div class="group">
+    <label>Color scheme</label>
+    <div class="swatches" id="sw-scheme">
+      <div class="sw sel" data-scheme="green" style="background:#2D5A3D" title="Classic Green"></div>
+      <div class="sw" data-scheme="gold" style="background:#C4A265" title="Warm Gold"></div>
+      <div class="sw" data-scheme="navy" style="background:#1F3A5F" title="Clubhouse Navy"></div>
+      <div class="sw" data-scheme="clay" style="background:#8A3E2A" title="Old Clay"></div>
+    </div>
+  </div>
+
+  <div class="group">
+    <label>Headline</label>
+    <select id="tw-headline-sel">
+      <option value="0">5 Reasons This Is The Father's Day Gift…</option>
+      <option value="1">His Favorite Course. On His Wall. By Father's Day.</option>
+      <option value="2">5 Reasons This Is The Only Golf Gift He Won't Return</option>
+      <option value="3">Every Round Tells A Story. Give Him One Worth Hanging.</option>
+    </select>
+  </div>
+
+  <div class="group">
+    <label>Hero subtitle</label>
+    <select id="tw-kicker-sel">
+      <option value="0">(And why every dad we've shipped to has asked for another one.)</option>
+      <option value="1">(The gift every golfer actually wants.)</option>
+      <option value="2">(Signed. Framed. Delivered by Father's Day.)</option>
+    </select>
+  </div>
+
+  <div class="group">
+    <label>Display font</label>
+    <select id="tw-display-sel">
+      <option value="copper">Copperplate (brand)</option>
+      <option value="serif">Playfair Display</option>
+      <option value="sans">System Sans</option>
+    </select>
+  </div>
+</div>
+
+<script>
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "scheme": "green",
+  "headlineIdx": 0,
+  "kickerIdx": 0,
+  "displayFont": "copper"
+}/*EDITMODE-END*/;
+
+const HEADLINES = [
+  "5 Reasons This Is The Father's Day Gift Every Golfer Actually Wants",
+  "His Favorite Course. On His Wall. By Father's Day.",
+  "5 Reasons This Is The Only Golf Gift He Won't Return",
+  "Every Round Tells A Story. Give Him One Worth Hanging."
+];
+const KICKERS = [
+  "(And why every dad we've shipped to has asked for another one.)",
+  "(The gift every golfer actually wants.)",
+  "(Signed. Framed. Delivered by Father's Day.)"
+];
+
+const SCHEMES = {
+  green: { "--green": "#2D5A3D", "--green-deep": "#1F4029", "--green-tint": "#EFF3ED", "--green-tint-2": "#E3EBE2" },
+  gold:  { "--green": "#8A7342", "--green-deep": "#5E4D29", "--green-tint": "#F5EEDB", "--green-tint-2": "#EADFC0" },
+  navy:  { "--green": "#1F3A5F", "--green-deep": "#132747", "--green-tint": "#EAF0F7", "--green-tint-2": "#D3DFEC" },
+  clay:  { "--green": "#8A3E2A", "--green-deep": "#5D2817", "--green-tint": "#F6EAE3", "--green-tint-2": "#EAD2C5" }
+};
+
+const FONTS = {
+  copper: '"Copperplate", "Copperplate Gothic Light", "Playfair Display", Georgia, serif',
+  serif:  '"Playfair Display", Georgia, serif',
+  sans:   '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+};
+
+let current = { ...TWEAK_DEFAULTS };
+
+function apply(state) {
+  const root = document.documentElement;
+  const scheme = SCHEMES[state.scheme] || SCHEMES.green;
+  Object.entries(scheme).forEach(([k, v]) => root.style.setProperty(k, v));
+  root.style.setProperty('--display', FONTS[state.displayFont] || FONTS.copper);
+
+  const hl = document.getElementById('headline');
+  if (hl) hl.textContent = HEADLINES[state.headlineIdx] || HEADLINES[0];
+  const kc = document.getElementById('kicker');
+  if (kc) kc.textContent = KICKERS[state.kickerIdx] || KICKERS[0];
+
+  document.querySelectorAll('#sw-scheme .sw').forEach(el => {
+    el.classList.toggle('sel', el.dataset.scheme === state.scheme);
+  });
+  const hs = document.getElementById('tw-headline-sel');
+  const ks = document.getElementById('tw-kicker-sel');
+  const ds = document.getElementById('tw-display-sel');
+  if (hs) hs.value = String(state.headlineIdx);
+  if (ks) ks.value = String(state.kickerIdx);
+  if (ds) ds.value = state.displayFont;
+}
+
+function persist(partial) {
+  current = { ...current, ...partial };
+  try { window.parent.postMessage({ type: '__edit_mode_set_keys', edits: partial }, '*'); } catch (e) {}
+}
+
+window.addEventListener('message', (e) => {
+  if (!e.data || !e.data.type) return;
+  if (e.data.type === '__activate_edit_mode') {
+    document.getElementById('tweaks-panel').classList.add('on');
+  } else if (e.data.type === '__deactivate_edit_mode') {
+    document.getElementById('tweaks-panel').classList.remove('on');
+  }
+});
+try { window.parent.postMessage({ type: '__edit_mode_available' }, '*'); } catch (e) {}
+
+document.querySelectorAll('#sw-scheme .sw').forEach(el => {
+  el.addEventListener('click', () => {
+    const scheme = el.dataset.scheme;
+    apply({ ...current, scheme });
+    persist({ scheme });
+  });
+});
+document.getElementById('tw-headline-sel').addEventListener('change', (e) => {
+  const headlineIdx = parseInt(e.target.value, 10);
+  apply({ ...current, headlineIdx });
+  persist({ headlineIdx });
+});
+document.getElementById('tw-kicker-sel').addEventListener('change', (e) => {
+  const kickerIdx = parseInt(e.target.value, 10);
+  apply({ ...current, kickerIdx });
+  persist({ kickerIdx });
+});
+document.getElementById('tw-display-sel').addEventListener('change', (e) => {
+  const displayFont = e.target.value;
+  apply({ ...current, displayFont });
+  persist({ displayFont });
+});
+
+apply(current);
+
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    item.classList.toggle('open');
+    const chev = item.querySelector('.chev');
+    if (chev) chev.textContent = isOpen ? '+' : '−';
+  });
+});
+
+document.querySelectorAll('.opt-row').forEach(row => {
+  row.addEventListener('click', () => {
+    document.querySelectorAll('.opt-row').forEach(r => r.classList.remove('sel'));
+    row.classList.add('sel');
+  });
+});
+
+// Thumb gallery switching
+const galleryImgs = [
+  'assets/Ocean_Course-Kiawah-Island-South-Carolina-1_HeroFrameWood.webp',
+  'assets/Pinehurst_Resort_No._2_Paper.png',
+  'assets/Bandon_Dunes__TableTop.webp',
+  'assets/ai-generated/print-noon-sun-20260402.jpg',
+  'assets/GCP-Hero.webp'
+];
+document.querySelectorAll('.gallery .thumb').forEach((thumb, i) => {
+  thumb.addEventListener('click', () => {
+    document.querySelectorAll('.gallery .thumb').forEach(t => t.classList.remove('active'));
+    thumb.classList.add('active');
+    const mainImg = document.getElementById('gallery-img');
+    if (mainImg && galleryImgs[i]) mainImg.src = galleryImgs[i];
+  });
+});
+</script>
+
+</body>
+</html>

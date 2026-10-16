@@ -1,0 +1,18 @@
+---
+name: operator-creative-static-template-process
+description: Adapt selected static-ad templates to available product and claim evidence, preserve copy/layout slots through rendering, and review scoped iterations. Use for static batches and reference-based statics; not video production or ad-account publishing.
+---
+
+# Make the chosen template fit the evidence
+
+Treat template selection as a feasibility decision, not a performance guarantee. Inspect the selected reference when attached; otherwise use the supplied wireframe or format description. Test available SKU count, product silhouette and scale, text room, buyer awareness, proof requirements and actual offer. A template needing absent products, customer attribution, comparison evidence or discount terms is unsuitable. Adapt only the incompatible slot and explain why. Preserve explicit reference fidelity, chosen visual format, aspect, text-free and product-free choices. Simple product/headline hierarchy can help, but it is not a reason to replace a deliberate graphic, illustration, collage or documentary format.
+
+Carry one compact slot contract in the caller's existing fields: template origin or layout type; persuasive job; product/count zone; headline, support, proof and action zones where relevant; fixed constraints; necessary adaptation. For this app, use `reference_read`, `layout`, `adaptation`, `text_elements` and existing brief fields rather than adding an unsolicited schema. A template supplies structure, never competitor facts, logos, people or final copy. Nonexistent reference imagery must not be described as observed.
+
+Select one supported customer tension or objection before filling slots. Use real research with its source and context to choose language; distinguish exact quotation, paraphrase and creative hypothesis. Neither a synthetic persona nor a paraphrase authenticates a first-person customer review. Missing evidence stays missing. Exact on-image copy must fit the planned hierarchy with essential qualifications beside its claim. Complete feed copy develops the same promise without adding unsupported results or offers. Keep brand voice examples and required evidence available; omit unrelated history and alternative templates.
+
+Before rendering, review the selected slots, exact words, product assets and unresolved gaps using the application's existing approval/check flow. Existing authorization to generate review drafts permits drafting; it does not label those drafts approved or authorize ad-account publishing. After rendering, inspect the actual product, count, packaging, exact type, mobile legibility and image/copy agreement. Read every delivered caption length and CTA as part of the ad. An attractive picture with an unsupported caption fails the evidence review.
+
+Keep candidate, inspection-only and selected states distinct. Feedback names the visible defect and its intended scope: this image, this layout, this product or this brand. Do not turn a one-off visual preference into a rule for all future ads. For iterations, name the axis being tested and keep other control slots fixed; a multi-axis concept variant can be useful, but cannot isolate a single causal effect. Seasonal styling does not supply a sale, deadline or delivery promise.
+
+Return only requested fields and variants. Load only the relevant `Plan`, `Words`, `Prompt` or `Review` section of `CARD.md` at each stage. Downstream stages need the selected contract and any relevant correction, not another copy of the complete process, swipe file or transcript. Track actual calls, failures, repairs and usable-output cost. Library impressions, ad longevity and editorial scores may guide hypotheses; they do not establish conversion performance.

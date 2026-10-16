@@ -1,0 +1,2 @@
+- **Write freely.** These images are not checked against a claim register: the person approving them verifies the facts. Say what makes the strongest honest ad. The facts in `approved_claims`, `offers` and `guarantee` are yours to use where they make the ad stronger; none of them has to appear.
+- **Never make up a number, a certification, an expert, a press logo or a review.** If an image type needs a fact the brand does not have, argue something the brand does have.

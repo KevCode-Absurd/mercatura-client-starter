@@ -1,0 +1,7 @@
+import type { CroAsset, CroRun, CroSection } from "./studio-types";
+const concise = (value: string) => value.replace(/\s+/g, " ").trim().slice(0, 140);
+function purpose(run: CroRun) { return concise(run.request.taskBrief?.buyerQuestion || run.request.goal || run.blueprint?.title || `${run.request.pageType} page`); }
+function review(run: CroRun) { return run.visualReview ? `visual review ${run.visualReview.verdict}; factual review separate` : "visual and factual review pending"; }
+export function canvasPreviewLabel(run: CroRun, device: "mobile" | "desktop", dirty = false) { return `${run.brand.productName || run.brand.name}; ${purpose(run)}; ${device} ${device === "mobile" ? "up to 390px" : "1440px"} viewport; page revision ${run.revision}; ${dirty ? "unsaved edits; " : ""}${review(run)}`; }
+export function canvasSectionLabel(run: CroRun, section: CroSection) { return `Inspect ${section.label} for ${run.brand.productName || run.brand.name}; ${purpose(run)}; section version ${section.version}; ${section.enabled ? "enabled" : "hidden"}; ${review(run)}`; }
+export function canvasAssetLabel(run: CroRun, section: CroSection, slot: string, asset: CroAsset, selected: boolean) { const product = run.brand.products?.find(product => product.id === asset.productId)?.name || run.brand.productName || run.brand.name; return `Use ${concise(asset.name)} for ${section.label}, ${slot}; ${product}; ${purpose(run)}; square selector thumbnail; section version ${section.version}; ${selected ? "selected" : "not selected"}; image facts not reviewed here`; }

@@ -1,0 +1,106 @@
+{
+  "sections": {
+    "main": {
+      "type": "brand-5-reasons",
+      "settings": {
+        "cta_url": "https://www.yourbrand.com/booknow",
+        "cta_label": "Book Your Night",
+        "final_cta_label": "Book Your Workshop",
+        "pill_text": "Excellent 4.9 | 2,000+ Reviews",
+        "review_rating": "4.9",
+        "h1": "5 Reasons Your Brand Is The Girls' Night Out Every Group Chat Is Booking",
+        "kicker": "The plan thousands of girls'-night groups keep picking over another dinner reservation. Five reasons your group chat will too.",
+        "byline_author": "The Your Brand Team",
+        "byline_meta": "Workshop Guide · 4 min read",
+        "press_eyebrow": "9 STUDIOS · BOOKED BY GROUPS IN",
+        "final_h2": "Pick a night. Round up the group. Walk out wearing silver you made.",
+        "final_body": "Tens of thousands of friends, sisters, bridal parties, and coworkers have already group-booked their night. Two clicks and yours is locked in. You're a gem ™.",
+        "micro_1": "4.9 stars · 2,000+ reviews",
+        "micro_2": "Sterling silver + real stones",
+        "micro_3": "Walk out wearing it",
+        "faq_h2": "Still Have Questions?",
+        "faq_sub": "The most common things groups ask before they book."
+      },
+      "blocks": {
+        "reason-1": {
+          "type": "reason",
+          "settings": {
+            "number": "01",
+            "show_stars": false,
+            "title": "Phones Down. Hands Busy. Conversations You'll Actually Remember.",
+            "body": "The best conversations always happen when your hands are busy. Three hours at the bench, hosted by a working silversmith, with the people who actually matter. Nobody is doom-scrolling while they are shaping silver over a mandrel."
+          }
+        },
+        "reason-2": {
+          "type": "reason",
+          "settings": {
+            "number": "02",
+            "show_stars": false,
+            "title": "Every Girls' Night Starts to Blur. Make One That Doesn't.",
+            "body": "Same restaurant, same playlist, same Uber home, same photos no one posts. The girls' nights you actually remember are the ones you did something. Same money as a forgettable dinner. Except this one comes home on your finger."
+          }
+        },
+        "reason-3": {
+          "type": "reason",
+          "settings": {
+            "number": "03",
+            "show_stars": true,
+            "title": "40,000+ Groups In. Still Counting.",
+            "body": "Over 40,000 girls'-night groups, bachelorette parties, birthday squads, and bridal showers have already gotten on the bench across our nine studios. The pattern is loud and it keeps repeating.",
+            "testimonial_quote": "Booked it on a whim for a sister's birthday. Three group chats and four bookings later, I get why the calendar fills up so fast.",
+            "testimonial_name": "Riley H.",
+            "testimonial_meta": "Park City · 4x group booker"
+          }
+        },
+        "reason-4": {
+          "type": "reason",
+          "settings": {
+            "number": "04",
+            "show_stars": false,
+            "title": "Bachelorettes, Birthdays, Bridal Showers, Sisters, Coworkers. Every Group Fits.",
+            "body": "Half our weekends are bachelorettes and bridal parties. The other half are birthday squads, work off-sites, and 'she's in town and we need a plan' Saturdays. Bring 8 or more and the studio is yours with custom packaging for the guest of honor.",
+            "testimonial_quote": "Best decision of the whole weekend. Did the bachelorette here instead of bar-hopping. Two months later we are all still wearing what we made.",
+            "testimonial_name": "Maddie R.",
+            "testimonial_meta": "Salt Lake City · Bachelorette of 8"
+          }
+        },
+        "reason-5": {
+          "type": "reason",
+          "settings": {
+            "number": "05",
+            "show_stars": false,
+            "title": "The Group Chat Doesn't Lie.",
+            "body": "The receipts are in the texts the next morning: 'when's the next one,' 'who else can we bring,' 'I'm booking it for Sarah's birthday.' Workshop graduates do not stop talking about it.",
+            "testimonial_quote": "First girls' night in I don't know how long where my friends actually put their phones down. The group chat is already planning the next one.",
+            "testimonial_name": "Lauren T.",
+            "testimonial_meta": "Gilbert · Birthday Squad of 5"
+          }
+        },
+        "loc-boise":     { "type": "location", "settings": { "name": "Boise",     "url": "https://yourbrand.com/locations/boise" } },
+        "loc-gilbert":   { "type": "location", "settings": { "name": "Gilbert",   "url": "https://yourbrand.com/locations/gilbert" } },
+        "loc-irvine":    { "type": "location", "settings": { "name": "Irvine",    "url": "https://yourbrand.com/locations/irvine" } },
+        "loc-nashville": { "type": "location", "settings": { "name": "Nashville", "url": "https://yourbrand.com/locations/nashville" } },
+        "loc-parkcity":  { "type": "location", "settings": { "name": "Park City", "url": "https://yourbrand.com/locations/park-city" } },
+        "loc-provo":     { "type": "location", "settings": { "name": "Provo",     "url": "https://yourbrand.com/locations/provo" } },
+        "loc-slc":       { "type": "location", "settings": { "name": "SLC",       "url": "https://yourbrand.com/locations/slc" } },
+        "loc-stgeorge":  { "type": "location", "settings": { "name": "St. George","url": "https://yourbrand.com/locations/st-george" } },
+        "loc-waikiki":   { "type": "location", "settings": { "name": "Waikiki",   "url": "https://yourbrand.com/locations/waikiki" } },
+
+        "faq-1": { "type": "faq", "settings": { "question": "How long is the workshop?", "answer": "Two to three hours from check-in to clean-up: design, cutting, soldering, stone setting, and finishing. Allow 15 minutes on either end if it's your first time." } },
+        "faq-2": { "type": "faq", "settings": { "question": "Do we need any jewelry-making experience?", "answer": "Zero. A working silversmith hosts every group and walks you through every step. We are not a school. The silversmith is your hype-person at the bench, not a teacher with a lesson plan." } },
+        "faq-3": { "type": "faq", "settings": { "question": "What if some of us don't drink?", "answer": "This isn't a bar. It's a creative studio. Drinker or not, every guest is making the same piece on the same bench. No one sits out, no one is the odd one out. Ages 16+ welcome (under 18 with a parent)." } },
+        "faq-4": { "type": "faq", "settings": { "question": "How big can our group be?", "answer": "Smaller groups (2–7) book into mixed public sessions. 8 or more unlocks a private studio buyout with custom packaging for the bride or birthday guest. Bachelorette parties of 12, 16, even 24 are routine. Use the group form for a quote." } },
+        "faq-5": { "type": "faq", "settings": { "question": "What do we actually make?", "answer": "Sterling silver ring, bracelet, pendant, bolo, cuff, or stud earrings. You pick the design and the stone (turquoise, larimar, moonstone, sun stone, amber, mother of pearl, mossy agate, and more). Cabochon-style only, no faceted stones." } },
+        "faq-6": { "type": "faq", "settings": { "question": "What if someone bails last minute?", "answer": "Cancellations inside 24 hours are $20 per person. Outside that window, reach out and we'll always try to make it work. Friends can swap into open seats anytime, no name change needed." } },
+        "faq-7": { "type": "faq", "settings": { "question": "What about the price?", "answer": "Most studios are $130–$165 per person all-in (Waikiki and Irvine premium tiers run a touch higher). Compare it to dinner plus drinks plus an Uber. Same money, except you walk out wearing the night instead of waking up to the receipt." } },
+        "faq-8": { "type": "faq", "settings": { "question": "Where are the studios?", "answer": "Nine studios: Boise, Gilbert, Irvine, Nashville, Park City, Provo, SLC, St. George, and Waikiki. Pick whichever is closest at checkout." } }
+      },
+      "block_order": [
+        "reason-1", "reason-2", "reason-3", "reason-4", "reason-5",
+        "loc-boise", "loc-gilbert", "loc-irvine", "loc-nashville", "loc-parkcity", "loc-provo", "loc-slc", "loc-stgeorge", "loc-waikiki",
+        "faq-1", "faq-2", "faq-3", "faq-4", "faq-5", "faq-6", "faq-7", "faq-8"
+      ]
+    }
+  },
+  "order": ["main"]
+}

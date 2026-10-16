@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-10-11",
+  "kind": "original_project_adaptation_of_official_guidance",
+  "upstream": "remotion-dev/skills",
+  "observed_skill_version": "4.0.534",
+  "sources": [
+    "https://www.remotion.dev/docs/ai/skills",
+    "https://github.com/remotion-dev/skills",
+    "https://github.com/remotion-dev/skills/blob/main/skills/remotion-best-practices/remotion-markup/video-editing.md",
+    "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-best-practices/remotion-markup/local-fonts.md",
+    "https://raw.githubusercontent.com/remotion-dev/skills/main/skills/remotion-best-practices/remotion-captions/REFERENCE.md",
+    "https://www.remotion.dev/docs/fonts",
+    "https://www.remotion.dev/docs/layout-utils/best-practices"
+  ],
+  "source_checks": {
+    "publisher": "Official Remotion documentation identifies this repository as maintained by Remotion.",
+    "skill_listing": "skills.sh listing checked; observed 599.4K installs and 5.0K GitHub stars. Counts are discovery signals, not a security guarantee.",
+    "license": "No LICENSE or LICENSE.md appeared in the repository root listing; direct probes returned 404. No license grant is assumed.",
+    "adaptation": "Original concise guidance, not a verbatim copy of upstream skill text or code; references retained for provenance.",
+    "dependencies": "No rendering framework, package, installer or external code installed. Existing FFmpeg/Sharp editor retained."
+  }
+}

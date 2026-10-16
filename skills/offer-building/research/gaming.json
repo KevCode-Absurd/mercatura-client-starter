@@ -1,0 +1,65 @@
+{
+  "at": "2026-10-02",
+  "model": "claude-sonnet-5-5",
+  "summary": "Games companies sell through pay-what-you-want tiers, bonus-laden virtual currency, and gifts that move across products. They also give away whole products free to build a habit, and they let buyers undo the purchase cheaply. Many of these offers reset on a schedule, so a customer who has already used one can be offered it again.",
+  "sources": [
+    "https://wou.edu/westernhowl/buy-games-help-kids-the-humble-bundle/",
+    "https://tech-insider.org/humble-bundle-vs-fanatical-vs-green-man-gaming-2026/",
+    "https://www.thesixthaxis.com/2026/05/16/the-epic-games-mega-sale-is-now-on-with-weekly-free-games/",
+    "https://store.epicgames.com/news/epic-games-mega-sale-buyers-guide",
+    "https://store.epicgames.com/en-US/news/epic-games-store-mega-sale-2025",
+    "https://www.thegamer.com/steam-refund-policy-change/",
+    "https://www.ldshop.gg/top-up/genshin-impact.html",
+    "https://www.joytify.com/en-us/genshin-impact"
+  ],
+  "patterns": [
+    {
+      "name": "Beat-the-average tiers",
+      "how": "The buyer picks the price, but the best items unlock only above the running average or at a fixed top tier. The average acts as a visible benchmark, so many people pay more than the $1 minimum to avoid getting the weaker set.",
+      "example": "Humble Bundle sells games in tiers: a minimum-price tier, a tier that requires beating the average price, and a top fixed-price tier that unlocks everything.",
+      "source": "https://wou.edu/westernhowl/buy-games-help-kids-the-humble-bundle/"
+    },
+    {
+      "name": "Buyer-controlled payment split",
+      "how": "At checkout the buyer decides how much of the payment goes to the creators, to charity, or to the platform. Choosing where the money goes makes the purchase feel like a good deed and not only a bargain.",
+      "example": "Humble Bundle checkout has a slider that splits the payment between developers, charities and the platform. One review notes the slider's default charity share is set low.",
+      "source": "https://tech-insider.org/humble-bundle-vs-fanatical-vs-green-man-gaming-2026/"
+    },
+    {
+      "name": "Free-to-keep weekly giveaway",
+      "how": "A store gives away complete games each week, and the buyer keeps them once claimed. This gets people to open the store on a schedule, builds their library on the platform, and puts paid items next to the free ones.",
+      "example": "The Epic Games Store runs weekly free games, and its May 2026 Mega Sale paired them with discounts of up to 75% off.",
+      "source": "https://www.thesixthaxis.com/2026/05/16/the-epic-games-mega-sale-is-now-on-with-weekly-free-games/"
+    },
+    {
+      "name": "Cross-product gift with purchase",
+      "how": "Buying one product unlocks a cosmetic item in a different product the buyer may already love. It adds value without cutting the price, and it pulls players of the other product toward the purchase.",
+      "example": "During the 2026 Epic Mega Sale, buying Super Meat Boy 3D gets you a Super Meat Boy Sidekick in Fortnite as a gift with purchase.",
+      "source": "https://store.epicgames.com/news/epic-games-mega-sale-buyers-guide"
+    },
+    {
+      "name": "Store-wide cashback credit",
+      "how": "A percentage of each purchase comes back as store credit that can only be spent in the same store. The buyer feels they are saving, and the credit is a reason to return and spend again.",
+      "example": "In 2025 Epic boosted Epic Rewards to 20% back at checkout during its Mega Sale, and keeps 20% back permanently on in-game purchases in Fortnite, Rocket League and Fall Guys. The boost was extended to Jan 8, 2026, so check it is still running.",
+      "source": "https://store.epicgames.com/en-US/news/epic-games-store-mega-sale-2025"
+    },
+    {
+      "name": "Playtime-based refund guarantee",
+      "how": "The buyer can get a refund if they have played under a set number of hours within a set number of days. Because the promise is tied to actual use, buying feels safe, and it still limits abuse.",
+      "example": "Steam refunds any game played for under two hours within 14 days of purchase. A recent change counts early-access hours toward that limit.",
+      "source": "https://www.thegamer.com/steam-refund-policy-change/"
+    },
+    {
+      "name": "Resetting first-purchase doubler",
+      "how": "The first purchase of each currency pack size gives double the currency, and the bonus resets on a schedule, such as an anniversary. This pushes buyers to try every pack size once, and lapsed spenders get a new reason to buy.",
+      "example": "Genshin Impact doubles the Genesis Crystals on a player's first purchase of each tier, and it announced a full reset of this bonus for its 6th anniversary after the 7.1 update.",
+      "source": "https://www.ldshop.gg/top-up/genshin-impact.html"
+    },
+    {
+      "name": "Bonus-currency price ladder",
+      "how": "Currency packs are priced so that bigger packs carry a much larger bonus, while the smallest pack has no bonus. In-game items are then priced in that currency, so the real cost is harder to compare, and buyers are nudged toward bigger packs.",
+      "example": "Genshin Impact's crystal packs run from 60 crystals at $0.99 up to 6480 plus a 1600 bonus at the top tier. The Welkin Moon pass is sold alongside at $4.99.",
+      "source": "https://www.joytify.com/en-us/genshin-impact"
+    }
+  ]
+}

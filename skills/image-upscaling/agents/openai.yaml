@@ -1,0 +1,4 @@
+interface:
+  display_name: "Image Upscaling"
+  short_description: "Increase resolution while preserving the approved shot"
+  default_prompt: "Use $image-upscaling to increase this approved image's resolution while preserving identity, product, composition and natural texture."

@@ -1,0 +1,9 @@
+# A complete long story beside a static image
+
+Keep one reader, problem, tense and argument. Begin inside the image's everyday moment with an opening that earns “See more”. Follow the task through concrete scenes: the inconvenience, reasonable workarounds, their supported limits and what the unresolved problem keeps costing. Research supplies vocabulary and supported patterns, not a licence to invent one customer's biography.
+
+Use brand-authored observation or conditional second-person narration. Illustrative scenes may show what could happen; make that perspective clear and keep it through the ending. Do not impersonate a customer, report invented purchases or first use, introduce a friend who recommended the product, or claim an ordinary day improved after using it. A source quote stays attributed, exact and within its supplied scope. The current brief may rule out testimonials entirely.
+
+Explain a cause only where the evidence supports it; otherwise describe the observable friction. Let practical hope rise through reasonable alternatives and their real tradeoffs, without inventing failed treatments or personal health history. Introduce the product at the stage's specified point as a supported option. Describe its verified format or action and why that addresses this reader's task; distinguish that mechanism from a promised personal outcome. Use only the permitted facts and qualified offer terms.
+
+Each paragraph adds a new scene, consequence, objection, explanation or proof and leads naturally to the next. Use paragraphs of two to five whole sentences, varied rhythm and concrete details relevant to the brief. Avoid headings, lists, repeated points and padding. Return to the opening task as a possible next step, never as an invented achieved result. Preserve the requested word range by developing the argument fully, not by manufacturing evidence.

@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHS Brand Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest:      #1E3A2F;
+      --forest-mid:  #2D5240;
+      --forest-dark: #152B22;
+      --amber:       #E07B39;
+      --amber-gold:  #DDA83C;
+      --terra:       #C4722A;
+      --cream:       #F5F0E8;
+      --cream-mid:   #EDE4D3;
+      --sage:        #7A9E7E;
+      --white:       #FFFFFF;
+      --border:      #D4C4A8;
+      --font-head:   'Josefin Sans', sans-serif;
+      --font-body:   'Source Sans Pro', system-ui, sans-serif;
+    }
+
+    @page { size: A4; margin: 0; }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--forest);
+      background: var(--white);
+    }
+
+    /* ---- Page breaks for PDF ---- */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 48px 56px;
+      page-break-after: always;
+      position: relative;
+    }
+    .page:last-child { page-break-after: auto; }
+
+    @media screen {
+      .page {
+        border: 1px solid #ddd;
+        margin-bottom: 24px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      }
+    }
+
+    /* ---- Cover ---- */
+    .cover {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: var(--forest);
+      color: var(--cream);
+      min-height: 297mm;
+    }
+    .cover__brand {
+      font-family: var(--font-head);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 24px;
+    }
+    .cover__title {
+      font-family: var(--font-head);
+      font-size: 48px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .cover__sub {
+      font-size: 16px;
+      color: rgba(245,240,232,0.65);
+      max-width: 42ch;
+    }
+    .cover__date {
+      position: absolute;
+      bottom: 48px;
+      font-size: 12px;
+      color: rgba(245,240,232,0.4);
+      letter-spacing: 0.08em;
+    }
+
+    /* ---- Section headers ---- */
+    .section-num {
+      font-family: var(--font-head);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 10px;
+      display: block;
+    }
+    h2 {
+      font-family: var(--font-head);
+      font-size: 32px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      color: var(--forest);
+      margin-bottom: 8px;
+    }
+    .section-intro {
+      font-size: 15px;
+      color: var(--forest-mid);
+      max-width: 56ch;
+      margin-bottom: 40px;
+      line-height: 1.65;
+    }
+    h3 {
+      font-family: var(--font-head);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--forest);
+      margin-bottom: 16px;
+      margin-top: 36px;
+    }
+    h3:first-of-type { margin-top: 0; }
+
+    /* ---- Color swatches ---- */
+    .swatches {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .swatch {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .swatch__color {
+      height: 72px;
+      display: flex;
+      align-items: flex-end;
+      padding: 8px 12px;
+    }
+    .swatch__info {
+      padding: 10px 12px;
+      background: var(--white);
+    }
+    .swatch__name {
+      font-family: var(--font-head);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--forest);
+    }
+    .swatch__hex {
+      font-family: monospace;
+      font-size: 12px;
+      color: var(--forest-mid);
+      margin-top: 2px;
+    }
+    .swatch__role {
+      font-size: 11px;
+      color: var(--sage);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* ---- Type specimens ---- */
+    .type-specimen {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px 24px;
+      margin-bottom: 16px;
+    }
+    .type-specimen__name {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 12px;
+    }
+    .type-specimen__sample-head {
+      font-family: var(--font-head);
+      font-size: 28px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      color: var(--forest);
+      margin-bottom: 6px;
+    }
+    .type-specimen__sample-body {
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--forest-mid);
+    }
+    .type-specimen__meta {
+      display: flex;
+      gap: 24px;
+      margin-top: 14px;
+      font-size: 11px;
+      color: var(--sage);
+      font-family: monospace;
+    }
+
+    /* ---- Scale table ---- */
+    .scale-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+    }
+    .scale-table th {
+      font-family: var(--font-head);
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--forest);
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 2px solid var(--forest);
+    }
+    .scale-table td {
+      padding: 10px 12px;
+      font-size: 13px;
+      color: var(--forest-mid);
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .scale-table td:first-child {
+      font-family: var(--font-head);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--forest);
+      white-space: nowrap;
+    }
+
+    /* ---- Pattern examples ---- */
+    .pattern-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .pattern-box {
+      border-radius: 10px;
+      padding: 24px 20px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .pattern-box--cream { background: var(--cream); color: var(--forest); }
+    .pattern-box--forest { background: var(--forest); color: var(--cream); }
+    .pattern-box__label {
+      font-family: var(--font-head);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .pattern-box--cream .pattern-box__label { color: var(--amber); }
+    .pattern-box--forest .pattern-box__label { color: var(--amber); }
+
+    /* ---- Button specimens ---- */
+    .btn-row {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .btn-specimen {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      font-family: var(--font-head);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-specimen--pill { border-radius: 999px; }
+    .btn-specimen--rounded { border-radius: 8px; }
+    .btn-specimen--amber { background: var(--amber); color: var(--white); }
+    .btn-specimen--forest { background: var(--forest); color: var(--white); }
+    .btn-specimen--outline { background: transparent; color: var(--forest); border: 1.5px solid var(--border); }
+    .btn-label {
+      font-size: 11px;
+      color: var(--sage);
+      font-family: monospace;
+    }
+
+    /* ---- Voice section ---- */
+    .voice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .voice-card {
+      border-radius: 10px;
+      padding: 20px;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+    .voice-card--do {
+      background: rgba(122,158,126,0.12);
+      border: 1px solid var(--sage);
+    }
+    .voice-card--dont {
+      background: rgba(224,123,57,0.08);
+      border: 1px solid rgba(224,123,57,0.3);
+    }
+    .voice-card__label {
+      font-family: var(--font-head);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+    }
+    .voice-card--do .voice-card__label { color: var(--sage); }
+    .voice-card--dont .voice-card__label { color: var(--amber); }
+    .voice-card p { color: var(--forest-mid); }
+    .voice-card p + p { margin-top: 8px; }
+
+    /* ---- Spacing tokens ---- */
+    .spacing-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+    .spacing-bar {
+      height: 20px;
+      background: var(--amber);
+      border-radius: 4px;
+      opacity: 0.7;
+    }
+    .spacing-label {
+      font-family: monospace;
+      font-size: 12px;
+      color: var(--forest-mid);
+      min-width: 80px;
+    }
+
+    /* ---- Footer ---- */
+    .page-footer {
+      position: absolute;
+      bottom: 32px;
+      left: 56px;
+      right: 56px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      color: var(--sage);
+      letter-spacing: 0.06em;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<div class="page cover">
+  <div class="cover__brand">Canine Health Solutions</div>
+  <h1 class="cover__title">Brand Guide</h1>
+  <p class="cover__sub">Visual identity and voice guidelines for the Earth &amp; Vitality design system.</p>
+  <div class="cover__date">April 2026 &middot; v1.0</div>
+</div>
+
+<!-- ============ PAGE 1: COLOR ============ -->
+<div class="page">
+  <span class="section-num">01 &mdash; Color</span>
+  <h2>Earth &amp; Vitality Palette</h2>
+  <p class="section-intro">The palette is built around two ideas: the deep greens of trust and nature, and the warm amber of energy and action. Cream ties them together as the neutral ground.</p>
+
+  <h3>Primary Colors</h3>
+  <div class="swatches">
+    <div class="swatch">
+      <div class="swatch__color" style="background:#1E3A2F;"></div>
+      <div class="swatch__info">
+        <div class="swatch__name">Forest</div>
+        <div class="swatch__hex">#1E3A2F</div>
+        <div class="swatch__role">Headings, dark sections, cards</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__color" style="background:#E07B39;"></div>
+      <div class="swatch__info">
+        <div class="swatch__name">Amber</div>
+        <div class="swatch__hex">#E07B39</div>
+        <div class="swatch__role">CTAs, eyebrows, checkmarks, stats</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__color" style="background:#F5F0E8;"></div>
+      <div class="swatch__info">
+        <div class="swatch__name">Cream</div>
+        <div class="swatch__hex">#F5F0E8</div>
+        <div class="swatch__role">Page background, light sections</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__color" style="background:#FFFFFF; border: 1px solid #EDE4D3;"></div>
+      <div class="swatch__info">
+        <div class="swatch__name">White</div>
+        <div class="swatch__hex">#FFFFFF</div>
+        <div class="swatch__role">Card backgrounds, inputs</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Supporting Colors</h3>
+  <div class="swatches">
+    <div class="swatch">
+      <div class="swatch__color" style="background:#2D5240;"></div>
+      <div class="swatch__info">
+        <div class="swatch__name">Forest Mid</div>
+        <div class="swatch__hex">#2D5240</div>
+        <div class="swatch__role">Body text, secondary content</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__color" style="background:#152B22;"></div>
+      <div class="swatch__info">
+        <div class="swatch__name">Forest Dark</div>
+        <div class="swatch__hex">#152B22</div>
+        <div class="swatch__role">Deep-dark sections</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__color" style="background:#C4722A;"></div>
+      <div class="swatch__info">
+        <div class="swatch__name">Terra</div>
+        <div class="swatch__hex">#C4722A</div>
+        <div class="swatch__role">CTA hover state</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__color" style="background:#7A9E7E;"></div>
+      <div class="swatch__info">
+        <div class="swatch__name">Sage</div>
+        <div class="swatch__hex">#7A9E7E</div>
+        <div class="swatch__role">Muted labels, meta text</div>
+      </div>
+    </div>
+  </div>
+  <div class="swatches" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="swatch">
+      <div class="swatch__color" style="background:#EDE4D3;"></div>
+      <div class="swatch__info">
+        <div class="swatch__name">Cream Mid</div>
+        <div class="swatch__hex">#EDE4D3</div>
+        <div class="swatch__role">Card tint, ticker strip bg</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__color" style="background:#DDA83C;"></div>
+      <div class="swatch__info">
+        <div class="swatch__name">Amber Gold</div>
+        <div class="swatch__hex">#DDA83C</div>
+        <div class="swatch__role">Selected state accents</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch__color" style="background:#D4C4A8;"></div>
+      <div class="swatch__info">
+        <div class="swatch__name">Border</div>
+        <div class="swatch__hex">#D4C4A8</div>
+        <div class="swatch__role">Borders, dividers, table rows</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Section Rhythm</h3>
+  <p style="font-size:13px; color:var(--forest-mid); margin-bottom:16px;">Sections alternate between cream and forest backgrounds. Never place two cream or two forest sections back-to-back.</p>
+  <div style="display:flex; gap:4px; height:40px; border-radius:8px; overflow:hidden; margin-bottom:8px;">
+    <div style="flex:1; background:var(--cream);"></div>
+    <div style="flex:1; background:var(--forest);"></div>
+    <div style="flex:1; background:var(--cream);"></div>
+    <div style="flex:1; background:var(--forest-dark);"></div>
+    <div style="flex:1; background:var(--cream);"></div>
+    <div style="flex:1; background:var(--forest);"></div>
+  </div>
+  <p style="font-size:11px; color:var(--sage); font-family:monospace;">cream → forest → cream → forest-dark → cream → forest</p>
+
+  <div class="page-footer">
+    <span>Canine Health Solutions</span>
+    <span>Brand Guide v1.0</span>
+  </div>
+</div>
+
+<!-- ============ PAGE 2: TYPOGRAPHY ============ -->
+<div class="page">
+  <span class="section-num">02 &mdash; Typography</span>
+  <h2>Two Fonts. Clear Roles.</h2>
+  <p class="section-intro">Josefin Sans is geometric, sharp, and uppercase. It speaks with authority. Source Sans Pro is clean and readable. It does the explaining.</p>
+
+  <div class="type-specimen">
+    <div class="type-specimen__name">Heading Font</div>
+    <div class="type-specimen__sample-head">Josefin Sans</div>
+    <div style="font-family:var(--font-head); font-size:14px; color:var(--forest-mid); letter-spacing:0.08em; text-transform:uppercase; margin-top:4px;">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789</div>
+    <div class="type-specimen__meta">
+      <span>Weights: 400, 600, 700</span>
+      <span>Always uppercase</span>
+      <span>Google Fonts</span>
+    </div>
+  </div>
+
+  <div class="type-specimen">
+    <div class="type-specimen__name">Body Font</div>
+    <div style="font-family:var(--font-body); font-size:24px; color:var(--forest); margin-bottom:6px;">Source Sans Pro</div>
+    <div class="type-specimen__sample-body">Eight herbs that calm the gut. Four mushrooms that rebuild immunity. One scoop a day, and your dog feels better while the gut actually heals.</div>
+    <div class="type-specimen__meta">
+      <span>Weights: 400, 600, 700</span>
+      <span>Sentence case</span>
+      <span>Google Fonts</span>
+    </div>
+  </div>
+
+  <h3>Type Scale</h3>
+  <table class="scale-table">
+    <thead>
+      <tr><th>Element</th><th>Font</th><th>Size</th><th>Weight</th><th>Style</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>H2 Title</td><td>Josefin Sans</td><td>36-44px</td><td>700</td><td>Uppercase, -0.01em tracking</td></tr>
+      <tr><td>H3 Subtitle</td><td>Josefin Sans</td><td>20-28px</td><td>700</td><td>Uppercase</td></tr>
+      <tr><td>Eyebrow</td><td>Josefin Sans</td><td>10-11px</td><td>700</td><td>Uppercase, 0.18em tracking</td></tr>
+      <tr><td>Body</td><td>Source Sans Pro</td><td>15-17px</td><td>400</td><td>Sentence case, 1.65 line-height</td></tr>
+      <tr><td>Small / Meta</td><td>Source Sans Pro</td><td>12-13px</td><td>600</td><td>Sentence case</td></tr>
+      <tr><td>Stat Number</td><td>Josefin Sans</td><td>48-56px</td><td>700</td><td>Amber color, -0.02em tracking</td></tr>
+      <tr><td>CTA Text</td><td>Josefin Sans</td><td>12-13px</td><td>700</td><td>Uppercase, 0.12em tracking</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Color on Background</h3>
+  <div class="pattern-row">
+    <div class="pattern-box pattern-box--cream">
+      <div class="pattern-box__label">On Cream</div>
+      <p>Headings: <strong style="color:var(--forest);">Forest #1E3A2F</strong></p>
+      <p>Body: <strong style="color:var(--forest-mid);">Forest Mid #2D5240</strong></p>
+      <p>Eyebrow: <strong style="color:var(--amber);">Amber #E07B39</strong></p>
+    </div>
+    <div class="pattern-box pattern-box--forest">
+      <div class="pattern-box__label">On Forest</div>
+      <p style="color:var(--white);">Headings: <strong>White #FFFFFF</strong></p>
+      <p style="color:rgba(255,255,255,0.88);">Body: <strong>White 88%</strong></p>
+      <p style="color:var(--amber);">Eyebrow: <strong>Amber #E07B39</strong></p>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Canine Health Solutions</span>
+    <span>Brand Guide v1.0</span>
+  </div>
+</div>
+
+<!-- ============ PAGE 3: COMPONENTS ============ -->
+<div class="page">
+  <span class="section-num">03 &mdash; Components</span>
+  <h2>Buttons, Cards, Spacing</h2>
+  <p class="section-intro">The building blocks. Everything uses the same radius, spacing, and shadow rules.</p>
+
+  <h3>Buttons</h3>
+  <div class="btn-row">
+    <a class="btn-specimen btn-specimen--pill btn-specimen--amber">Start Today</a>
+    <span class="btn-label">Primary CTA &middot; pill &middot; amber bg &middot; border-radius: 999px</span>
+  </div>
+  <div class="btn-row">
+    <a class="btn-specimen btn-specimen--rounded btn-specimen--amber">Add to Cart</a>
+    <span class="btn-label">Cart CTA &middot; rounded &middot; amber bg &middot; border-radius: 8px</span>
+  </div>
+  <div class="btn-row">
+    <a class="btn-specimen btn-specimen--rounded btn-specimen--forest">Select</a>
+    <span class="btn-label">Selected state &middot; forest bg &middot; white text</span>
+  </div>
+  <div class="btn-row">
+    <a class="btn-specimen btn-specimen--rounded btn-specimen--outline">30 Day</a>
+    <span class="btn-label">Unselected option &middot; border only &middot; border-radius: 8px</span>
+  </div>
+
+  <h3>Border Radius</h3>
+  <table class="scale-table">
+    <thead><tr><th>Element</th><th>Radius</th></tr></thead>
+    <tbody>
+      <tr><td>Cards, Sections</td><td>12-16px</td></tr>
+      <tr><td>Buttons, Inputs, Pills</td><td>8px (rounded) or 999px (pill)</td></tr>
+      <tr><td>Badges</td><td>4px</td></tr>
+      <tr><td>Avatars</td><td>50% (circle)</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Spacing Scale</h3>
+  <div style="margin-bottom:24px;">
+    <div class="spacing-row"><span class="spacing-label">8px</span><div class="spacing-bar" style="width:32px;"></div></div>
+    <div class="spacing-row"><span class="spacing-label">12px</span><div class="spacing-bar" style="width:48px;"></div></div>
+    <div class="spacing-row"><span class="spacing-label">16px</span><div class="spacing-bar" style="width:64px;"></div></div>
+    <div class="spacing-row"><span class="spacing-label">24px</span><div class="spacing-bar" style="width:96px;"></div></div>
+    <div class="spacing-row"><span class="spacing-label">32px</span><div class="spacing-bar" style="width:128px;"></div></div>
+    <div class="spacing-row"><span class="spacing-label">48px</span><div class="spacing-bar" style="width:192px;"></div></div>
+    <div class="spacing-row"><span class="spacing-label">56px (head mb)</span><div class="spacing-bar" style="width:224px;"></div></div>
+    <div class="spacing-row"><span class="spacing-label">80px (section py)</span><div class="spacing-bar" style="width:320px;"></div></div>
+  </div>
+
+  <h3>Cards</h3>
+  <p style="font-size:13px; color:var(--forest-mid); margin-bottom:12px;">Two card styles. Pick based on background:</p>
+  <div class="pattern-row">
+    <div class="pattern-box" style="background:var(--white); border:1px solid var(--border); border-radius:16px;">
+      <div class="pattern-box__label" style="color:var(--forest);">On Cream Sections</div>
+      <p style="color:var(--forest-mid);">White bg + 1px border (#D4C4A8). No shadow or subtle shadow only.</p>
+    </div>
+    <div class="pattern-box" style="background:var(--cream-mid); border-radius:16px;">
+      <div class="pattern-box__label" style="color:var(--forest);">Tinted Card</div>
+      <p style="color:var(--forest-mid);">Cream-mid bg, no border. Used for dual-value cards and feature boxes.</p>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Canine Health Solutions</span>
+    <span>Brand Guide v1.0</span>
+  </div>
+</div>
+
+<!-- ============ PAGE 4: VOICE ============ -->
+<div class="page">
+  <span class="section-num">04 &mdash; Voice</span>
+  <h2>How CHS Sounds</h2>
+  <p class="section-intro">CHS talks like a friend who happens to know a lot about dog health. Direct, specific, a little blunt. Never like a press release.</p>
+
+  <h3>Voice Principles</h3>
+  <table class="scale-table">
+    <thead><tr><th>Principle</th><th>What It Means</th></tr></thead>
+    <tbody>
+      <tr><td>Direct</td><td>Say what it does. "Slippery elm coats the gut lining." Not "Known for its soothing properties, slippery elm helps to coat the digestive tract."</td></tr>
+      <tr><td>Specific</td><td>Concrete details over vague claims. "Firms up loose stools" beats "supports digestive health." Names, numbers, timelines.</td></tr>
+      <tr><td>Has Edges</td><td>Be against something. "No spray-dried bacteria that die before they reach the gut." Not just positive. Real opinions.</td></tr>
+      <tr><td>Short</td><td>One idea per sentence. If a sentence has a comma and a present participle, it's probably doing too much. Split it.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Do / Don't</h3>
+  <div class="voice-grid">
+    <div class="voice-card voice-card--do">
+      <div class="voice-card__label">Do</div>
+      <p>"Coats the gut lining. Soothes the kind of irritation that turns into runny stools."</p>
+    </div>
+    <div class="voice-card voice-card--dont">
+      <div class="voice-card__label">Don't</div>
+      <p>"Known for its soothing properties, slippery elm helps to coat the digestive tract, providing relief from irritation and promoting gut health."</p>
+    </div>
+  </div>
+  <div class="voice-grid">
+    <div class="voice-card voice-card--do">
+      <div class="voice-card__label">Do</div>
+      <p>"Energy and stamina. The 'old dog who suddenly acts young again' ingredient."</p>
+    </div>
+    <div class="voice-card voice-card--dont">
+      <div class="voice-card__label">Don't</div>
+      <p>"This powerful mushroom supports energy levels and overall vitality, helping your dog stay active and healthy."</p>
+    </div>
+  </div>
+  <div class="voice-grid">
+    <div class="voice-card voice-card--do">
+      <div class="voice-card__label">Do</div>
+      <p>"No fillers, no spray-dried bacteria, no vague proprietary blend. Twelve real ingredients you can pronounce."</p>
+    </div>
+    <div class="voice-card voice-card--dont">
+      <div class="voice-card__label">Don't</div>
+      <p>"Our commitment to quality ensures that every ingredient is carefully selected to support your dog's overall wellness journey."</p>
+    </div>
+  </div>
+
+  <h3>Words to Avoid</h3>
+  <p style="font-size:13px; color:var(--forest-mid); margin-bottom:12px;">These words flag copy as AI-written. Use sparingly or not at all:</p>
+  <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:20px;">
+    <span style="background:rgba(224,123,57,0.1); border:1px solid rgba(224,123,57,0.25); border-radius:4px; padding:4px 10px; font-size:12px; color:var(--forest);">enhance</span>
+    <span style="background:rgba(224,123,57,0.1); border:1px solid rgba(224,123,57,0.25); border-radius:4px; padding:4px 10px; font-size:12px; color:var(--forest);">foster</span>
+    <span style="background:rgba(224,123,57,0.1); border:1px solid rgba(224,123,57,0.25); border-radius:4px; padding:4px 10px; font-size:12px; color:var(--forest);">showcase</span>
+    <span style="background:rgba(224,123,57,0.1); border:1px solid rgba(224,123,57,0.25); border-radius:4px; padding:4px 10px; font-size:12px; color:var(--forest);">crucial</span>
+    <span style="background:rgba(224,123,57,0.1); border:1px solid rgba(224,123,57,0.25); border-radius:4px; padding:4px 10px; font-size:12px; color:var(--forest);">journey</span>
+    <span style="background:rgba(224,123,57,0.1); border:1px solid rgba(224,123,57,0.25); border-radius:4px; padding:4px 10px; font-size:12px; color:var(--forest);">vibrant</span>
+    <span style="background:rgba(224,123,57,0.1); border:1px solid rgba(224,123,57,0.25); border-radius:4px; padding:4px 10px; font-size:12px; color:var(--forest);">renowned</span>
+    <span style="background:rgba(224,123,57,0.1); border:1px solid rgba(224,123,57,0.25); border-radius:4px; padding:4px 10px; font-size:12px; color:var(--forest);">delve</span>
+    <span style="background:rgba(224,123,57,0.1); border:1px solid rgba(224,123,57,0.25); border-radius:4px; padding:4px 10px; font-size:12px; color:var(--forest);">pivotal</span>
+    <span style="background:rgba(224,123,57,0.1); border:1px solid rgba(224,123,57,0.25); border-radius:4px; padding:4px 10px; font-size:12px; color:var(--forest);">testament</span>
+    <span style="background:rgba(224,123,57,0.1); border:1px solid rgba(224,123,57,0.25); border-radius:4px; padding:4px 10px; font-size:12px; color:var(--forest);">holistic</span>
+    <span style="background:rgba(224,123,57,0.1); border:1px solid rgba(224,123,57,0.25); border-radius:4px; padding:4px 10px; font-size:12px; color:var(--forest);">empower</span>
+    <span style="background:rgba(224,123,57,0.1); border:1px solid rgba(224,123,57,0.25); border-radius:4px; padding:4px 10px; font-size:12px; color:var(--forest);">seamless</span>
+    <span style="background:rgba(224,123,57,0.1); border:1px solid rgba(224,123,57,0.25); border-radius:4px; padding:4px 10px; font-size:12px; color:var(--forest);">meticulous</span>
+  </div>
+
+  <h3>Sentence Patterns to Avoid</h3>
+  <table class="scale-table">
+    <thead><tr><th>Pattern</th><th>Why It's Bad</th></tr></thead>
+    <tbody>
+      <tr><td>"Known for its..."</td><td>Vague attribution. Who knows? Say what it does instead.</td></tr>
+      <tr><td>"...ensuring/promoting/contributing to..."</td><td>Present-participle filler. The sentence said nothing after the comma.</td></tr>
+      <tr><td>"Not just X, but Y"</td><td>LLM crutch. Just say Y.</td></tr>
+      <tr><td>"supports overall wellness"</td><td>The single most overused phrase in supplement copy. Be specific or delete.</td></tr>
+      <tr><td>"This [adj] [noun]..."</td><td>"This powerful mushroom..." "This unique formula..." — empty adjective + category noun. Name the thing.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="page-footer">
+    <span>Canine Health Solutions</span>
+    <span>Brand Guide v1.0</span>
+  </div>
+</div>
+
+<!-- ============ PAGE 5: QUICK REFERENCE ============ -->
+<div class="page">
+  <span class="section-num">05 &mdash; Quick Reference</span>
+  <h2>Cheat Sheet</h2>
+  <p class="section-intro">Everything on one page. Pin this above your desk.</p>
+
+  <h3>Colors</h3>
+  <div style="display:flex; gap:8px; margin-bottom:24px;">
+    <div style="width:48px; height:48px; border-radius:8px; background:#1E3A2F;" title="Forest"></div>
+    <div style="width:48px; height:48px; border-radius:8px; background:#2D5240;" title="Forest Mid"></div>
+    <div style="width:48px; height:48px; border-radius:8px; background:#152B22;" title="Forest Dark"></div>
+    <div style="width:48px; height:48px; border-radius:8px; background:#E07B39;" title="Amber"></div>
+    <div style="width:48px; height:48px; border-radius:8px; background:#C4722A;" title="Terra"></div>
+    <div style="width:48px; height:48px; border-radius:8px; background:#DDA83C;" title="Amber Gold"></div>
+    <div style="width:48px; height:48px; border-radius:8px; background:#F5F0E8; border:1px solid #D4C4A8;" title="Cream"></div>
+    <div style="width:48px; height:48px; border-radius:8px; background:#EDE4D3;" title="Cream Mid"></div>
+    <div style="width:48px; height:48px; border-radius:8px; background:#7A9E7E;" title="Sage"></div>
+    <div style="width:48px; height:48px; border-radius:8px; background:#D4C4A8;" title="Border"></div>
+  </div>
+
+  <h3>Fonts</h3>
+  <p style="font-size:13px; color:var(--forest-mid); margin-bottom:8px;"><strong>Josefin Sans 700</strong> &mdash; headings, eyebrows, CTAs, stats. Always uppercase.</p>
+  <p style="font-size:13px; color:var(--forest-mid); margin-bottom:24px;"><strong>Source Sans Pro 400/600</strong> &mdash; body text, descriptions, labels. Sentence case.</p>
+
+  <h3>Section Pattern</h3>
+  <p style="font-size:13px; color:var(--forest-mid); margin-bottom:8px;">Each section: <strong>Eyebrow</strong> (amber, 11px) &rarr; <strong>H2 Title</strong> (forest/white, 40px) &rarr; <strong>Subtitle</strong> (forest-mid/white-high, 17px) &rarr; <strong>Content</strong></p>
+  <p style="font-size:13px; color:var(--forest-mid); margin-bottom:24px;">Centered head block, max-width 680px. Content max-width 1100px. 80px vertical padding (56px on mobile).</p>
+
+  <h3>CTA Hierarchy</h3>
+  <p style="font-size:13px; color:var(--forest-mid); margin-bottom:8px;">1. <strong>Amber pill</strong> (primary: Start Today, Add to Cart)</p>
+  <p style="font-size:13px; color:var(--forest-mid); margin-bottom:8px;">2. <strong>Forest filled</strong> (selected states)</p>
+  <p style="font-size:13px; color:var(--forest-mid); margin-bottom:24px;">3. <strong>Border outline</strong> (unselected options)</p>
+
+  <h3>Voice in Five Words</h3>
+  <p style="font-family:var(--font-head); font-size:20px; font-weight:700; text-transform:uppercase; color:var(--forest); letter-spacing:0.04em; margin-bottom:8px;">Direct. Specific. Short. Opinionated. Real.</p>
+  <p style="font-size:13px; color:var(--forest-mid);">If a sentence ends with "...promoting overall wellness" or "...contributing to a healthy gut," delete everything after the last period.</p>
+
+  <div class="page-footer">
+    <span>Canine Health Solutions</span>
+    <span>Brand Guide v1.0</span>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ecomOS idea record",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["id", "title", "domain", "bottleneck", "lever", "hypothesis", "applies_when", "signal", "expected_effect", "effort", "cost", "risk", "prerequisites", "steps", "test", "sources", "confidence", "general_practice"],
+    "properties": {
+      "id": {"type": "string", "pattern": "^[A-Z]{3,5}-[0-9]{3}$"},
+      "title": {"type": "string", "minLength": 8, "maxLength": 110},
+      "domain": {"type": "string", "pattern": "^[0-9]{2}-[A-Za-z]+"},
+      "bottleneck": {"type": "array", "minItems": 1, "maxItems": 3, "items": {"enum": ["acquisition_volume", "acquisition_efficiency", "conversion", "aov", "repeat_retention", "margin_cogs", "cash_inventory", "fulfilment_cx", "trust_brand", "site_speed", "measurement_data", "team_capacity", "risk_compliance"]}},
+      "lever": {"type": "string", "minLength": 3, "maxLength": 60},
+      "hypothesis": {"type": "string", "minLength": 20, "maxLength": 400},
+      "applies_when": {"type": "array", "minItems": 1, "items": {"enum": ["any", "hero_sku", "catalogue", "low_aov", "high_aov", "subscription", "one_off", "marketplace_heavy", "dtc_only", "luxury_considered", "impulse", "india_mobile", "us", "shopify", "custom_platform", "paid_social_led", "organic_led", "new_store", "scaling_store"]}},
+      "does_not_apply_when": {"type": "array", "items": {"type": "string", "maxLength": 120}},
+      "signal": {"type": "object", "additionalProperties": false, "required": ["check", "metrics"], "properties": {"check": {"type": "string", "minLength": 10, "maxLength": 400}, "metrics": {"type": "array", "items": {"type": "string", "pattern": "^[a-z0-9_]+$|^other:[a-z0-9_]+$"}}}},
+      "expected_effect": {"type": "object", "additionalProperties": false, "required": ["metric", "direction", "size", "basis"], "properties": {"metric": {"type": "string", "pattern": "^[a-z0-9_]+$|^other:[a-z0-9_]+$"}, "direction": {"enum": ["up", "down"]}, "size": {"type": "string", "maxLength": 200}, "basis": {"enum": ["measured", "source_claim", "general_practice"]}}},
+      "effort": {"type": "object", "additionalProperties": false, "required": ["size", "owner"], "properties": {"size": {"enum": ["S", "M", "L"]}, "owner": {"enum": ["dev", "marketer", "designer", "ops", "founder", "agency", "finance", "support", "sourcing"]}}},
+      "cost": {"enum": ["none", "low", "medium", "high"]},
+      "risk": {"type": "object", "additionalProperties": false, "required": ["level", "reversible", "note"], "properties": {"level": {"enum": ["low", "medium", "high"]}, "reversible": {"type": "boolean"}, "note": {"type": "string", "maxLength": 300}}},
+      "prerequisites": {"type": "array", "items": {"type": "string", "maxLength": 160}},
+      "steps": {"type": "array", "minItems": 2, "maxItems": 8, "items": {"type": "string", "minLength": 8, "maxLength": 260}},
+      "test": {"type": "object", "additionalProperties": false, "required": ["method", "measure", "read_point"], "properties": {"method": {"type": "string", "maxLength": 300}, "measure": {"type": "string", "maxLength": 200}, "read_point": {"type": "string", "maxLength": 200}}},
+      "sources": {"type": "object", "additionalProperties": false, "required": ["mini_playbooks", "cards", "rules"], "properties": {"mini_playbooks": {"type": "array", "items": {"type": "string", "pattern": "^[0-9]{2}[a-z]?$"}}, "cards": {"type": "array", "items": {"type": "string", "pattern": "^[0-9a-f]{10,24}$"}}, "rules": {"type": "array", "items": {"type": "string", "pattern": "^(R|P|F|C)[0-9]+[a-z]?$"}}}},
+      "confidence": {"enum": ["high", "medium", "low"]},
+      "general_practice": {"type": "boolean"}
+    }
+  }
+}

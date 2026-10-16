@@ -1,0 +1,53 @@
+{
+  "skill_name": "talking-object-ad",
+  "note": "Rewritten in the skill pass of 2026-10-05. The 3 brands are made up. Each prompt gives the facts a brand brain would hold; anything not given is blank and must be asked for or marked inferred, never invented.",
+  "evals": [
+    {
+      "id": 0,
+      "eval_name": "consumable-result-not-visible",
+      "prompt": "Brand: an evening drink powder in a matte lilac tub with a scoop. Facts: 300 mg magnesium glycinate per scoop, no melatonin, 30 nights to send it back. Visible result: nothing visible. Awareness: problem-aware. Customer language: 'I was taking 4 different things before bed', 'wired at 11pm'. The moment: the bedside table, 11 at night. Make a 10-second talking object ad.",
+      "expected_output": "A witness or the thing it replaces is chosen (a bedside lamp, or 1 of the half-used pots), never the tub of the product and never a body part. 1 fixed character sentence, the place and light, the product at the frame's edge from its photo, a 10-second monologue of about 24 words, the stills to approve, 1 clip.",
+      "assertions": [
+        { "name": "object_is_not_the_product", "description": "The talking object is not the product and the product is given no face" },
+        { "name": "problem_object_not_used", "description": "Because the visible result is 'nothing visible', the problem itself is not chosen as the object, and no body part, organ or symptom talks" },
+        { "name": "choice_is_reasoned_from_the_brain", "description": "The choice of object cites the awareness level, the moment or the customer language given" },
+        { "name": "character_sentence_complete", "description": "The character sentence gives the object and material, its visible state, where the face sits, eyes, eyebrows, mouth, and arms or 'no arms'" },
+        { "name": "no_studio_named", "description": "The look is described and no studio, film, game or known character is named" },
+        { "name": "monologue_rules", "description": "First person, about 24 words, never 'you', no call to action, no price, ends on a line that lands" },
+        { "name": "no_unseen_result", "description": "The object states no result inside a body (sleep, calm, energy) and no number that is not in the given facts" },
+        { "name": "stills_before_clip", "description": "A character picture and an opening frame are to be approved before the clip, with the product's photo tagged with its job" }
+      ],
+      "files": []
+    },
+    {
+      "id": 1,
+      "eval_name": "durable-thing-it-replaces",
+      "prompt": "Brand: a 28 cm 5-ply stainless steel frying pan with no coating and a lifetime guarantee. Visible result: food releases once the pan is hot; no coating to wear off. Awareness: solution-aware, the market has heard every claim. Customer language: 'I bin a non-stick every 18 months'. What they tried before: non-stick pans, replaced every 1 to 2 years. Make a 20-second talking object ad.",
+      "expected_output": "The thing it replaces is chosen: an unbranded scratched non-stick pan, in a confession or existential tone. 2 clips of 10 seconds. The steel pan is beside it from the first frame and is looked at in the last clip.",
+      "assertions": [
+        { "name": "object_is_the_replaced_thing", "description": "The object is a generic non-stick pan with visible damage, with no brand's shape, colour or name" },
+        { "name": "damage_is_shown", "description": "The character sentence describes the damage as something seen (scratched coating, loose handle)" },
+        { "name": "faults_are_supported", "description": "The faults it admits are ones anyone can see or that the given facts state; no health claim about coatings is made" },
+        { "name": "product_in_frame_from_start", "description": "The product is at the edge of the frame from the first frame, faceless, and the object's eyes go to it at the turn" },
+        { "name": "two_clips_one_turn", "description": "2 clips of about 10 seconds and about 24 words each, with the turn only in the last clip" },
+        { "name": "mouth_and_place", "description": "Each beat says the mouth moves with the words, and the object stays in its place" },
+        { "name": "offer_not_spoken", "description": "The guarantee or offer is on-screen text on the last shot, not said by the object" }
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "eval_name": "skincare-blank-fields",
+      "prompt": "Brand: a vitamin C face serum in a 30 ml amber glass dropper bottle. Facts: 15% vitamin C. No avatar, no customer language and no 'The moment' are filled in. Make a talking object ad.",
+      "expected_output": "The skill asks for what is in the room when the problem shows, or proposes a witness marked 'inferred' (a bathroom shelf object), and does not invent a customer or a result. No mirror, no skin and no blemish is the object.",
+      "assertions": [
+        { "name": "asks_or_marks_inferred", "description": "The blank fields are asked for, or the choice is marked 'inferred'; no customer quote or home detail is invented as fact" },
+        { "name": "no_mirror_no_body", "description": "The object is not a mirror or a screen, and not skin, a spot, a wrinkle or any body part" },
+        { "name": "no_skin_result_claimed", "description": "The monologue states no change to anyone's skin" },
+        { "name": "label_kept", "description": "The serum bottle keeps its real label from its photo and has no face" },
+        { "name": "tone_from_brand_voice", "description": "With no voice given, the tone is confession or fact-drop and is marked 'inferred'" }
+      ],
+      "files": []
+    }
+  ]
+}

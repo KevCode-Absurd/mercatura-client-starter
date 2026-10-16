@@ -1,0 +1,142 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ForeplayVideoAnalysis",
+  "description": "Structured extraction schema for Gemini 2.5 Flash video analysis. Force JSON output mode. Null any field that cannot be determined from the video alone. Do not infer beyond what is visible or audible.",
+  "type": "object",
+  "required": [
+    "hook_type",
+    "hook_first_3s",
+    "format",
+    "claim_primary",
+    "objection_handled",
+    "cta_softness",
+    "production_tier",
+    "duration_seconds",
+    "why_it_works"
+  ],
+  "properties": {
+    "hook_type": {
+      "type": "string",
+      "enum": [
+        "POV",
+        "problem-statement",
+        "pattern-interrupt",
+        "claim",
+        "question",
+        "demo",
+        "transformation",
+        "founder-pitch",
+        "stitch-react",
+        "other"
+      ],
+      "description": "The dominant hook archetype in seconds 0-3."
+    },
+    "hook_first_3s": {
+      "type": "string",
+      "description": "Verbatim transcript of any spoken audio in seconds 0-3, OR a literal visual description of what's on screen if no audio. Do not paraphrase. Do not editorialize."
+    },
+    "format": {
+      "type": "string",
+      "enum": [
+        "UGC talking-head",
+        "UGC product demo",
+        "founder-led to camera",
+        "satisfying product demonstration",
+        "b-roll montage",
+        "before-after transformation",
+        "split-screen comparison",
+        "tutorial educational",
+        "POV creator",
+        "stitch react",
+        "customer review compilation reel",
+        "animation kinetic-typography",
+        "mascot or character-led",
+        "static image",
+        "carousel",
+        "DCO",
+        "other"
+      ],
+      "description": "Visual format archetype. Pick the most accurate match. ACCURACY MATTERS — common errors to avoid: (1) Do NOT label as 'UGC talking-head' if there is no face speaking directly to camera. A voiceover over product b-roll is NOT talking-head; it's 'satisfying product demonstration' or 'b-roll montage'. (2) 'UGC talking-head' requires a person's face visible and speaking AT the camera. (3) 'UGC product demo' requires the product being used or applied on camera, hands visible. (4) 'Satisfying product demonstration' = product action is the visual subject, no face talking to camera, often slow-motion or ASMR-coded, voiceover (if any) narrates sensation/result not instructions. (5) 'Founder-led to camera' requires the speaker to be identifiable as the brand founder, not a generic creator. (6) 'Tutorial educational' requires explicit numbered or sequenced steps with teaching intent. When two formats could apply, pick the more specific one based on these rules."
+    },
+    "claim_primary": {
+      "type": "string",
+      "description": "The single most prominent benefit or claim the ad leads with. Verbatim if spoken or shown on screen. One sentence."
+    },
+    "claim_secondary": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Supporting claims, up to 3. Verbatim. Empty array if none."
+    },
+    "objection_handled": {
+      "type": "string",
+      "enum": ["price", "skepticism", "efficacy", "fit", "convenience", "trust", "other", "none"],
+      "description": "The primary objection the ad addresses. Pick 'none' if the ad doesn't engage any objection."
+    },
+    "social_proof_type": {
+      "type": ["string", "null"],
+      "enum": ["testimonial", "before-after", "review-screenshot", "influencer", "press", "UGC-stitch", "user-count", "none", null],
+      "description": "Type of social proof used. Null if absent."
+    },
+    "cta_timing_pct": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Where in the video duration the primary CTA appears, as a percentage. Null if no clear CTA."
+    },
+    "cta_softness": {
+      "type": "string",
+      "enum": ["hard", "soft", "educational", "none"],
+      "description": "Hard = direct purchase ask. Soft = 'check it out', 'learn more'. Educational = no ask, ends on insight."
+    },
+    "cta_text": {
+      "type": ["string", "null"],
+      "description": "Verbatim CTA wording (on-screen text or spoken). Null if no CTA."
+    },
+    "production_tier": {
+      "type": "string",
+      "enum": ["raw iPhone UGC", "mid-tier creator", "agency-produced", "CGI", "AI-generated"],
+      "description": "Best inference of production tier from camera quality, editing polish, lighting, and overall fidelity."
+    },
+    "visible_text_overlay": {
+      "type": "object",
+      "properties": {
+        "present": {"type": "boolean"},
+        "style": {
+          "type": "string",
+          "enum": ["kinetic", "static", "captions-only", "none"]
+        }
+      },
+      "required": ["present", "style"]
+    },
+    "music_register": {
+      "type": "string",
+      "enum": ["trending-audio", "generic-stock", "branded", "voiceover-only", "none"],
+      "description": "What's the audio bed doing?"
+    },
+    "duration_seconds": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Total video duration."
+    },
+    "spoken_transcript": {
+      "type": ["string", "null"],
+      "description": "Full verbatim transcript of all spoken audio. Null if no voiceover."
+    },
+    "visual_beats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["time_s", "description"],
+        "properties": {
+          "time_s": {"type": "number"},
+          "description": {"type": "string"}
+        }
+      },
+      "description": "Major visual beat changes. Up to 8 entries. Each = a moment where the shot, framing, or subject meaningfully changes."
+    },
+    "why_it_works": {
+      "type": "string",
+      "description": "1 to 2 sentences explaining the creative mechanism, grounded in what's visible on screen. No vague platitudes. Reference the specific hook, claim, or beat that does the work."
+    }
+  }
+}
