@@ -64,4 +64,4 @@ Measure accepted outputs, distinct approved concepts, factual defects, total spe
 
 The `/connections` screen is a preparation checklist. It does not connect accounts. Follow the implementation plan to build hosted identity, OAuth, encrypted credentials, ingestion and permission enforcement before shared team use. Tomorrow you can collect account IDs, client authorization, scope requirements and a small test export while the standalone creative pilot runs.
 
-Read `docs/PLATFORM-IMPLEMENTATION-PLAN.md` for the India hosting choice, connection runbooks, tenant model, costs and staged release gates. Never put credentials in Slack, Git, prompts or client documents.
+Read `docs/PLATFORM-IMPLEMENTATION-PLAN.md` for the US launch and India hosting options, connection runbooks, tenant model, current costs and staged release gates. Never put credentials in Slack, Git, prompts or client documents.

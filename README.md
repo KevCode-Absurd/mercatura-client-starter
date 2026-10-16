@@ -19,11 +19,13 @@ Brand intake, resource preparation, creative planning, image and script workflow
 
 This is a single-operator local app using SQLite and filesystem storage. It has no hosted team authentication, enforced agency authorization, marketing-data ingestion workers, production OAuth installation flows, Slack installation, hosted cost reservations or live subscription billing. The platform folder is a design scaffold, not an activated service. DATABASE_URL and future OAuth fields are placeholders until adapters and the migration are implemented.
 
-Do not deploy the local app publicly for multiple clients. The complete India-first implementation plan explains the staged replacement of these boundaries and the tests required before team access.
+Do not deploy the local app publicly for multiple clients. The revised US-market implementation plan with an India option explains the staged replacement of these boundaries and the tests required before team access.
 
 ## Documentation
 
-- docs/PLATFORM-IMPLEMENTATION-PLAN.md - architecture, connections, scaling, cost and commercial plan.
+- docs/PLATFORM-IMPLEMENTATION-PLAN.md - revised US-market architecture, named platform deep dive, current pricing, scaling and commercial plan.
+- docs/cost-calculator.html - offline component and accepted-output cost calculator.
+- docs/vendor-pricing-2026-10-16.json - dated official-source pricing snapshot.
 - docs/guide/01-start-here.md - practical first-client workflow and quality brief examples.
 - docs/SECURITY-AND-DATA.md - data boundaries and release gates.
 - platform/ - typed adapter contracts and illustrative Postgres schema.

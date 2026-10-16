@@ -1,0 +1,125 @@
+{
+  "checkedAt": "2026-10-16",
+  "currency": "USD",
+  "taxIncluded": false,
+  "note": "Published reference rates, not measured app costs or a live feed. Monthly unless annualEquivalent explicitly stated. Confirm checkout, region, entitlements and usage before purchase.",
+  "railway": {
+    "source": "https://railway.com/pricing",
+    "regionsSource": "https://docs.railway.com/deployments/regions",
+    "proMinimumIncludingCredit": 20,
+    "memoryPerGbSecond": 3.86e-06,
+    "cpuPerVcpuSecond": 7.72e-06,
+    "serviceEgressPerGb": 0.05,
+    "bucketPerGbMonth": 0.015
+  },
+  "neon": {
+    "source": "https://neon.com/pricing",
+    "launchPerCuHour": 0.106,
+    "databasePerGbMonth": 0.35,
+    "historyPerGbMonth": 0.2,
+    "extraBranchPerHour": 0.002,
+    "regionSource": "https://neon.com/docs/introduction/regions"
+  },
+  "clerk": {
+    "source": "https://clerk.com/pricing",
+    "proMonthly": 25,
+    "proAnnualEquivalent": 20,
+    "b2bMonthly": 100,
+    "b2bAnnualEquivalent": 85,
+    "includedMru": 50000,
+    "includedMro": 100,
+    "firstMruOverage": 0.02,
+    "firstMroOverage": 1,
+    "note": "Graduated bands apply above 100K MRU and 1K MRO. Enhanced B2B required when exceeding MRO allowance."
+  },
+  "firecrawl": {
+    "source": "https://www.firecrawl.dev/pricing",
+    "freeMonthlyCredits": 1000,
+    "hobbyMonthly": 19,
+    "hobbyAnnualEquivalent": 16,
+    "hobbyCredits": 5000,
+    "standardAnnualEquivalent": 83,
+    "standardCredits": 100000,
+    "growthAnnualEquivalent": 333,
+    "growthCredits": 500000,
+    "scaleAnnualEquivalent": 599,
+    "scaleCredits": 1000000,
+    "largerMonthlyCheckout": "Not verified; annual-equivalent display fetched.",
+    "note": "Endpoint credits vary; autonomous Agent dynamic. Advanced extraction adds credits."
+  },
+  "trigger": {
+    "source": "https://trigger.dev/pricing",
+    "hobbyMonthlyIncludingCredit": 10,
+    "proMonthlyIncludingCredit": 50,
+    "small1xPerSecond": 3.38e-05,
+    "perInvocation": 2.5e-05
+  },
+  "supabase": {
+    "source": "https://supabase.com/pricing",
+    "proBase": 25,
+    "computeCredit": 10,
+    "pitrStartsMonthly": 100
+  },
+  "inngest": {
+    "source": "https://www.inngest.com/pricing",
+    "proStartsMonthly": 99,
+    "includedProExecutions": 1000000
+  },
+  "upstashRedis": {
+    "source": "https://upstash.com/pricing/redis",
+    "per100kCommands": 0.2
+  },
+  "qstash": {
+    "source": "https://upstash.com/pricing/qstash",
+    "per100kDeliveryAttempts": 1
+  },
+  "r2": {
+    "source": "https://developers.cloudflare.com/r2/pricing/",
+    "standardPerGbMonth": 0.015,
+    "classAPerMillion": 4.5,
+    "classBPerMillion": 0.36,
+    "note": "Before free allowances; location hints are not country guarantees."
+  },
+  "workos": {
+    "source": "https://workos.com/pricing",
+    "authKitIncludedMau": 1000000,
+    "firstSsoConnectionBandMonthly": 125
+  },
+  "vercel": {
+    "source": "https://vercel.com/pricing",
+    "proDeveloperSeatMonthly": 20,
+    "note": "Usage and add-ons separate; credit rules apply."
+  },
+  "render": {
+    "source": "https://render.com/pricing",
+    "numericPricingVerified": false
+  },
+  "inference": {
+    "openaiSource": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+    "claudeSource": "https://platform.claude.com/docs/en/about-claude/pricing",
+    "googleSource": "https://ai.google.dev/gemini-api/docs/pricing",
+    "textStandardExamplePerMillionInput": 2,
+    "textStandardExamplePerMillionOutput": 10,
+    "note": "Text anchors GPT-6.1 Sol short-context Standard and Sonnet 5.5 base. Model-specific cache/long-context/geography/tool rules apply; image scenario prices are assumptions."
+  },
+  "scenario": {
+    "images": 200,
+    "imageUsd": 0.12,
+    "scripts": 40,
+    "scriptUsd": 0.05,
+    "landings": 4,
+    "landingUsd": 0.3,
+    "articles": 8,
+    "articleUsd": 0.4,
+    "repairs": 0.2,
+    "otherAi": 20,
+    "acceptance": 0.7,
+    "imageReviewMinutes": 0.5,
+    "scriptReviewMinutes": 2,
+    "landingReviewMinutes": 10,
+    "articleReviewMinutes": 15,
+    "hourlyReview": 15,
+    "margin": 0.7,
+    "paymentFee": 0.03
+  }
+}

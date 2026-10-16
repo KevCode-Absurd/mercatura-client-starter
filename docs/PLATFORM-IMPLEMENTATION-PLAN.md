@@ -1,16 +1,20 @@
-# Mercatura: new-client launch and agency platform plan
+# Mercatura: US-market platform, costs and implementation plan
 
-India-first architecture, implementation, operating model and cost workbook. Prepared 16 October 2026. Vendor facts were checked against official documentation on this date. Prices are USD, exclude tax, and must be rechecked before purchase. Capacity numbers and engineering budgets below are explicit planning assumptions, not measured capacity or service guarantees.
+Revision 2. Researched 16 October 2026. US-market architecture with a separate India option; current vendor pricing, agent tooling, implementation and operating economics. USD before tax. Monthly billing is used unless explicitly labeled annual. Published facts, engineering recommendations and hypothetical workload estimates are identified separately. This supersedes the earlier India-first recommendation; it does not change any deployed infrastructure.
 
-## 1. Decision and programme objective
+## 1. Decision, costs and programme objective
 
-Use the clean local starter for tomorrow's single-operator onboarding. Build the hosted platform in stages around India-hosted Postgres, private object storage, verified identity and durable workers. Keep creative production useful with uploaded evidence even when an account connection is unavailable. Add performance data as a separate, traceable evidence layer.
+Build the customer-facing hosted service in US East if the primary customers will be US agencies. Your team can operate it from India. Use the clean local starter for the first controlled onboarding while hosted identity and tenancy are implemented. Keep an India deployment track for customers who contractually require it. The earlier India-region answer is retained as an available option, rather than being silently treated as a permanent constraint for all future customers.
 
-The programme objective is to let an authorized agency team connect a brand, ingest its permitted business data, create varied and factually supported work, review it and export approved deliverables. The system must prevent access across clients, keep costs attributable and make data limitations visible. It should produce more useful accepted work per unit of time and cost, rather than maximize generated file count.
+Recommended US stack for the first hosted agency: Railway Pro for the Next.js web container and any custom workers; Neon Postgres in AWS US East; Clerk for user sign-in and organization membership; Trigger.dev for durable production jobs; Firecrawl for bounded public website intake; private S3 US East objects when explicit regional controls are needed. Railway Buckets are a simpler storage candidate when their selected location, protection features and contract meet the client's requirements. Use one workflow system and one identity system. Add Upstash Redis only after cache/rate-limit requirements justify it.
 
-Recommended initial managed stack after the hosted migration: DigitalOcean App Platform in Bangalore for web and worker services, Supabase in Mumbai for Postgres and application identity, S3 Mumbai for private objects, and SQS/EventBridge plus Secrets Manager/KMS in Mumbai for durable work and credentials. This mixed-provider choice prioritizes a quick managed launch while keeping core data in India. It adds inter-provider networking and IAM complexity; validate it with a deployment spike before committing. Prefer an all-AWS Mumbai stack if a single cloud, private networking or customer procurement requirements outweigh that convenience.
+This is an engineering recommendation based on the current service capabilities, the existing container/media workload and the wish to work effectively with coding agents. It is not a claim that these vendors integrate automatically or that this is the cheapest stack under every workload. The consolidated alternative is Railway plus Supabase US East for database/auth/storage, with application-owned agency membership. Chapter 31 compares both routes, including Neon Managed Better Auth and WorkOS. Evaluate them with a small vertical slice before purchasing annual subscriptions.
 
-Do not deploy the current local app as a shared multi-agency service. Its SQLite database, filesystem and brand cookie need the migration described below. The repository contains contracts and a schema sketch to guide that work; those files do not activate hosted authorization or connections.
+For planning, a recommended US pilot has roughly $280/month of platform services, plus $56.48 of modeled AI consumption for one brand at the chapter 22 workload. That is about $336/month before people, taxes and payment charges. Adding modeled review and support gives about $488/month. A lower-cost consolidated pilot can be modeled around $110/month in platform services, but that is a deliberately lean allowance with different auth and operational choices. Neither figure is a vendor package or measured production bill. The component formulas and larger-scale scenarios are in chapters 32 and 33.
+
+The programme objective is an authorized agency team connecting a brand, ingesting permitted data, creating varied evidence-backed work, reviewing it and exporting approved deliverables. Increase accepted useful output per hour and per dollar. Standalone evidence-based creation remains available when Meta, Google or Shopify access is missing. The US-market decision changes placement and procurement priorities; it does not remove tenant isolation, cost controls, migration or quality work.
+
+The current repository is local, with SQLite, filesystem storage and a brand-selection cookie. It has not been converted into a hosted agency SaaS by writing this plan. Contracts and schema sketches are implementation guidance only. Do not expose it to unrelated clients until the hosted gates in chapter 27 pass.
 
 ## 2. What the new repository actually provides
 
@@ -38,24 +42,25 @@ Tomorrow's team collaboration can use a controlled document and approved exports
 
 [manual-page-break]: #
 
-## 4. India hosting and vendor comparison
+## 4. Region choice and the platform decision matrix
 
-An India database setting does not keep every processor in India. OAuth providers, Slack, AI APIs, support tools, telemetry and content-delivery caches need separate decisions. Use explicit regions for the database, objects, compute, queues, secrets, logs and backups, and verify them in infrastructure configuration and provider consoles.
+Choose the region closest to the application's users and database, subject to each client's contract and the permitted processing destinations. An Indian operator does not require an India origin for a US product. Keeping the web app in one country and its transactional database in another adds repeated network trips. A CDN can accelerate public assets; it does not eliminate remote database latency on personalized reads.
 
-| Option | Fit for this programme | Decision |
+| Layer | US launch recommendation | India-resident alternative |
 | --- | --- | --- |
-| Supabase Mumbai | Managed Postgres and application identity; region ap-south-1 is listed | Initial database/auth candidate; enforce and test our own tenant policies |
-| DigitalOcean App Platform BLR | India dynamic app hosting is listed; managed services and workers | Fast web/worker candidate after an India deployment spike |
-| AWS Mumbai | ECS/Fargate is supported; S3, queues and managed security services compose into one cloud | Preferred consolidation path; more infrastructure ownership |
-| Railway | Convenient developer workflow; listed Asia region is Singapore | Do not use for India-only web/worker processing under this requirement |
-| Neon | Agent-friendly managed Postgres tooling; current listed regions omit India | Reconsider only if regional requirements change |
-| Cloudflare R2 | Attractive storage economics, but an APAC location hint is not India residency | Do not use for an India-resident client media store |
+| Web and custom workers | Railway US East (Virginia), container deployment | DigitalOcean App Platform Bangalore or AWS Mumbai |
+| Transactional database | Neon AWS US East; pool connections | Supabase Mumbai or AWS managed Postgres Mumbai |
+| User identity | Clerk; application-owned brand grants | Supabase Auth in selected project or reviewed self-hosted auth |
+| Durable production | Trigger.dev US worker region, validated in deployment | Region-controlled workers with SQS/EventBridge Mumbai |
+| Private objects | S3 us-east-1; Railway Buckets subject to location/controls check | S3 ap-south-1 |
+| Public web intake | Firecrawl with limits and approved public hosts | Local parsing or approved regional/self-hosted extraction |
+| Secrets and logs | Separate production credentials, redacted telemetry | Explicit regional configuration and processor review |
 
-These region facts come from [Supabase regions](https://supabase.com/docs/guides/platform/regions), [DigitalOcean availability](https://docs.digitalocean.com/products/app-platform/details/availability/), [AWS Fargate regions](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate-Regions.html), [Railway regions](https://docs.railway.com/deployments/regions), [Neon regions](https://neon.com/docs/introduction/regions) and [R2 data location](https://developers.cloudflare.com/r2/reference/data-location/).
+Railway currently lists California, Virginia, Amsterdam and Singapore. Neon lists AWS regions including Virginia/Ohio and Singapore, with no India entry; its existing project region is fixed. Supabase lists both Mumbai and North Virginia. Clerk's current security guidance says regional selection is not offered and identifies US hosting. These facts are from [Railway regions](https://docs.railway.com/deployments/regions), [Neon regions](https://neon.com/docs/introduction/regions), [Supabase regions](https://supabase.com/docs/guides/platform/regions) and [Clerk security](https://clerk.com/security). They make Railway/Neon a reasonable US candidate and an unsuitable substitute for an India-only processing promise.
 
-For the mixed-provider pilot, use TLS, a pooled Postgres connection, narrowly scoped S3/queue access and explicit outbound network policy. Budget egress and cross-cloud latency. A static egress address may be needed for allowlists and adds cost. If private cross-cloud connectivity becomes a burden, move compute into AWS Mumbai before adding more agencies.
+A region on a dashboard is not an end-to-end residency guarantee. Assess database, backups, object copies, workers, job payloads, identity, scraping, AI inference, telemetry, support access and recovery separately. Supabase explicitly describes out-of-region handling for limited account/support/usage categories in its [residency FAQ](https://supabase.com/legal/privacy-resources/data-residency-and-transfers-faq). Require equivalent clarity from other vendors rather than assuming that their product region covers every processor.
 
-Choose providers for reliable APIs, IaC, logs, exportability and bounded agent credentials. “Agent first” should mean an operator can reproducibly inspect and deploy a reviewed plan. It must not mean an autonomous agent gets every tenant's production secrets or permission to incur unrestricted spend.
+Do not start with active-active global databases. Use one home region per agency, a public-asset delivery layer and a regional deployment registry. Chapter 29 defines migration and a later India cell. This minimizes early operational complexity and avoids paying for duplicated services before there is an agreed need.
 
 ## 5. Target architecture and service boundaries
 
@@ -300,47 +305,63 @@ Scale using measured workload, not agency count alone. This scenario assumes thr
 
 Example ingestion envelope: 200 active ads x 30 days x two providers x five report grains is 60,000 rows per brand per month. At 3,000 brands that is 180 million monthly rows before retention, indexes or other streams. This is an intentionally simplified sizing example; report grains overlap and real cardinality varies. Do not put unlimited detail history in one hot operational database.
 
-Keep recent normalized operational facts and aggregates in Postgres. Archive raw and older detailed facts as partitioned compressed objects; introduce an India warehouse/query layer when measured volume requires it. Partition by date and tenant-aware access pattern, not one table per agency by default. Avoid making a warehouse query part of an interactive generation request; publish validated aggregates/evidence back to operational views.
+Keep recent normalized operational facts and aggregates in Postgres. Archive raw and older detailed facts as partitioned compressed objects; introduce a warehouse/query layer in the tenant home region when measured volume requires it. Partition by date and tenant-aware access pattern, not one table per agency by default. Avoid making a warehouse query part of an interactive generation request; publish validated aggregates/evidence back to operational views.
 
 Separate interactive queues from backfills. At growth, allocate worker pools by task type and enforce tenant fairness. At large scale, shard hot tenants or dedicated accounts only after profiling demonstrates the need. Large regulated clients may require dedicated projects or deployments, priced separately. A shared Supabase project is a cost-efficient starting design, not a promise that one small database can host thousands of agencies unchanged.
 
-## 21. Vendor pricing facts and infrastructure allowances
+## 21. Published vendor prices: the procurement baseline
 
-Current reference facts: Supabase Pro starts at $25/month with compute credits and included quotas; larger compute and excess usage add cost. Railway Pro has a $20 monthly minimum usage commitment including $20 usage, rather than $20 plus the same included usage again. Neon Launch lists $0.106/CU-hour and $0.35/GB-month storage, but currently has no listed India region. These facts do not make either Railway or Neon an India-region substitute. Sources: [Supabase pricing](https://supabase.com/pricing), [Railway pricing](https://railway.com/pricing), [Neon pricing](https://neon.com/pricing).
+The prices below were checked on official pages on 16 October 2026. They are price references, not a bill for this application. Free-tier thresholds, usage, credits, paid features and geography are different billing dimensions. Prices exclude tax. Annual figures are monthly equivalents with an annual commitment, not month-to-month prices. Do not buy every product in this table; several are alternatives.
 
-DigitalOcean lists a shared 1-vCPU/2-GiB App Platform container at $25/month and a dedicated 1-vCPU/2-GiB container at $39/month. Component count multiplies cost; workers are separate components. The smallest plan is not a sizing recommendation for Next.js plus rendering. [DigitalOcean pricing](https://docs.digitalocean.com/products/app-platform/details/pricing/) is the source.
-
-| Monthly infrastructure bucket | Hosted pilot allowance | Ten-agency allowance |
+| Service | Current price reference | What increases the bill |
 | --- | --- | --- |
-| Web and worker compute | $75-200 | $200-700 |
-| Database/auth and backups | $25-100 | $100-350 |
-| Objects, transfer and requests | $10-50 | $40-180 |
-| Queue, secrets, logs and monitoring | $15-60 | $40-170 |
-| Planning total, excluding AI and people | $125-410 | $380-1,400 |
+| Railway Pro | $20/month minimum including $20 usage | Resource use beyond included credit; service network transfer; optional products |
+| Neon Launch | $0.106/CU-hour; $0.35/GB-month database storage | Active compute, retained change history, branches, snapshots, transfer and backend products |
+| Clerk Pro | $25 monthly; $20/month annual equivalent | B2B add-on, retained orgs/users, SSO, machine usage, dashboard features |
+| Clerk enhanced B2B | $100 monthly; $85/month annual equivalent | Retained organizations beyond allowance and separately metered features |
+| Firecrawl Hobby | $19 monthly; $16/month annual equivalent; 5,000 credits | Endpoint credits, extraction options and top-ups |
+| Firecrawl Standard | $83/month annual equivalent; 100,000 credits | Confirm month-to-month checkout price; top-ups and high-cost operations |
+| Trigger.dev | Hobby $10 or Pro $50/month, with matching usage credits | Execution compute, run invocations and feature/concurrency add-ons |
+| Supabase Pro | From $25/month; $10 compute credit | Additional projects/compute, usage, PITR, drains and other add-ons |
+| Inngest Pro | From $99/month | Executions, concurrency, events, worker and observability add-ons |
+| Upstash Redis PAYG | $0.20/100,000 commands | Storage/transfer beyond allowances and optional plans |
+| Upstash QStash PAYG | $1/100,000 delivery attempts | Retries, transfer, schedules and features |
+| Cloudflare R2 Standard | $0.015/GB-month, before free allowance | Request operations, optional products and storage class |
+| WorkOS AuthKit | First 1 million monthly active users free | Enterprise SSO, directory connections, domains and other products |
+| Vercel Pro | $20/month developer seat; usage credit applies | Extra developer seats and resource/add-on consumption |
 
-These are engineering budget ranges, not provider quotes or measured usage. At 100 agencies, reserve roughly $2,000-8,000/month infrastructure pending load tests; at 1,000 agencies, $12,000-50,000+ is a scenario envelope rather than a ceiling. Warehouse scans, retention, media egress, HA, logs and dedicated tenants can dominate. Reprice from actual rows, bytes, CPU time and concurrency using vendor calculators before contracting.
+Primary sources: [Railway](https://railway.com/pricing), [Neon](https://neon.com/pricing), [Clerk](https://clerk.com/pricing), [Firecrawl](https://www.firecrawl.dev/pricing), [Trigger.dev](https://trigger.dev/pricing), [Supabase](https://supabase.com/pricing), [Inngest](https://www.inngest.com/pricing), [Redis](https://upstash.com/pricing/redis), [QStash](https://upstash.com/pricing/qstash), [R2](https://developers.cloudflare.com/r2/pricing/), [WorkOS](https://workos.com/pricing) and [Vercel](https://vercel.com/pricing). For Firecrawl Standard and larger plans the fetched default presentation was annual. This workbook deliberately does not invent an exact monthly checkout number from a rounded annual discount.
 
-Use S3 Mumbai pricing for the final storage estimate; do not apply US regional rates casually. Include network paths, backups, NAT/static IP, database compute, observability, staging and restore environments. Keep tax, FX, payment processing, support and engineering outside a deceptively small cloud subtotal.
+Railway invoices must not be modeled as $20 plus the same first $20 of resource usage. Supabase's compute credit similarly offsets compute; it is not a second free production project. Trigger.dev's paid credits offset its usage, while LLM provider calls remain separately billed. Service availability targets are not a substitute for a contractual SLA and compensation terms.
 
-## 22. Generation economics and the editable model
+Before purchase, record plan/cadence, region, quantity, quoted total, included allowance, overage behavior, hard-stop behavior, renewal and export procedure. The machine-readable pricing snapshot accompanies the document, with source links and explicit units. It is a dated reference, not a live price feed. The original platform budgets have been replaced by the more detailed model in chapters 32 and 33.
 
-Use a spreadsheet or the included calculator to model units explicitly. The following unit costs are hypothetical planning inputs, not current API prices. They must be replaced with the chosen model's current prices, resolutions, token usage and observed failure rates. Video rendering is excluded until separately estimated.
+## 22. AI cost per output and accepted-unit economics
 
-Example per brand per month: 200 initial images at $0.12 each, 40 scripts at $0.05, four landing drafts at $0.30 and eight full articles at $0.40. Initial generation is $30.40. With 20% additional attempts across these work units, modeled cost is $36.48. This excludes extraction, critiques, reference analysis, image editing, orchestration overhead and all people costs; add them as separate inputs instead of pretending the subtotal is fully loaded.
+Separate vendor rates from the application's workload. A text price per million tokens does not reveal the price of an article: evidence preparation, outline, drafting, critique, repair and verification can each make a call. Image costs depend on model, dimensions, quality, reference inputs and edits. A script is text; a finished generated video has a separate, usually much larger, media budget.
 
-If image acceptance is 70%, 200 first attempts plus 40 repair attempts yield 168 accepted images only under the simplifying assumption that all attempts share that acceptance rate. Image generation then costs $28.80 / 168 = about $0.171 per accepted image. In practice, measure the actual accepted count and all attempts; repair attempts often have a different success probability.
+Verified rate anchors: GPT-6.1 Sol Standard short-context lists $2 input and $10 output per million tokens; Claude Sonnet 5.5 lists the same base input/output rates. Their caching, batch, long-context and geography rules differ. These are comparison anchors, not a claim that both produce equivalent quality or that every installed account has access. Sources: [OpenAI model rates](https://developers.openai.com/api/docs/models/gpt-6.1-sol), [Claude pricing](https://platform.claude.com/docs/en/about-claude/pricing). Official OpenAI documentation also distinguishes image inputs, outputs and tool charges: [API pricing](https://developers.openai.com/api/docs/pricing).
 
-| Scenario | Brands | Modeled generation subtotal |
+At that illustrative $2/$10 rate, 20,000 uncached input tokens plus 6,000 output tokens costs $0.10 for one call. A draft plus a second identical-cost pass costs $0.20. Actual output tokens, reasoning, cache writes/reads, reference processing and paid tools must be measured. Reusing a compact approved evidence pack is usually more controllable than repeatedly sending a whole resource library.
+
+Google currently lists Gemini 3.1 Flash Image output equivalents of about $0.067 at 1K and $0.101 at 2K; its Lite Image lists $0.0336 at 1K, before additional inputs and text/thinking. The older Gemini 2.5 Flash Image pricing still appears on the page with a shutdown notice dated 2 October 2026. It is not a valid cheap launch recommendation. Source: [Gemini pricing and lifecycle notice](https://ai.google.dev/gemini-api/docs/pricing). Benchmark current available models instead of automatically choosing the newest or cheapest one.
+
+The editable scenario uses deliberately rounded workload costs, not those rates as per-deliverable promises: 200 initial images at $0.12, 40 scripts at $0.05, four landing drafts at $0.30 and eight full articles at $0.40 per brand per month. Initial modeled generation is $30.40. A 20% additional-attempt allowance gives $36.48. Add a separate $20/brand allowance for source analysis, critiques and other AI calls: total $56.48/brand/month. This scenario produces 252 initial items, rather than guaranteeing 252 accepted deliverables. It includes no finished generated videos.
+
+| Per-brand API scenario | Calculation | Monthly USD |
 | --- | --- | --- |
-| One direct brand | 1 | $36.48/month |
-| One agency | 3 | $109.44/month |
-| Ten agencies | 30 | $1,094.40/month |
-| 100 agencies | 300 | $10,944/month |
-| 1,000 agencies | 3,000 | $109,440/month |
+| Image attempts | 200 x $0.12 x 1.20 | $28.80 |
+| Script attempts | 40 x $0.05 x 1.20 | $2.40 |
+| Landing draft attempts | 4 x $0.30 x 1.20 | $1.44 |
+| Article attempts | 8 x $0.40 x 1.20 | $3.84 |
+| Other AI allowance | Explicit additional monthly allocation | $20.00 |
+| Total | Generation and other AI | $56.48 |
 
-These subtotals are arithmetic examples, not recommended allowances or actual bills. Add critique/extraction tokens, optional video, storage, failed submissions, human review and support. Human review at even a few minutes per accepted piece can cost more than the API call; model it explicitly. Track agency contribution margin using fully loaded costs and a contingency for unknown charges.
+The calculator treats the other-AI allowance as an independent monthly input; it does not multiply it by the repair fraction again. Each modality has its own human-review time. Sample assumptions are 0.5 minute per image attempt, two per script, ten per landing draft and fifteen per article. Applied to this workload and 20% additional attempts, that is 6.8 hours/brand/month, or $102 at an assumed $15/hour. That rate is a cost assumption, not a US editor wage estimate. US specialist review or regulated claims can cost substantially more.
 
-The calculator lets you change agencies, brands, output volumes, unit costs, repair multiplier, acceptance rate, review minutes/rate, infrastructure allowance and target gross margin. It shows revenue required for that target. It does not fetch prices, FX or account metrics and can run entirely offline.
+The simplified image estimate is 200 x 1.20 x 70% = 168 accepted images, capped at the initial target. API image cost is then $28.80/168, about $0.171 per accepted image. This is an expectation under an equal-quality assumption, not a guarantee or a forecast of independent repair outcomes. Enter actual accepted counts after a pilot. Do not let generating more copies inflate the acceptance score. To promise 200 accepted pieces at a stable 70% yield requires about 286 total attempts before rounding/variance, so a fixed 240-attempt allowance may be insufficient.
+
+Measure all paid attempts, accepted revisions, review minutes and delivery time. Keep factual/claim defects, visual identity errors and duplicate concepts separate. Invoice reconciliation, approved evidence and human sign-off establish reliability; an LLM's self-reported quality score does not establish truth.
 
 ## 23. Commercial structure and cost controls
 
@@ -364,9 +385,9 @@ Use secrets management and encryption in transit and at rest. Separate developme
 
 Define retention by purpose and contract. An initial policy proposal is short-lived raw debugging data, bounded detailed marketing history, versioned approved evidence and deliverables for the agreed service period, and a separate audit retention period. These durations require client/legal approval; do not choose indefinite retention by default. Implement source deletion, derived evidence invalidation, vector/cache removal, exports and backup-expiry behavior as one documented workflow.
 
-India hosting is a customer requirement, not a claim that all Indian privacy law mandates full localization. The final Digital Personal Data Protection Rules 2025 have phased commencement; as of this plan date, do not assume every rule is already effective. Review applicability, processor agreements, notices, rights handling, breach response and cross-border processing with qualified counsel. Sources: [MeitY rules and implementation materials](https://www.meity.gov.in/documents/act-and-policies/digital-personal-data-protection-rules-2025-gDOxUjMtQWa) and the [official notification](https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf).
+India-only hosting is a separate customer option; it is not the default for the US product and not a claim that all Indian privacy law mandates full localization. The final Digital Personal Data Protection Rules 2025 have phased commencement; as of this plan date, do not assume every rule is already effective. Review applicability, processor agreements, notices, rights handling, breach response and cross-border processing with qualified counsel. Sources: [MeitY rules and implementation materials](https://www.meity.gov.in/documents/act-and-policies/digital-personal-data-protection-rules-2025-gDOxUjMtQWa) and the [official notification](https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf).
 
-Set pilot recovery objectives explicitly: for example, a proposed RPO of 24 hours and RTO of one business day while manually operated; strengthen them before contractual scale. Test a full restore into an isolated India environment and verify resources, tenant permissions, secrets references and job reconciliation. Backups that have never been restored are not sufficient evidence of recoverability.
+Set pilot recovery objectives explicitly: for example, a proposed RPO of 24 hours and RTO of one business day while manually operated; strengthen them before contractual scale. Test a full restore into an isolated environment in the approved recovery region and verify resources, tenant permissions, secrets references and job reconciliation. Backups that have never been restored are not sufficient evidence of recoverability.
 
 ## 25. Operations and reliability
 
@@ -382,7 +403,7 @@ At ten agencies, designate an operational owner and backup. At 100, establish re
 
 ## 26. Implementation backlog and ownership
 
-Treat this as staged engineering work with external approval dependencies. The following sequence can structure 30/60/90-day planning, but dates require a codebase migration spike and actual team capacity. API review timelines are outside the team's control.
+Treat this as staged engineering work with external approval dependencies. Chapter 35 adds person-week and investment scenarios; these are planning estimates rather than fixed-price commitments. The following sequence can structure 30/60/90-day planning, but dates require a codebase migration spike and actual team capacity. API review timelines are outside the team's control.
 
 | Work package | Owner and dependencies | Acceptance evidence |
 | --- | --- | --- |
@@ -397,7 +418,7 @@ Treat this as staged engineering work with external approval dependencies. The f
 | I. Billing and operations | Platform/finance; D | Usage/invoice reconciliation, hard stops, restore and incident rehearsal |
 | J. Growth readiness | Engineering lead; representative traffic | Load/capacity report, retention/archive plan, support/on-call readiness |
 
-Suggested first 30-day focus: the local pilot, migration inventory, India deployment spike, identity, scoped repository/storage vertical slice and one durable production path. Days 31-60: one read-only connector, reconciliation, remaining production migration, review roles and a small hosted agency pilot. Days 61-90: additional connectors, Slack, billing, observability and measured ten-agency readiness. Adjust rather than compressing security/data gates to meet a calendar.
+Suggested first 30-day focus: the local pilot, migration inventory, chosen-region deployment spike, identity, scoped repository/storage vertical slice and one durable production path. Days 31-60: one read-only connector, reconciliation, remaining production migration, review roles and a small hosted agency pilot. Days 61-90: additional connectors, Slack, billing, observability and measured ten-agency readiness. Adjust rather than compressing security/data gates to meet a calendar.
 
 ## 27. Release gates from one brand to scale
 
@@ -415,10 +436,293 @@ Each gate produces a report with test inputs, environment, results, limits and o
 
 ## 28. Practical next actions and definition of success
 
-The operator's next action is to create the new client in the clean installation and build a verified evidence pack. The engineering team's next action is an India deployment and migration spike, followed by identity plus one complete authorized resource-to-artifact workflow. The integration team's next action is to collect account ownership and provider approval prerequisites before writing every connector simultaneously.
+The operator's next action is to create the new client in the clean installation and build a verified evidence pack. The engineering team's next action is a US-region deployment and migration spike, retaining an India path, followed by identity plus one complete authorized resource-to-artifact workflow. The integration team's next action is to collect account ownership and provider approval prerequisites before writing every connector simultaneously.
 
 Success for the first client is a small approved body of work that accurately represents the product, demonstrates useful creative range and has a measured cost and review time. Success for the first agency adds safe team access and trustworthy read-only data. Success at scale adds fair throughput, recovery, support and predictable economics without weakening those boundaries.
 
 Keep a programme register with objective, decision owner, current stage, client count, tested load, data region, provider approvals, open risks, accepted-output metrics, spend and the next gate. Review it weekly with evidence. The plan is meant to make implementation decisions inspectable and correctable, including when a pilot exposes a failed assumption.
 
 No live accounts, cloud resources, subscriptions, Slack messages or paid generation are created by this document. Those actions happen during explicit onboarding and deployment once their concrete configuration and destination are known.
+
+## 29. US market, India operations and regional migration
+
+Serving US clients from an India-based company or team is technically feasible. The infrastructure location, the legal seller, the support team and the buyer's location are separate choices. Select US East for US users' interactive work unless a customer requires another geography. Store country/currency/timezone per brand and preserve provider account settings; US customers need US English, relevant commercial terms, date conventions and claim review, independently of where engineers work.
+
+### What would become an issue
+
+The avoidable technical problem is a chatty cross-ocean request path: US browser -> US application -> India database for several serial queries. Each round trip adds delay. Putting only a frontend CDN in the US does not move those database queries. Co-locate database, web origin and workers in the same metro where practical, then measure cross-provider RTT. Railway Virginia and Neon AWS Virginia are geographically close, but not a guaranteed private same-cloud network. Use TLS and a connection pool; budget public-network transfer. Do not assume that matching a region label removes networking charges or automatically grants private connectivity.
+
+The procurement problem is promising US-only processing when an AI vendor, scrape service, workflow payload store, support log or backup can process elsewhere. A US database alone does not solve this. List each subprocessor and what it receives. Restrict Firecrawl to approved public pages; do not put private client documents or access tokens into crawl requests. Send AI providers only the authorized evidence needed for the job. Review available regional inference endpoints, data retention terms and any price premiums before making a locality promise.
+
+The service problem is an India-only support schedule sold to US agencies as immediate business-hours support. Publish response windows in the customer's timezone, route incidents to an owner and provide asynchronous job status. Price live coverage separately. The commercial problem is treating payment processing, FX, taxes, refunds and sales costs as zero. Those are not included in the cloud prices and depend on the billing entity, payment method and customer jurisdictions.
+
+The legal/privacy assessment depends on data collected, customer contracts and applicable thresholds. US hosting does not itself establish compliance. Minimize data to product, creative and aggregate marketing facts; avoid customer-level order identities unless necessary and authorized. Define processor contracts, deletion/return, access controls, incident response and remote support access. The [California Attorney General's CCPA guidance](https://oag.ca.gov/privacy/ccpa) explains the rights and business framework; use a qualified adviser to determine applicability rather than assuming every agency has identical obligations. The [official Indian DPDP rules notification](https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf) has phased commencement. Do not turn a preference for India into an unsupported blanket localization claim.
+
+### Start US now, or move later
+
+If the first client does not require India-only data, deploy the hosted pilot in US East from the start. This avoids paying for an unnecessary regional migration. The current blank local repository has no hosted client database to relocate. Region selection can therefore be made before importing any production client data.
+
+If the first client requires India, keep that client in an India deployment and onboard later US clients into a separate US deployment. Add agency.home_region, deployment_id, residency_policy and approved_processor_policy to the control-plane design. Route agency traffic to its home deployment. Keep data stores, queues, credentials and backups region-scoped. A global account directory should contain minimal routing metadata and must itself be assessed; it must not become a second copy of every brand's content.
+
+Moving an existing agency is a migration project. Inventory rows, objects, active jobs, webhooks, secrets and grants; obtain the appropriate client authorization; provision a new target; rehearse export/import and checksums; pause writes and drain work; move data with a final delta strategy; update routing and webhook handling; verify counts, samples and permissions; resume limited traffic; retain a bounded rollback copy; delete the old live data under the agreed retention policy. Prefer a scheduled pilot cutover before building complex cross-region dual writes. Neon's [region guidance](https://neon.com/docs/introduction/regions) states that moving an existing database requires a new project and migration. A same-project database branch is not a second-country deployment.
+
+For two regional cells, budget duplicated base services, staging/recovery work and support. They do not necessarily cost exactly twice as much because workloads differ, but neither is the second region free. Begin with region-aware identifiers and a storage adapter; implement full regional routing when a real second-region customer justifies the operational work.
+
+## 30. Agent tooling: what the four named platforms actually add
+
+Use agent-friendly infrastructure to make reviewed changes faster, reproducible and observable. Score the tooling separately from application quality and tenancy. An MCP connection is a way for a coding agent to operate a service; it is not evidence that the service automatically understands agency permissions, reconciles marketing data or produces accurate advertising.
+
+### Railway: container delivery and operations
+
+Railway fits the existing Next.js container, media dependencies and custom workers. Its CLI/MCP can inspect and manage deployments. Current documentation describes a hosted MCP endpoint and a CLI bridge; the default hosted path requires CLI 5.44.0 or later. See [Railway MCP](https://docs.railway.com/cli/mcp). This can shorten deployment/debug cycles when used with reviewed configuration, health checks and rollbacks. It does not replace our job ledger, application authorization or a production database migration.
+
+Deploy the web app as a stateless service. Store all persistent artifacts in Postgres/private objects. Use separate temporary work directories for renders. A horizontal replica must not depend on a local brand folder or one machine's SQLite file. Keep custom rendering workers separate from user-facing web memory. If Trigger.dev executes a task, do not also count an always-on Railway worker for that same execution unless it actually exists.
+
+Railway's current [price page](https://railway.com/pricing) lists memory $0.00000386/GB-second, CPU $0.00000772/vCPU-second, service egress $0.05/GB and object storage $0.015/GB-month. Its [bucket billing documentation](https://docs.railway.com/storage-buckets/billing) says API operations and bucket egress are free, while a Railway service uploading to a bucket still incurs public-network service egress. Route user downloads directly through authorized signed URLs where the selected storage supports that flow. Check feature and location needs before choosing it over S3.
+
+Use narrowly scoped deployment credentials for staging first. Do not grant the product's runtime agent the infrastructure owner's token. Production changes should have an inspectable diff, targeted environment, cost estimate and rollback. Multi-region web replicas do not make a single-region database resilient to a regional outage: [Railway failover guide](https://docs.railway.com/guides/multi-region-api-failover).
+
+### Neon: Postgres branching and agent development
+
+Neon's strongest fit here is managed Postgres with quick isolated development branches, pooled access and programmable project operations. Its MCP can manage projects, query and change schema, with a warning about broad management access. Source: [Neon MCP overview](https://neon.com/docs/ai/neon-mcp-server). Use synthetic or appropriately sanitized branch data for agent development. A branch of live client data remains client data; copying it into development is not anonymization.
+
+Do not use one branch per brand as an automatic tenant-security model. Use organization/brand keys and enforced policies in a shared database for ordinary clients, with dedicated projects for justified isolation needs. Use migration branches for preview/review, give them expiry and watch retained history. [Branching documentation](https://neon.com/docs/introduction/branching) explains the platform primitive; application tenancy is still ours to implement.
+
+Neon is no longer accurately described as database-only: current documentation includes Managed Better Auth, objects, functions, gateway and realtime, with product availability varying by region. Postgres and managed auth are listed across its AWS regions; other backend features are not available everywhere. See [Neon regional product availability](https://neon.com/docs/introduction/regions). These are credible consolidation candidates, not an excuse to assume feature parity or production suitability without a pilot. Compare their real permission, backup and runtime behavior before adding a second auth/storage system.
+
+For frequent imports or status polling, the database may remain awake. Model active CU-hours rather than multiplying every calendar month by a tiny assumed activity fraction. Long-running queries and retained branches can remove the saving you expected from scale-to-zero. Keep a tested restore/export path and a migration contract independent of the provider console.
+
+### Clerk: identity, agency membership and app permissions
+
+Clerk can speed sign-in, invitations and organization switching. Its current free allowance is 50,000 monthly retained users and 100 retained organizations; basic organizations have a 20-member limit. The enhanced B2B add-on supplies features such as custom roles and unlimited members. Source: [Clerk pricing](https://clerk.com/pricing). The product should map one agency to one organization and retain brands beneath it. Creating an auth organization per brand can change both the access model and the bill.
+
+Keep app-owned brand grants, integration permissions, revision approvals and budget authority in Postgres. Clerk authenticates the actor and can supply organization context; our server still validates that the requested brand belongs to the organization and that the membership is current. A signed organization ID is not permission for every action. Removing membership must revoke future job submission and signed-object access; do not wait for a stale browser state to update.
+
+At 1,000 qualifying organizations and 5,000 retained users, model monthly Pro $25 + enhanced B2B $100 + 900 x $1 organization overage = $1,025 before other features. This is derived arithmetic using published thresholds, with one active qualifying org per agency. At 100 such agencies, user/org volume remains within the free allowances, but selected paid features still cost money. [Clerk's current pricing explanation](https://clerk.com/articles/clerk-pricing-explained) distinguishes retained users from conventional active-user counts. Enterprise SSO is a separate connection model and must be quoted for the client's needs.
+
+Clerk's AI guidance documents agent-assisted development, MCP-related resources and machine-to-machine auth. See [Using Clerk with AI](https://clerk.com/docs/guides/ai/overview). Distinguish a development assistant configuring identity from a customer-facing agent acting under delegated permissions. Neither should use an agency owner's session as a shared service credential.
+
+### Firecrawl: public research and ingestion
+
+Use Firecrawl to turn an approved website into structured source material and to refresh selected pages. It can reduce custom scraping work and offers [MCP tooling](https://docs.firecrawl.dev/mcp-server). It does not replace authenticated Meta, Google or Shopify account connectors. It also does not establish that scraped claims are true, current or licensed for reuse.
+
+A basic page scrape uses one credit; search, extraction and browser work meter differently. JSON output on scrape/crawl adds credits. The autonomous Agent endpoint is dynamically priced. Its free allowance changed to recurring credits in current docs; old comparisons quoting only a one-time 500-credit grant are stale. See [Firecrawl pricing](https://www.firecrawl.dev/pricing) and [billing rules](https://docs.firecrawl.dev/billing). Keep deterministic crawl + bounded parse as the default onboarding flow and make open-ended research a separately capped operation.
+
+Our implementation should discover a limited sitemap/URL list, allowlist the host, bound pages/depth/bytes, cache by canonical URL and content hash, prefer fresh product/offer pages, store timestamp/source rights and show contradictions for review. Prevent server-side request forgery and treat fetched instructions as untrusted text. A returned 403/404 document is not a valid product fact even if the scrape is billable.
+
+For example, 300 brands x 100 basic page refreshes/month is 30,000 credits, before search, JSON or new-site intake. Repeating 500 pages daily would be 15,000 pages/brand/month and change the economics dramatically. Do not crawl everything every time someone writes a headline. Enterprise zero retention, dedicated terms and region commitments require separate confirmation: [Firecrawl enterprise](https://www.firecrawl.dev/enterprise).
+
+## 31. Alternatives, overlap and a sensible buying sequence
+
+The fastest initial implementation usually comes from a few coherent components. Avoid paying for overlapping auth, database APIs, queues, workflows and vector stores simply because each has a convenient MCP server. The following recommendations are engineering judgments for this codebase, with published pricing anchors in chapter 21.
+
+| Stack option | What to use | Tradeoff and decision |
+| --- | --- | --- |
+| A. Preferred US modular stack | Railway + Neon + Clerk + Trigger.dev + private objects; Firecrawl for web intake | Strong developer/agent workflow and B2B UX; more vendors and explicit integration work |
+| B. Consolidated managed backend | Railway + Supabase US East Auth/Postgres/Storage + one workflow system | Fewer integrations and low pilot base; build agency/brand membership carefully |
+| C. Neon backend consolidation | Railway + Neon Postgres/Managed Better Auth plus selected regional backend products | Potentially fewer bills; prove maturity, limits and access model in a spike |
+| D. Enterprise identity variant | A or B with WorkOS instead of Clerk | Consider when enterprise SSO/IT onboarding drives sales; connection costs differ |
+| E. India deployment | DO Bangalore/AWS Mumbai + Supabase Mumbai + S3/SQS Mumbai | Meets selected core-data placement; review all external processors independently |
+| F. Single-cloud control | AWS regional containers, managed Postgres, S3, SQS, secrets/logs | Stronger network/IAM consolidation; larger operations and infrastructure workload |
+
+Supabase Pro includes managed database, auth and storage allowances, but compute upgrades, extra projects, logs and recovery options cost more. Its current PITR add-on starts at $100/month; do not silently include it in a $25 pilot estimate. Its MCP is useful for development and should use project-scoped permissions: [Supabase pricing](https://supabase.com/pricing), [MCP docs](https://supabase.com/docs/guides/ai-tools/mcp). If using Supabase Auth, Clerk is optional rather than a mandatory second authentication invoice.
+
+WorkOS AuthKit's free user allowance is generous, while SSO and directory connections are separate products; the first published SSO band is $125/connection/month. Its custom domain and support terms also affect the bill. Source: [WorkOS pricing](https://workos.com/pricing). Better Auth is a framework-level alternative with more ownership and deployment responsibility: [Better Auth introduction](https://better-auth.com/docs/introduction). A free auth library does not mean zero engineering, email, security or operational cost. Do not mix an own-hosted library's economics with Neon's managed auth as though they are identical services.
+
+Trigger.dev is the preferred initial workflow candidate because this app has long-running TypeScript production tasks and media jobs. Use waits/checkpoints and concurrency controls, with the app's own durable job/cost IDs. Its managed workers and invocation/compute charges belong in the cost ledger. An Inngest design is also viable, particularly if event-driven steps are the stronger fit, but its current Pro base is $99 and executions count function runs plus steps. These systems are alternatives for a given workflow, not two reliability layers to buy by default: [Trigger pricing](https://trigger.dev/pricing), [Inngest pricing](https://www.inngest.com/pricing).
+
+Upstash Redis is a candidate for distributed rate limiting or cache state. QStash is a simpler durable HTTP delivery/scheduling option, with each delivery retry billable; the endpoint still needs actual compute and idempotent processing. It is not a substitute for transactionally reconciling a paid generation call. Prefer one queue/workflow approach until measured needs justify another. Sources: [Redis pricing](https://upstash.com/pricing/redis), [QStash pricing](https://upstash.com/pricing/qstash).
+
+Cloudflare R2 has low object-storage/egress pricing, but location hints are not a country-specific residency promise. Its documented jurisdictions do not justify equating the default North America location hint with a blanket US-only processing agreement. Use S3 in an explicit region for clients with that requirement, subject to the full processor review. Sources: [R2 pricing](https://developers.cloudflare.com/r2/pricing/), [R2 location controls](https://developers.cloudflare.com/r2/reference/data-location/), [S3 pricing components](https://aws.amazon.com/s3/pricing/).
+
+Vercel is a strong alternative for the Next.js web delivery layer, particularly if previews and the integrated frontend workflow are the deciding advantage. Current offerings include workflows and other execution products; the old blanket claim that it can never run background/agent workloads is out of date. For this existing container/media code, Railway is the initial fit judgment, while a Vercel design still needs workload-specific limits and prices. Sources: [Vercel pricing](https://vercel.com/pricing). Render also offers CLI/MCP, web services and workers, so agent support is not unique to Railway. Its fetched pricing page did not expose usable current numeric rates; obtain a current quote before making a cost claim: [Render pricing](https://render.com/pricing).
+
+DigitalOcean is not excluded for lacking agent tooling: current docs link a CLI and MCP reference. App Platform lists $25/month shared 1-vCPU/2-GiB and $39 dedicated 1-vCPU/2-GiB containers, each per component. It remains a regional India option and a US alternative: [current pricing](https://docs.digitalocean.com/products/app-platform/details/pricing/), [availability](https://docs.digitalocean.com/products/app-platform/details/availability/). AWS is also programmable; agent-native branding is a weaker selection criterion than tested access controls, operations and total delivery time.
+
+Buy in order: one production web environment and database; one identity approach; one durable production path; private object storage; a small bounded web-intake allowance; essential monitoring and backups. Add cache, enterprise identity, additional regions, warehouses and sandboxes only when an acceptance gate or actual customer requirement calls for them.
+
+## 32. Bottom-up monthly platform cost: one brand
+
+This is a transparent example of the recommended US modular stack. It assumes modest usage, no high availability promise, limited retention and no generated video. Numbers marked allowance are engineering budgets, not quoted vendor line items. Use actual account usage after the pilot. The source price snapshot and offline calculator are included with this workbook.
+
+| Component | Monthly scenario | Basis |
+| --- | --- | --- |
+| Railway web/custom compute and service egress | $40.00 | Allowance above the $20 minimum; workload dependent |
+| Neon database and history | $40.91 | 0.5 CU x 720 active hours x $0.106 + 5 GB x $0.35 + 5 GB-month history x $0.20 |
+| Clerk Pro | $25.00 | Monthly production plan; no enhanced B2B assumption |
+| Trigger.dev Hobby | $10.00 | Usage within included credits; not $10 plus those same credits |
+| Firecrawl Hobby | $19.00 | Monthly plan; basic intake within allowance |
+| Private objects, requests and delivery | $5.00 | Allowance; quote selected region/network paths |
+| Monitoring, secrets, email and restore work | $25.00 | Allowance; mix of consumption and small service plans |
+| Staging and deployment overhead | $25.00 | Allowance; no copy of private production data |
+| Platform total | $279.91 | Rounded to $280 in scaling examples |
+
+The Neon arithmetic uses Launch's published compute/storage/history units. A permanently active one-CU database costs $76.32 in compute alone for a 720-hour month; the price page's typical $15 example is not a price ceiling. At 0.5 CU for 240 hours the compute term would instead be $12.72. Use the actual compute floor, active hours, chosen plan and measured imports. Paid history and staging can change both cases. [Neon pricing](https://neon.com/pricing).
+
+A Railway usage illustration, independent of the $40 allowance: 2 average GB of memory plus 0.30 average vCPU continuously over a 30-day month uses 2,592,000 seconds. At current published rates that is $20.01 memory + $6.00 CPU, plus $1 for 20 GB service egress, or about $27.01. The Pro bill is max($20, eligible resource usage) before other products/charges, not $47.01. This is a sizing input, not measured CPU demand or a claim that two GB is sufficient for every render. [Railway resource pricing](https://railway.com/pricing).
+
+Trigger.dev Small 1x has a published $0.0000338/second compute rate and $0.000025 per invocation. 10,000 runs of ten executing seconds use $3.38 + $0.25 = $3.63 before any other usage; that fits a hypothetical $10 included-credit allowance. If a worker spends 120 executing seconds on each of 100,000 runs, compute alone becomes $405.60. Checkpointed waits and ordinary waiting inside executing code have different implications; measure the actual billable runtime. [Trigger pricing](https://trigger.dev/pricing).
+
+The lean consolidated alternative is an illustrative $20 Railway + $25 Supabase + $10 workflow + $19 Firecrawl + $20 operations + $15 staging = $109/month. It assumes low consumption, uses Supabase Auth/Storage and has no separate Clerk or Neon invoice. It does not include PITR, strong SLA, enterprise SSO, expensive rendering or high-volume delivery. This is a valid cost-sensitive option to test, not the cost of the preferred modular stack.
+
+Annual payment changes cash flow. Clerk's annual equivalent would be $240/year for Pro, rather than $25 paid each month. Firecrawl displays annual equivalents for several tiers; verify the full checkout amount and renewal. Do not turn a fractional monthly comparison into a cash budget without recording the annual charge. Keep a reserve for tax, FX and unused commitments. Prefer monthly procurement during the validation stage.
+
+## 33. From one brand to 1,000 agencies: cost and staffing scenarios
+
+Assumptions are three brands and five retained users per agency; 200 initial images, 40 scripts, four landing drafts and eight articles per brand/month; 20% additional attempts; $20 other AI/brand; the review times in chapter 22 at $15/hour. These are invented planning inputs for sensitivity analysis, not actual customers, measured acceptance or a capacity guarantee. The one-direct-brand row has one brand rather than three.
+
+| Scale | Brands / users | Monthly platform allowance |
+| --- | --- | --- |
+| Direct brand | 1 / 1 | $280 |
+| One agency | 3 / 5 | $320 |
+| Ten agencies | 30 / 50 | $1,050 |
+| 100 agencies | 300 / 500 | $6,500 |
+| 1,000 agencies | 3,000 / 5,000 | $40,000 |
+
+The platform allowance includes shared compute, database, identity, workflows, scraping, objects, logs, staging and an operational infrastructure reserve. It excludes AI generation, people, sales, corporate overhead, tax and finished video. It is deliberately not derived by multiplying one small paid plan by the number of tenants. At 100 and 1,000 agencies, actual load tests, support contracts and warehouse/retention decisions are required. Large-scale allowances are planning envelopes and may be exceeded.
+
+| Scale | Platform + AI/month | Review + support/month |
+| --- | --- | --- |
+| Direct brand | $336.48 | $152.00 |
+| One agency | $489.44 | $406.00 |
+| Ten agencies | $2,744.40 | $4,060.00 |
+| 100 agencies | $23,444.00 | $40,600.00 |
+| 1,000 agencies | $209,440.00 | $406,000.00 |
+
+Support assumptions are $50 for one direct brand or $100/agency/month. This is an allocated service-cost input, not a vendor subscription or staffing quotation. Review is $102/brand/month from 6.8 hours. Total modeled direct service cost therefore becomes $488.48, $895.44, $6,804.40, $64,044 and $615,440/month respectively. Keep a 20% cash contingency on platform plus AI during pilots: that reserve is additional to these figures and is not a booked expense until used.
+
+For self-serve SaaS, clients do their own editorial review; do not put the same review labor in our COGS and charge it again as a managed service. Still include our actual support and quality operations. For managed service, include the review time, rework, account management and coverage actually promised. At 3,000 brands, 6.8 hours/brand is 20,400 review hours/month, equivalent to 127.5 full-time schedules at an assumed 160 available hours before leave, utilization and management. This explains why managed creative operations cannot be priced like unlimited software usage.
+
+The platform allowance can be examined by layer:
+
+| Layer | Ten agencies/month | 100 agencies/month |
+| --- | --- | --- |
+| Web/custom compute | $200 | $1,200 |
+| Database/history | $200 | $1,000 |
+| Identity | $125 | $125 |
+| Workflow compute | $100 | $700 |
+| Scraping allowance | $25 | $125 |
+| Objects/network | $100 | $700 |
+| Monitoring/secrets | $100 | $650 |
+| Staging/recovery/infrastructure reserve | $200 | $2,000 |
+| Total | $1,050 | $6,500 |
+
+These layer numbers are budgets, not current invoices. At 1,000 agencies the $40,000 allowance decomposes into $7,000 web/custom compute, $8,000 database/warehouse, $1,025 identity, $4,000 workflow, $1,000 scraping, $6,000 objects/network, $3,000 observability/secrets and $9,975 staging/recovery/infrastructure reserve. Enterprise procurement can change identity and other numbers; obtain quotes before signing an SLA.
+
+Use provider quotas and burst models to size capacity. In the chapter 20 ingestion example, 3,000 brands can create 180 million raw report rows/month; at an assumed one KB each this is 180 GB uncompressed before indexes, logs and retention. This is not a measured schema size. Keep detailed history out of the hottest transactional tables and cost archive scans explicitly. A few thousand users is not evidence that a tiny operational database can sustain the ingestion workload.
+
+At the example content volume, 3,000 brands request 600,000 initial image attempts/month; a 20% attempt allowance is 720,000. At an illustrative 30 seconds of provider processing per attempt, average concurrency across a 30-day month is about 8.33; a tenfold burst would need about 83.3 in-flight slots before other work. This is a simplified throughput model, not a current provider latency or approved quota. Quotas, budget limits, review capacity and client delivery windows all constrain real volume.
+
+## 34. Sensitivity analysis: what can make the bill large
+
+The expensive errors are unrestricted repeats, low acceptance, long-running media, excessive source context, high-frequency recrawls, unbounded retention, duplicate data imports and human work disguised as free software. Instrument them before negotiating fixed output commitments.
+
+For images, moving from a $0.12 to $0.30 average attempt changes 240 monthly attempts from $28.80 to $72 per brand. The difference across 3,000 brands is $129,600/month. These are hypothetical blended attempt prices. Do not choose a cheaper model that increases factual/identity failures and review time enough to erase the saving. Evaluate accepted outputs per dollar and per reviewer hour.
+
+For text, doubling article length does not necessarily double total cost because source intake and planning may be fixed. It can increase output tokens and review time. Prefer intent-complete articles with concrete examples and evidence over a word-count target alone. Reserve a distinct quality budget for long SEO pieces, source checking and expert review. Ensure the configured output limit can contain a full article plus structured metadata without truncation.
+
+Finished video is excluded from all base scenarios. As a sensitivity example only, 20 videos/brand x 30 seconds x an assumed $0.20/generated second x two charged takes costs $240/brand/month in generation. Add voice, music licensing, editing, rendering, storage and review. Across 3,000 brands that hypothetical media subtotal is $720,000/month. This is not a current model quote. Quote a selected model, resolution, audio option and retry policy before selling video credits.
+
+For crawling, distinguish first onboarding from ongoing change refresh. Retain a content hash, snapshot version and approved fact changes. A client with 10,000 products is not a typical 100-page brochure site. Cap new-site intake and make large catalogues an explicit backfill project. Avoid paid autonomous research when a bounded sitemap fetch or an authorized product export is enough.
+
+For storage, object retention grows cumulatively. An illustrative 200 images x 5 MB x 1.20 is 1.2 GB/brand/month before previews, variants and source media. At 3,000 brands, that is 3.6 TB of new image bytes/month; twelve retained months would be 43.2 TB before deletions or other media. At R2's published standard storage rate, storage alone would be about $648/month before allowances/requests, but this does not establish a US-only location or cover application egress and other vendors. [R2 pricing](https://developers.cloudflare.com/r2/pricing/). Video and downloads can dominate the storage term.
+
+Control cost in this order: avoid duplicate work through content hashes/idempotency; reuse approved facts; batch independent low-urgency tasks; route simple classification to a tested smaller model; generate low-cost contact sheets before selected final renders; repair only failed sections/elements; limit retries; use signed direct asset delivery; expire previews/branches; archive detail; reconcile provider invoices. Keep a daily operational cost report and weekly accepted-unit review.
+
+The calculator now separates per-format review time, other AI, support, infrastructure, payment percentage, contingency and target margin. It also provides Railway, Neon, Clerk and Trigger unit calculators. No network calls are made. A scenario does not authorize spend and does not change any account limit.
+
+## 35. One-time build cost, rollout effort and commercial pricing
+
+Cloud subscriptions are only a fraction of the cost to make the local starter a reliable multi-agency platform. The code already provides useful creative workflows, but hosted authorization, storage replacement, connectors, reconciliation and billing remain substantial implementation. Do not describe a few platform subscriptions as the all-in cost of finishing the product.
+
+| Work package | Estimated person-weeks | Exit evidence |
+| --- | --- | --- |
+| Region/vendor spike and migration inventory | 1-2 | One scoped upload-to-artifact path, measured latency/cost |
+| Identity, organization and brand permissions | 2-4 | Negative access tests, invitations/revocation, audit |
+| Postgres/object migration and durable production | 3-6 | Restart safety, complete storage inventory, restore |
+| First read-only connector and normalization | 2-4 | Account binding, known-day reconciliation, backfill |
+| Additional connectors | 3-6 | Separate scopes, versions, quotas, revoke behavior |
+| Slack, review roles and usage/billing ledger | 2-4 | Signed revision approval, metering and invoice checks |
+| Quality evaluation and hosted pilot hardening | 2-4 | Blind eval, load/restore/security and rollback report |
+| Total planning range | 15-30 | Before new requirements or provider approval delays |
+
+These are my engineering estimates for experienced contributors, not vendor delivery promises. Person-weeks are not calendar weeks; some work overlaps and some depends on prior migration. With 40 hours/person-week, the range is 600-1,200 hours. At an assumed blended $50/hour, labor is $30,000-60,000; at $100/hour it is $60,000-120,000, before contingency, legal work, external audits or acquisition. Existing in-house labor still has an opportunity cost even if it does not generate a contractor invoice.
+
+Coding agents can accelerate scaffolding, migrations, tests, connector boilerplate and documentation. They do not remove product decisions, account ownership, API app reviews, credential approvals, factual review or real deployment testing. Use feature acceptance to measure speed. A claim that parallel agents guarantee a production-ready SaaS in a day is not supported by this plan.
+
+An appropriate first commercial offer can combine agency platform access, active brand limits, named seats and a bounded generation allowance. Sell onboarding/data backfill as a separate service when significant. Charge managed editorial/creative review separately from self-serve software. Price enterprise SSO, dedicated infrastructure, special residency, custom connectors and finished video from their actual incremental costs and support obligations.
+
+Cost-based price floor: if C is recurring direct cost, m is desired contribution margin and f is an assumed payment fee fraction of revenue, price must be at least C/(1-m-f), provided m+f < 1. This is not a willingness-to-pay estimate, tax-inclusive price or operating-profit guarantee. For example, C=$895.44 for the modeled managed agency, m=70% and f=3% gives $3,316.44/month before tax. Self-serve at $489.44 technical cost + $100 support gives C=$589.44 and an illustrative floor of $2,183.11 under the same assumptions. These reflect the chosen workload and margin, not a recommended launch list price.
+
+If the market will not support that price, reduce included consumption or service labor, charge usage separately, improve acceptance and review efficiency, or change the margin assumption. Do not bury costs with unlimited volume. Keep implementation investment, sales, general payroll and profit separate from direct contribution margin. Convert USD to INR using an explicit editable FX assumption rather than an undated exchange-rate claim; actual card settlement and GST treatment depend on the entity and supplier.
+
+## 36. Implementation sequence and the purchase decision
+
+First complete a two-path architecture spike: the preferred modular US stack and the consolidated Supabase variant. Use synthetic data and one authorized resource -> job -> artifact -> review flow. Measure setup effort, session behavior, tenant enforcement, database/runtime latency, retry recovery, export/restore and cost attribution. Do not subscribe to every product merely to compare dashboards.
+
+For the chosen stack, migrate one complete vertical workflow before porting all screens. Add verified identity and server-created tenant scope. Replace local reads/writes with repositories and private objects. Add durable jobs with immutable input revisions, reservations and provider request IDs. Implement one connector end to end and reconcile source data. Then migrate the other production features, Slack and billing. Chapters 5-20 and 26-27 retain the detailed implementation and release gates.
+
+The next 30-day engineering focus is one-brand evidence quality, a region decision, identity/storage migration and durable production. The following phase adds a read-only connector and a small hosted agency pilot. Expand to ten agencies only after fair scheduling, quota handling, restore, invoice reconciliation and support ownership are demonstrated. Provider approval delays are schedule dependencies, not bugs that can be bypassed by a hosting choice.
+
+US launch checklist: signed processor/region inventory; US home deployment selected; restore tested; agency and brand grants tested with separate users; actual provider scopes approved; standalone mode still useful; prices in USD with clear allowances; response windows in US timezones; deletion/export path; representative quality samples; latency/cost measurements; billing reconciliation; named incident owner. This is a release readiness checklist, not a claim those features are implemented today.
+
+At one agency, minimize integration surface. At ten, add repeatable onboarding and usage dashboards. At 100, partition/archive and operational ownership should be established from measured traffic. At 1,000, re-evaluate provider enterprise terms, dedicated tenants, regional cells, data warehousing, capacity and support. There is no need to pre-purchase the largest architecture, but the schema and account model should avoid irreversible shortcuts.
+
+The planning decision is therefore: keep tomorrow's local onboarding simple; target US East for the primary hosted product; shortlist Railway/Neon/Clerk/Trigger/Firecrawl with S3 or validated Railway Buckets; prove a cheaper consolidated alternative; use India-specific infrastructure where a client requires it. Procurement and deployment happen after the vertical slice and the relevant account approvals. This revision itself creates no paid service, connection or deployment.
+
+## 37. Research register, uncertainty and keeping prices fresh
+
+All links below are primary vendor or official government sources opened or checked during this revision on 16 October 2026. The register records the specific question answered rather than treating a vendor homepage as proof of everything. Availability in public documentation is not proof of account entitlement, procurement terms, region capacity or an approved model quota.
+
+| Source | What it supports | Remaining check |
+| --- | --- | --- |
+| [Railway pricing](https://railway.com/pricing) | Minimum/credits, resource units, bucket storage | Actual app usage and enterprise terms |
+| [Railway regions](https://docs.railway.com/deployments/regions) | Four listed deploy regions | Selected service and bucket location |
+| [Railway MCP](https://docs.railway.com/cli/mcp) | Hosted/CLI agent tooling | Installed CLI, scoped auth and tool permissions |
+| [Bucket billing](https://docs.railway.com/storage-buckets/billing) | Objects and service-upload egress distinction | Retention, replication and client requirements |
+| [Neon pricing](https://neon.com/pricing) | CU, storage, history and branch costs | Selected plan, activity and backend usage |
+| [Neon regions](https://neon.com/docs/introduction/regions) | Region immutability and product matrix | Chosen product availability in account |
+| [Neon MCP](https://neon.com/docs/ai/neon-mcp-server) | Programmable agent management | Avoid production-wide development credentials |
+| [Neon branching](https://neon.com/docs/introduction/branching) | Development branch primitive | Masking, expiry and restore tests |
+| [Clerk pricing](https://clerk.com/pricing) | MRU/MRO units, add-ons and SSO | Selected feature set and dashboard seats |
+| [Clerk pricing explanation](https://clerk.com/articles/clerk-pricing-explained) | Monthly billing and changed free allowance | Checkout agreement controls |
+| [Clerk security](https://clerk.com/security) | Region-selection statement | Contract, subprocessors and customer approval |
+| [Clerk AI guidance](https://clerk.com/docs/guides/ai/overview) | AI development and agent auth resources | App-owned delegation and tenant tests |
+| [Firecrawl pricing](https://www.firecrawl.dev/pricing) | Current credits, annual presentation and endpoint units | Exact monthly checkout for larger tiers |
+| [Firecrawl billing](https://docs.firecrawl.dev/billing) | PAYG and credit behavior | Explicit caps, agent and extraction costs |
+| [Firecrawl MCP](https://docs.firecrawl.dev/mcp-server) | Agent-access tooling | Narrow host/payload policies |
+| [Firecrawl enterprise](https://www.firecrawl.dev/enterprise) | Custom terms and retention offers | Region and contract commitments |
+| [Trigger pricing](https://trigger.dev/pricing) | Plans/credits, compute and invocation units | Runtime profile and extra features |
+| [Trigger regional workers](https://trigger.dev/changelog/multi-region-workers) | Region selection including US East | Current account region; payload/control-plane location |
+| [Inngest pricing](https://www.inngest.com/pricing) | Current paid base and execution units | Required steps, runtime host and region |
+| [Supabase pricing](https://supabase.com/pricing) | Bundled quotas, compute and recovery add-ons | Compute sizing and retention |
+| [Supabase regions](https://supabase.com/docs/guides/platform/regions) | Mumbai and US deployment options | Actual selected project region |
+| [Supabase residency FAQ](https://supabase.com/legal/privacy-resources/data-residency-and-transfers-faq) | Limits to blanket regional guarantees | Contract and support/log processing |
+| [Supabase MCP](https://supabase.com/docs/guides/ai-tools/mcp) | Project development tooling | Scoped non-production credentials |
+| [WorkOS pricing](https://workos.com/pricing) | AuthKit and enterprise connection economics | Enterprise identity, domain/support quote |
+| [Better Auth](https://better-auth.com/docs/introduction) | Framework auth alternative | Hosting, email and security ownership |
+| [Upstash Redis](https://upstash.com/pricing/redis) | Commands, storage and transfer pricing | Regional placement and real command count |
+| [QStash pricing](https://upstash.com/pricing/qstash) | Delivery attempts and retry billing | Endpoint compute and concurrency |
+| [R2 pricing](https://developers.cloudflare.com/r2/pricing/) | Storage, operations and egress | Request volume and location requirements |
+| [R2 locations](https://developers.cloudflare.com/r2/reference/data-location/) | Hints versus jurisdictions | Country-specific contract suitability |
+| [S3 pricing](https://aws.amazon.com/s3/pricing/) | Multiple storage/request/network cost components | Selected-region calculator quote |
+| [Fargate pricing](https://aws.amazon.com/fargate/pricing/) | Usage-based container alternative | Architecture, region, network and support costs |
+| [Vercel pricing](https://vercel.com/pricing) | Current seats, workflows and usage products | Workload limits and complete bill |
+| [Render pricing](https://render.com/pricing) | Product/CLI/MCP alternatives | Numeric prices not exposed by fetched page |
+| [DigitalOcean prices](https://docs.digitalocean.com/products/app-platform/details/pricing/) | Per-component current container prices | Component sizing and team transfer |
+| [DigitalOcean availability](https://docs.digitalocean.com/products/app-platform/details/availability/) | India and US location candidates | Actual deployment and product coverage |
+| [OpenAI model](https://developers.openai.com/api/docs/models/gpt-6.1-sol) | Standard text rates and modifiers | Account/model entitlement and measured tokens |
+| [OpenAI pricing](https://developers.openai.com/api/docs/pricing) | Tool/image and processing-tier distinctions | Chosen image settings and actual invoice |
+| [Gemini pricing](https://ai.google.dev/gemini-api/docs/pricing) | Current image rates and old-model shutdown notice | Model availability, resolution and inputs |
+| [Claude pricing](https://platform.claude.com/docs/en/about-claude/pricing) | Current base rates/cache/geography rules | Selected model and actual usage |
+| [Google Ads quotas](https://developers.google.com/google-ads/api/docs/best-practices/quotas) | Access-level operations and other limits | Actual project approval/tier |
+| [Shopify client credentials](https://shopify.dev/docs/apps/build/authentication-authorization/client-credentials-grant?lang=node) | Own-organization scope of that auth flow | Correct external-client installation |
+| [Slack rate limits](https://docs.slack.dev/apis/web-api/rate-limits/) | Method/distribution-specific quotas | Client installation and actual method use |
+| [California CCPA](https://oag.ca.gov/privacy/ccpa) | Official rights/business guidance | Client/entity applicability and contracts |
+| [Indian rules notification](https://www.meity.gov.in/static/uploads/2025/11/53450e6e5dc0bfa85ebd78686cadad39.pdf) | Phased rules commencement | Applicable duties at actual launch |
+
+Meta's public documentation could not be retrieved reliably during this revision. No fixed Meta quota, current review completion or universal permission entitlement is asserted. Verify through the developer app/account and current official docs during implementation. The source register is a researched plan, not a security certification or a claim of all vendor account-level tests.
+
+Pricing refresh procedure: re-open official plan, usage, region and lifecycle pages before a purchase; record the date and exact billing cadence; run model/unit arithmetic tests; compare the estimate to a representative actual invoice after launch. Review monthly and after provider notices. Pin API versions, record model lifecycle warnings and rerun a small quality/cost benchmark before switching production models. A stale estimate should be labeled stale rather than silently used as a spending promise.
+
+The revised PDF, offline HTML, pricing snapshot and cost calculator carry the same research date. They use no client account data, make no generation calls and incur no provider consumption. Their scenario calculations are unit-tested; the app's original baseline tests are separate from this document's economic and architecture assumptions.

@@ -55,7 +55,9 @@ def build(output):
     md=(root/'docs/PLATFORM-IMPLEMENTATION-PLAN.md').read_text(encoding='utf8')
     guide=(root/'docs/guide/01-start-here.md').read_text(encoding='utf8')
     plan=list(blocks(md)); play=list(blocks(guide))
-    body=[(k,v) for k,v in plan if k!='h1']+[('h2','29. First-client operator playbook')]+[(('h3' if k=='h2' else k),v) for k,v in play if k!='h1']
+    count=sum(1 for k,v in plan if k=='h2')
+    start=next(i for i,(k,v) in enumerate(plan) if k=='h2')
+    body=plan[start:]+[('h2',str(count+1)+'. First-client operator playbook')]+[(('h3' if k=='h2' else k),v) for k,v in play if k!='h1']
     titles=[v for k,v in body if k=='h2']
     font=Path(reportlab.__file__).parent/'fonts'
     for name,file in [('Vera','Vera.ttf'),('Vera-Bold','VeraBd.ttf'),('Vera-Italic','VeraIt.ttf')]:pdfmetrics.registerFont(TTFont(name,str(font/file)))
@@ -67,13 +69,13 @@ def build(output):
     st.add(ParagraphStyle('PlanH3',parent=st['Plan'],fontName='Vera-Bold',fontSize=12,leading=17,spaceBefore=9,spaceAfter=8,keepWithNext=True))
     st.add(ParagraphStyle('PlanCell',parent=st['Plan'],fontSize=8.7,leading=12,spaceAfter=0))
     st.add(ParagraphStyle('PlanItem',parent=st['Plan'],leftIndent=12,firstLineIndent=-12,spaceAfter=8))
-    st.add(ParagraphStyle('PlanToc',parent=st['Plan'],fontSize=9.3,leading=13,spaceAfter=7))
+    st.add(ParagraphStyle('PlanToc',parent=st['Plan'],fontSize=8.8,leading=12,spaceAfter=3))
     st.add(ParagraphStyle('PlanLabel',parent=st['Plan'],fontName='Vera-Bold',fontSize=9,leading=13,textColor=colors.HexColor('#39725b'),spaceAfter=18))
     pdf=out/'mercatura-client-platform-plan.pdf'
-    doc=PlanDocument(str(pdf),pagesize=(595.28,841.89),leftMargin=43,rightMargin=43,topMargin=48,bottomMargin=44,title='Mercatura: new-client launch and agency platform plan',author='Mercatura')
+    doc=PlanDocument(str(pdf),pagesize=(595.28,841.89),leftMargin=43,rightMargin=43,topMargin=48,bottomMargin=44,title='Mercatura: US-market platform, costs and implementation plan',author='Mercatura')
     doc.section_index=0
-    story=[Spacer(1,34),Paragraph('MERCATURA / IMPLEMENTATION WORKBOOK',st['PlanLabel']),Paragraph('A clean client start.<br/>A platform that can scale.',st['PlanTitle']),Paragraph('India-first architecture, account connections, agency permissions, accepted-output quality and operating economics.',st['PlanH3']),Spacer(1,18),Paragraph('16 October 2026',st['PlanLabel']),Paragraph('Start with one verified client and one trusted operator. Expand through measured release gates to agency teams and a larger service.',st['Plan']),Spacer(1,18)]
-    for heading,detail in [('Tomorrow','Use the empty local starter. Approve a small evidence-led pilot before increasing volume.'),('Hosted launch','Implement identity, tenant-scoped Postgres and objects, durable jobs, encrypted connections and cost reservations.'),('Scale','Prove reconciliation, isolation, recovery, accepted-unit economics and capacity before each rollout gate.')]:
+    story=[Spacer(1,34),Paragraph('MERCATURA / RESEARCHED IMPLEMENTATION WORKBOOK',st['PlanLabel']),Paragraph('Built for US clients.<br/>Run from India.<br/>Costed to scale.',st['PlanTitle']),Paragraph('Railway, Neon, Clerk, Firecrawl and the alternatives. Architecture, current pricing, agency permissions and accepted-output economics.',st['PlanH3']),Spacer(1,18),Paragraph('REVISION 2 / 16 OCTOBER 2026',st['PlanLabel']),Paragraph('US East is the recommended hosted launch region. A separate India path remains available for clients who require it.',st['Plan']),Spacer(1,18)]
+    for heading,detail in [('Pilot budget','About $280/month platform services plus modeled AI, review and support. Published rates and assumptions are separated.'),('Build investment','Hosted migration is still implementation work. The document includes person-week estimates and release gates.'),('Scale decisions','Compare the modular and consolidated stacks, with explicit costs from one brand to 1,000 agencies.')]:
         story.append(KeepTogether([Paragraph(heading,st['PlanH3']),Paragraph(detail,st['Plan'])]))
     story.extend([Spacer(1,22),Paragraph('The current repository is a local starter. Hosted adapters and permissions in this plan are implementation work, not activated services. Cost and capacity scenarios are assumptions, not quotes or guarantees.',st['Plan']),PageBreak(),Paragraph('Contents',st['PlanTitle'])])
     for i,title in enumerate(titles):story.append(Paragraph('<link href="#section-'+str(i)+'">'+escape(title)+'</link>',st['PlanToc']))
@@ -89,7 +91,7 @@ def build(output):
             story.extend([table,Spacer(1,12)])
     def decorate(canvas,document):
         canvas.saveState();canvas.setFont('Vera',7.5);canvas.setFillColor(colors.HexColor('#5d7468'))
-        if document.page>1:canvas.drawString(43,818,'MERCATURA / INDIA-FIRST CLIENT PLATFORM')
+        if document.page>1:canvas.drawString(43,818,'MERCATURA / US-MARKET PLATFORM AND COSTS')
         canvas.drawString(43,24,'Implementation plan | 16 October 2026');canvas.drawRightString(552,24,str(document.page));canvas.restoreState()
     doc.build(story,onFirstPage=decorate,onLaterPages=decorate)
     nav=[];parts=[];index=-1
@@ -100,9 +102,9 @@ def build(output):
         elif kind=='item':parts.append('<p class="item">'+inline(value)+'</p>')
         elif kind=='table':parts.append('<div class="table"><table>'+''.join('<tr>'+''.join('<'+('th' if j==0 else 'td')+'>'+inline(c)+'</'+('th' if j==0 else 'td')+'>' for c in row)+'</tr>' for j,row in enumerate(value))+'</table></div>')
     css='*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f5f4ef;color:#20372d;font:17px/1.75 system-ui,sans-serif}aside{position:fixed;width:300px;inset:0 auto 0 0;overflow:auto;background:#e7ede4;padding:25px 21px}aside a{display:block;margin:12px 0;font-size:13px;line-height:1.4;text-decoration:none}main{margin-left:300px;max-width:1200px;padding:35px 55px 90px}h1{font-size:42px;line-height:1.15}h2{font-size:29px;line-height:1.25;margin-top:65px;scroll-margin-top:24px}h3{font-size:21px;margin-top:30px}a{color:#165d43}table{border-collapse:collapse;font-size:14px;line-height:1.6;width:100%}td,th{padding:12px;text-align:left;vertical-align:top}th{background:#dce9e1}tr:nth-child(even){background:#edf2e9}.table{overflow:auto}.actions{padding:18px;border:1px solid #c8d7c9;border-radius:9px;background:white}.actions a{margin-right:20px}.item{padding-left:15px}input{width:100%;padding:8px;font:inherit;font-size:13px;margin:10px 0}@media(max-width:850px){aside{position:static;width:auto;max-height:300px}main{margin:0;padding:22px}h1{font-size:32px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}@media print{aside,.actions{display:none}main{margin:0;padding:0}h2{break-before:page}table{break-inside:auto}}'
-    page='<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mercatura client platform plan</title><style>'+css+'</style><body><aside><strong>Implementation workbook</strong><label>Find a chapter<input id="find" type="search" placeholder="Try permissions, costs or Slack"></label><nav>'+''.join(nav)+'</nav></aside><main><h1>A clean client start.<br>A platform that can scale.</h1><p>India-first implementation workbook. 16 October 2026.</p><div class="actions"><a href="mercatura-client-platform-plan.pdf">Printable PDF</a><a href="cost-calculator.html">Offline cost calculator</a><p>Architecture and costs are proposed plans. The local starter does not activate hosted integrations.</p></div>'+''.join(parts)+'</main><script>document.getElementById("find").addEventListener("input",e=>{const q=e.target.value.toLowerCase();document.querySelectorAll("nav a").forEach(a=>a.hidden=!a.textContent.toLowerCase().includes(q));});</script></body></html>'
+    page='<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mercatura US-market platform and costs</title><style>'+css+'</style><body><aside><strong>US-market implementation workbook</strong><label>Find a chapter<input id="find" type="search" placeholder="Try Railway, costs, region or Slack"></label><nav>'+''.join(nav)+'</nav></aside><main><h1>Built for US clients.<br>Run from India.<br>Costed to scale.</h1><p>Revision 2. Researched 16 October 2026. US launch with a separate India option.</p><div class="actions"><a href="mercatura-client-platform-plan.pdf">Printable PDF</a><a href="cost-calculator.html">Offline cost calculator</a><a href="vendor-pricing-2026-10-16.json">Dated price snapshot</a><p>Published facts and workload assumptions are distinct. The local starter does not activate hosted integrations.</p></div>'+''.join(parts)+'</main><script>document.getElementById("find").addEventListener("input",e=>{const q=e.target.value.toLowerCase();document.querySelectorAll("nav a").forEach(a=>a.hidden=!a.textContent.toLowerCase().includes(q));});</script></body></html>'
     (out/'index.html').write_text(page,encoding='utf8')
-    for file in ['cost-calculator.html','cost-model.js','PLATFORM-IMPLEMENTATION-PLAN.md']:shutil.copy2(root/'docs'/file,out/file)
+    for file in ['cost-calculator.html','cost-model.js','PLATFORM-IMPLEMENTATION-PLAN.md','vendor-pricing-2026-10-16.json']:shutil.copy2(root/'docs'/file,out/file)
     stats={'pdfPages':len(PdfReader(pdf).pages),'chapters':len(titles),'words':len(re.findall(r"\b[\w'-]+\b",md+'\n'+guide)),'providerCalls':0}
     (out/'build-validation.json').write_text(json.dumps(stats,indent=2),encoding='utf8');print(json.dumps(stats))
 
